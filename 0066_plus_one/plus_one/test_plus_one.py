@@ -22,6 +22,11 @@ class Solution(object):
         return digits
 
     def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+
         if digits:
             for i in reversed(range(len(digits))):
                 if digits[i] < 9:

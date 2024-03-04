@@ -41,4 +41,4 @@ class Solution(object):
     ],
 )
 def test_add_two_numbers(l1, l2, expected):
-    actual = Solution().addTwoNumbers(make_ll(l1), make_ll(l2)) == make_ll(expected)
+    assert Solution().addTwoNumbers(make_ll(l1), make_ll(l2)) == make_ll(expected)

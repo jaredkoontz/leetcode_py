@@ -30,7 +30,6 @@ class Solution(object):
 
         return True
 
-
     def isPalindrome_str(self, x):
         if x < 0:
             return False

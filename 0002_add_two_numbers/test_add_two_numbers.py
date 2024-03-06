@@ -1,6 +1,7 @@
 import pytest
 
-from helpers.ll import ListNode, make_ll
+from helpers.ll import ListNode
+from helpers.ll import make_ll
 
 
 class Solution(object):

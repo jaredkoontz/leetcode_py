@@ -31,9 +31,10 @@ class Solution(object):
         for i in range(len(nums)):
             candidate = target - nums[i]
             if candidate in number_map:
-                return [number_map[candidate],i]
+                return [number_map[candidate], i]
             else:
                 number_map[nums[i]] = i
+
 
 @pytest.mark.parametrize(
     "nums,target,expected",

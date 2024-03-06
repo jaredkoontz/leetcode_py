@@ -19,8 +19,8 @@ class Solution(object):
         str_len = len(s)
         n = 0
         for i in range(str_len, 0, -1):
-            if s[i-1] != " ":
-                while i > 0 and s[i-1] != " ":
+            if s[i - 1] != " ":
+                while i > 0 and s[i - 1] != " ":
                     n += 1
                     i -= 1
                 return n

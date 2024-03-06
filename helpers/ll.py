@@ -1,4 +1,3 @@
-
 class ListNode(object):
     # Definition for singly-linked list.
     def __init__(self, val=0, next=None):
@@ -17,11 +16,21 @@ class ListNode(object):
         result += "]"
         return result
 
+    def __eq__(self, other):
+        mine = self
+        while mine and other:
+            if mine.val != other.val:
+                return False
+            mine = mine.next
+            other = other.next
+        return True
+
 
 def make_ll(arr):
-    head = ListNode(arr[0])
-    curr = head
-    for val in range(1, len(arr)):
-        curr.next = ListNode(arr[val])
-        curr = curr.next
-    return head
+    if len(arr) != 0:
+        head = ListNode(arr[0])
+        curr = head
+        for val in range(1, len(arr)):
+            curr.next = ListNode(arr[val])
+            curr = curr.next
+        return head

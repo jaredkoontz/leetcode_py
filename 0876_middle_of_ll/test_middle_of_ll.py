@@ -2,7 +2,9 @@ from typing import Optional
 
 import pytest
 
-from helpers.ll import make_ll, ListNode, compare_lls
+from helpers.ll import compare_lls
+from helpers.ll import ListNode
+from helpers.ll import make_ll
 
 
 class Solution:

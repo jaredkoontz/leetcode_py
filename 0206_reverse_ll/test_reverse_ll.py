@@ -2,6 +2,7 @@ from typing import Optional
 
 import pytest
 
+from helpers.ll import compare_lls
 from helpers.ll import ListNode
 from helpers.ll import make_ll
 
@@ -21,8 +22,8 @@ class Solution:
 
         return prev
 
-    def reverse_recurse(self, head):
-        def reverse(cur, prev):
+    def reverse_recurse(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        def reverse(cur: Optional[ListNode], prev: Optional[ListNode]):
             # reached the end of the list, return previous
             if cur is None:
                 return prev
@@ -45,4 +46,4 @@ class Solution:
     ],
 )
 def test_reverse_ll(l1, expected):
-    assert Solution().reverseList(make_ll(l1)) == make_ll(expected)
+    assert compare_lls(Solution().reverseList(make_ll(l1)), make_ll(expected))

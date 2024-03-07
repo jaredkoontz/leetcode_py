@@ -24,14 +24,16 @@ class Solution:
         right = self.sortList(right)
         return self.merge(left, right)
 
-    def get_middle_node(self, head: ListNode) -> ListNode:
+    @staticmethod
+    def get_middle_node(head: ListNode) -> ListNode:
         slow, fast = head, head.next
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
         return slow
 
-    def merge(self, left: ListNode, right: ListNode) -> ListNode:
+    @staticmethod
+    def merge(left: ListNode, right: ListNode) -> ListNode:
         tail = dummy = ListNode(0)
 
         while left and right:

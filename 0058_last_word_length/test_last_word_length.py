@@ -36,5 +36,5 @@ class Solution(object):
         ("luffy is still joyboy", 6),
     ],
 )
-def test_two_sum(target, expected):
+def test_last_word_len(target, expected):
     assert Solution().lengthOfLastWord(target) == expected

@@ -55,7 +55,7 @@ class Solution:
         ([7], [7]),
     ],
 )
-def test_add_two_numbers(l1, expected):
+def test_insert_gcd(l1, expected):
     assert compare_lls(
         Solution().insertGreatestCommonDivisors(make_ll(l1)), make_ll(expected)
     )

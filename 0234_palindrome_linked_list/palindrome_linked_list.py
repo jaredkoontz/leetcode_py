@@ -88,5 +88,5 @@ class Solution(object):
         ([9, 9, 9, 9, 9, 9, 9], True),
     ],
 )
-def test_add_two_numbers(l1, expected):
+def test_palindrome_ll(l1, expected):
     assert Solution().isPalindrome(make_ll(l1)) == expected

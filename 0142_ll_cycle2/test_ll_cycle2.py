@@ -29,17 +29,23 @@ class Solution:
 
 
 @pytest.mark.parametrize(
-    "l1,pos,expected",
+    "l1,pos,expected_val,expected_index",
     [
-        ([3, 2, 0, -4], 1, 2),
-        ([1, 2], 0, 1),
-        ([1], -1, None),
+        ([3, 2, 0, -4], 1, 2, 1),
+        ([1, 2], 0, 1, 0),
+        ([1], -1, None, None),
     ],
 )
-def test_ll_cycle(l1, pos, expected):
-    # the official site will verify the index. for ease, we are just comparing node.val
+def test_ll_cycle2(l1, pos, expected_val, expected_index):
     linked_list = make_ll(l1)
     if pos >= 0:
         create_ll_cycle(linked_list, pos)
-    expected_node = ListNode(expected) if expected else None
-    assert Solution().detectCycle(linked_list) == expected_node
+    expected_node = ListNode(expected_val) if expected_val else None
+    node = Solution().detectCycle(linked_list)
+    my_index = None
+    for i, arr_val in enumerate(l1):
+        if arr_val == expected_val:
+            my_index = i
+            break
+    assert node == expected_node
+    assert my_index == expected_index

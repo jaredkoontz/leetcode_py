@@ -8,11 +8,18 @@ from helpers.ll import make_ll
 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
-        return self.reverse_recurse(head)
+        return self.reverse_iterative(head)
+
+    def reverse_iterative(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        curr = head
+        prev = None
+        while curr:
+            next_node = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next_node
+
+        return prev
 
     def reverse_recurse(self, head):
         def reverse(cur, prev):
@@ -37,5 +44,5 @@ class Solution:
         ([], []),
     ],
 )
-def test_add_two_numbers(l1, expected):
+def test_reverse_ll(l1, expected):
     assert Solution().reverseList(make_ll(l1)) == make_ll(expected)

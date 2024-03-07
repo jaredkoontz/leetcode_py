@@ -1,33 +1,32 @@
-from typing import Optional
-
 import pytest
 
+from helpers.ll import create_ll_cycle
 from helpers.ll import ListNode
 from helpers.ll import make_ll
 
 
 class Solution:
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
-        return self.hasCycle_hash_map(head)
+    def hasCycle(self, head: ListNode) -> bool:
+        return self.hasCycle_tortise_hare(head)
 
-    def hasCycle_tortise_hare(self, head: Optional[ListNode]) -> bool:
+    def hasCycle_tortise_hare(self, head: ListNode) -> bool:
         fast, slow = head, head
         while fast and fast.next:
             fast = fast.next.next
             slow = slow.next
-            if fast == slow:
+            if fast.val == slow.val:
                 return True
         return False
 
-    def hasCycle_hash_map(self, head: Optional[ListNode]) -> bool:
+    def hasCycle_hash_map(self, head: ListNode) -> bool:
         # relies on distinct nodes and uses extra space 😭
-        map = {}
+        h_map = {}
         curr = head
         while curr:
-            if curr.val in map:
+            if curr.val in h_map:
                 return True
             else:
-                map[curr.val] = True
+                h_map[curr.val] = True
                 curr = curr.next
 
         return False
@@ -43,16 +42,7 @@ class Solution:
 )
 def test_ll_cycle(l1, pos, expected):
     linked_list = make_ll(l1)
-    if pos > 0:
-        curr = linked_list
+    if pos >= 0:
+        create_ll_cycle(linked_list, pos)
 
-        while curr.next:
-            curr = curr.next
-
-        # curr now points to last node
-        new_curr = linked_list
-        for _ in range(pos):
-            new_curr = new_curr.next
-        curr.next = new_curr
-
-    assert Solution().hasCycle(make_ll(l1)) == expected
+    assert Solution().hasCycle(linked_list) == expected

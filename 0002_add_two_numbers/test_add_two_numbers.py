@@ -1,16 +1,12 @@
 import pytest
 
+from helpers.ll import compare_lls
 from helpers.ll import ListNode
 from helpers.ll import make_ll
 
 
 class Solution(object):
-    def addTwoNumbers(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         dummy = ListNode()
         curr = dummy
         carry = 0
@@ -34,12 +30,14 @@ class Solution(object):
 @pytest.mark.parametrize(
     "l1,l2,expected",
     [
-        ([2, 4, 3, 3], [5, 6, 4], [8, 0, 7, 3]),
-        ([2, 4, 3], [5, 6, 4], [8, 0, 7]),
+        ([2, 4, 3, 3], [5, 6, 4], [7, 0, 8, 3]),
+        ([2, 4, 3], [5, 6, 4], [7, 0, 8]),
         ([0], [0], [0]),
         ([7], [8], [5, 1]),
         ([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9], [8, 9, 9, 9, 0, 0, 0, 1]),
     ],
 )
 def test_add_two_numbers(l1, l2, expected):
-    assert Solution().addTwoNumbers(make_ll(l1), make_ll(l2)) == make_ll(expected)
+    assert compare_lls(
+        Solution().addTwoNumbers(make_ll(l1), make_ll(l2)), make_ll(expected)
+    )

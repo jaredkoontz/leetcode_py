@@ -3,6 +3,7 @@ from typing import Optional
 
 import pytest
 
+from helpers.ll import compare_lls
 from helpers.ll import ListNode
 from helpers.ll import make_ll
 
@@ -55,4 +56,6 @@ class Solution:
     ],
 )
 def test_add_two_numbers(l1, expected):
-    assert Solution().insertGreatestCommonDivisors(make_ll(l1)) == make_ll(expected)
+    assert compare_lls(
+        Solution().insertGreatestCommonDivisors(make_ll(l1)), make_ll(expected)
+    )

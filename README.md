@@ -2,3 +2,4 @@
 
 Leetcode problems implemented in python 🐍
 
+Run everything with `python -m pytest`

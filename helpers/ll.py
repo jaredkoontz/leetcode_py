@@ -1,32 +1,56 @@
+from typing import List
+
+
 class ListNode(object):
     # Definition for singly-linked list.
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=0, next_node=None):
         self.val = val
-        self.next = next
+        self.next = next_node
 
     def __str__(self):
         result = "["
-        node = self
-        if node is not None:
-            result += str(node.val)
-            node = node.next
-            while node:
-                result += ", " + str(node.val)
-                node = node.next
+        head = self
+        if head:
+            result += str(head.val)
+            head = head.next
+            while head:
+                result += ", " + str(head.val)
+                head = head.next
         result += "]"
         return result
 
-    def __eq__(self, other):
+    def __eq__(self, other: "ListNode"):
         mine = self
-        while mine and other:
-            if mine.val != other.val:
-                return False
-            mine = mine.next
-            other = other.next
-        return True
+        if mine and other:
+            return mine.val == other.val
+        return False
 
 
-def make_ll(arr):
+def compare_lls(l1: ListNode, l2: ListNode) -> bool:
+    while l1 and l2:
+        if l1 != l2:
+            return False
+        l1 = l1.next
+        l2 = l2.next
+    return True
+
+
+def create_ll_cycle(head: ListNode, pos: int) -> ListNode:
+    curr = head
+
+    while curr.next:
+        curr = curr.next
+
+    # curr now points to last node
+    new_curr = head
+    for _ in range(pos):
+        new_curr = new_curr.next
+    curr.next = new_curr
+    return head
+
+
+def make_ll(arr: List[int]) -> ListNode:
+    """makes a linked list from an array of integers"""
     if len(arr) != 0:
         head = ListNode(arr[0])
         curr = head

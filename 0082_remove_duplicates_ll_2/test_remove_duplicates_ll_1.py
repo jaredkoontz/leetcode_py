@@ -44,6 +44,4 @@ class Solution:
     ],
 )
 def test_remove_duplicates_ll(l1, expected):
-    result = Solution().deleteDuplicates(make_ll(l1))
-    print(result)
-    assert compare_lls(result, make_ll(expected))
+    assert compare_lls(Solution().deleteDuplicates(make_ll(l1)), make_ll(expected))

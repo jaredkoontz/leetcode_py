@@ -78,5 +78,5 @@ class Solution:
         ([0], []),
     ],
 )
-def test_remove_duplicates_ll(l1, expected):
+def test_removeZeroSumSublists(l1, expected):
     assert compare_lls(Solution().removeZeroSumSublists(make_ll(l1)), make_ll(expected))

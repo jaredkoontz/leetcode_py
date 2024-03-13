@@ -1,3 +1,6 @@
+import pytest
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -6,38 +9,52 @@ class TreeNode:
 
 
 def create_tree(tree_array: list[int]) -> TreeNode | None:
-    # array = [root, root.left, root.right, root.left.left, 4, 5, 6] and root.val = array[0]
+    # array = [root, root.left, root.right, root.left.left, ...]
     if not tree_array:
         return None
 
     it = iter(tree_array)
     root = TreeNode(next(it))
-    q = [root]
-    for node in q:
+    queue = [root]
+    for node in queue:
         val = next(it, None)
         if val is not None:
             node.left = TreeNode(val)
-            q.append(node.left)
+            queue.append(node.left)
         val = next(it, None)
         if val is not None:
             node.right = TreeNode(val)
-            q.append(node.right)
+            queue.append(node.right)
     return root
 
 
-#
-# def create_array(root):
-#     if not root:
-#         return []
-#
-#     # Level traverse
-#     l, q, node = [], [], root
-#     while node:
-#         l.append(node.val)
-#         left, right = node.left, node.right
-#         if left:
-#             q.insert(0, left)
-#         if right:
-#             q.insert(0, right)
-#         node = None if not q else q.pop()
-#     return l
+def create_array_from_tree(root):
+    if not root:
+        return []
+
+    # Level traverse
+    my_list, q, node = [], [], root
+    while node:
+        my_list.append(node.val)
+        left, right = node.left, node.right
+        if left:
+            q.insert(0, left)
+        if right:
+            q.insert(0, right)
+        node = None if not q else q.pop()
+    return my_list
+
+
+@pytest.mark.parametrize(
+    "l1",
+    [
+        ([1, None, 2, 3]),
+        ([1, 2, None, 3]),
+        ([1, 2, 3]),
+        ([1, 4, 2, 3]),
+        ([1, 5, 2, 3, 4]),
+    ],
+)
+def test_bin_tree_maker(l1):
+    # todo fails because of none
+    assert create_array_from_tree(create_tree(l1)) == l1

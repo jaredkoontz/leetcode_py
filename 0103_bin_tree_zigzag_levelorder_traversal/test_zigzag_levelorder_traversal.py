@@ -52,5 +52,5 @@ class Solution:
         ([1], [[1]]),
     ],
 )
-def test_levelOrder(l1, expected):
+def test_zigzag_levelOrder(l1, expected):
     assert Solution().levelOrder(create_tree(l1)) == expected

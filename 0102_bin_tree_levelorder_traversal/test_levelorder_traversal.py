@@ -1,10 +1,9 @@
-import copy
 from typing import Optional
 
 import pytest
 
-from helpers.bin_tree import TreeNode
 from helpers.bin_tree import create_tree
+from helpers.bin_tree import TreeNode
 
 
 class Solution:
@@ -12,21 +11,22 @@ class Solution:
         if not root:
             return []
 
-        level, queue, node = [], [], root
-        level.append([root.val])
-        while node:
-            my_list = []
-            left, right = node.left, node.right
-            if left:
-                queue.insert(0, left)
-                my_list.append(left.val)
-            if right:
-                queue.insert(0, right)
-                my_list.append(right.val)
-            node = None if not queue else queue.pop()
-            level.append(copy.copy(my_list)) if my_list else ...
-            my_list.clear()
-        return level
+        queue = [root]
+        result = []
+
+        while queue:
+            next_queue = []
+            level = []
+            for root in queue:
+                level.append(root.val)
+                if root.left:
+                    next_queue.append(root.left)
+                if root.right:
+                    next_queue.append(root.right)
+            result.append(level)
+            queue = next_queue
+
+        return result
 
 
 @pytest.mark.parametrize(
@@ -37,7 +37,7 @@ class Solution:
         ([1, 4, 2, 3], [[1], [4, 2], [3]]),
         ([1, 5, 2, 3, 4], [[1], [5, 2], [3, 4]]),
         ([], []),
-        ([[1]], [[1]]),
+        ([1], [[1]]),
     ],
 )
 def test_levelOrder(l1, expected):

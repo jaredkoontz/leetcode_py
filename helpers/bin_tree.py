@@ -7,6 +7,11 @@ class TreeNode:
         self.left = left
         self.right = right
 
+    def __str__(self):
+        left_val = self.left.val if self.left is not None else "None"
+        right_val = self.right.val if self.right is not None else "None"
+        return f"{self.val} l={left_val} r={right_val}"
+
 
 def create_tree(tree_array: list[int]) -> TreeNode | None:
     # array = [root, root.left, root.right, root.left.left, ...]

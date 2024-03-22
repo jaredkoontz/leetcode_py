@@ -1,5 +1,3 @@
-from typing import Optional
-
 import pytest
 
 from helpers.ll import compare_lls
@@ -8,10 +6,11 @@ from helpers.ll import make_ll
 
 
 class Solution:
-    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def reverseList(self, head: ListNode | None) -> ListNode | None:
         return self.reverse_iterative(head)
 
-    def reverse_iterative(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    @staticmethod
+    def reverse_iterative(head: ListNode | None) -> ListNode | None:
         curr = head
         prev = None
         while curr:
@@ -22,8 +21,9 @@ class Solution:
 
         return prev
 
-    def reverse_recurse(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        def reverse(cur: Optional[ListNode], prev: Optional[ListNode]):
+    @staticmethod
+    def reverse_recurse(head: ListNode | None) -> ListNode | None:
+        def reverse(cur: ListNode | None, prev: ListNode | None):
             # reached the end of the list, return previous
             if cur is None:
                 return prev

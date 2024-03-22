@@ -2,7 +2,8 @@ import pytest
 
 
 class Solution:
-    def isValid(self, s: str) -> bool:
+    @staticmethod
+    def isValid(s: str) -> bool:
         if not s:
             return False
 

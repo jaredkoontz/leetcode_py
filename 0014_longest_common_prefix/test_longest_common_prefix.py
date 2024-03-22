@@ -5,7 +5,8 @@ class Solution:
     def longestCommonPrefix(self, strs: list[str]) -> str:
         return self.longestCommonPrefix_sorted(strs)
 
-    def longestCommonPrefix_mine(self, strs: list[str]) -> str:
+    @staticmethod
+    def longestCommonPrefix_mine(strs: list[str]) -> str:
         if not strs:
             return ""
 
@@ -30,7 +31,8 @@ class Solution:
 
         return longest_common_prefix
 
-    def longestCommonPrefix_sorted(self, strs: list[str]) -> str:
+    @staticmethod
+    def longestCommonPrefix_sorted(strs: list[str]) -> str:
         ans = ""
         v = sorted(strs)
         first = v[0]

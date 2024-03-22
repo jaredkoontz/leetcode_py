@@ -49,8 +49,9 @@ class Version:
         return f"{self.major}.{self.minor}.{self.patch}"
 
 
-class Solution(object):
-    def compareVersion(self, version1: str, version2: str) -> int:
+class Solution:
+    @staticmethod
+    def compareVersion(version1: str, version2: str) -> int:
         my_version1 = create_version(version1)
         my_version2 = create_version(version2)
         if my_version1 == my_version2:

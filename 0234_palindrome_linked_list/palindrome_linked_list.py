@@ -1,21 +1,15 @@
 import pytest
 
+from helpers.ll import ListNode
 from helpers.ll import make_ll
 
 
-class Solution(object):
-    def isPalindrome(self, head):
-        """
-        :type head: ListNode
-        :rtype: bool
-        """
+class Solution:
+    def isPalindrome(self, head: ListNode | None) -> bool:
         return self.isPalindrome_reverse(head)
 
-    def isPalindrome_reverse(self, head):
-        """
-        :type head: ListNode
-        :rtype: bool
-        """
+    @staticmethod
+    def isPalindrome_reverse(head: ListNode | None) -> bool:
         fast = slow = head
 
         # find middle(slow)
@@ -40,11 +34,8 @@ class Solution(object):
             right = right.next
         return True
 
-    def isPalindrome_arr_mine(self, head):
-        """
-        :type head: ListNode
-        :rtype: bool
-        """
+    @staticmethod
+    def isPalindrome_arr_mine(head: ListNode | None) -> bool:
         arr = []
         if not head:
             return True
@@ -59,11 +50,8 @@ class Solution(object):
                 return False
         return True
 
-    def isPalindrome_arr_neet(self, head):
-        """
-        :type head: ListNode
-        :rtype: bool
-        """
+    @staticmethod
+    def isPalindrome_arr_neet(head: ListNode | None) -> bool:
         arr = []
         while head:
             arr.append(head.val)

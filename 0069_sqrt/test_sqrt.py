@@ -5,7 +5,8 @@ class Solution:
     def mySqrt(self, x: int) -> int:
         return self.mySqrt_bin(x)
 
-    def mySqrt_linear(self, x: int) -> int:
+    @staticmethod
+    def mySqrt_linear(x: int) -> int:
         number = 1
         square = 1
         while square < x:
@@ -15,7 +16,8 @@ class Solution:
             number -= 1
         return number
 
-    def mySqrt_bin(self, x: int) -> int:
+    @staticmethod
+    def mySqrt_bin(x: int) -> int:
         low, high = 0, x
         result = 0
         while low <= high:

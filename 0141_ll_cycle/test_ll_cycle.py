@@ -9,7 +9,8 @@ class Solution:
     def hasCycle(self, head: ListNode) -> bool:
         return self.hasCycle_tortise_hare(head)
 
-    def hasCycle_tortise_hare(self, head: ListNode) -> bool:
+    @staticmethod
+    def hasCycle_tortise_hare(head: ListNode) -> bool:
         fast, slow = head, head
         while fast and fast.next:
             fast = fast.next.next
@@ -18,7 +19,8 @@ class Solution:
                 return True
         return False
 
-    def hasCycle_hash_map(self, head: ListNode) -> bool:
+    @staticmethod
+    def hasCycle_hash_map(head: ListNode) -> bool:
         # relies on distinct nodes and uses extra space 😭
         h_map = {}
         curr = head

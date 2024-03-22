@@ -5,7 +5,8 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         return self.lengthOfLongestSubstring_theirs(s)
 
-    def lengthOfLongestSubstring_theirs(self, s: str) -> int:
+    @staticmethod
+    def lengthOfLongestSubstring_theirs(s: str) -> int:
         char_set = set()
         left = 0
         result = 0
@@ -19,7 +20,8 @@ class Solution:
 
         return result
 
-    def lengthOfLongestSubstring_mine(self, s: str) -> int:
+    @staticmethod
+    def lengthOfLongestSubstring_mine(s: str) -> int:
         curr_longest = ""
         curr = ""
         length = len(s)

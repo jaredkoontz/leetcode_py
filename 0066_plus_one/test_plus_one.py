@@ -1,13 +1,12 @@
 import pytest
 
 
-class Solution(object):
-    def plusOneMine(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
+class Solution:
+    def plusOne(self, digits: list[int]) -> list[int]:
+        return self.plusOne_theirs(digits)
 
+    @staticmethod
+    def plusOneMine(digits: list[int]) -> list[int]:
         if digits:
             last_val = -1
             if digits[-1] == 9:
@@ -21,12 +20,8 @@ class Solution(object):
             digits[last_val] += 1
         return digits
 
-    def plusOne(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
-
+    @staticmethod
+    def plusOne_theirs(digits: list[int]) -> list[int]:
         if digits:
             for i in reversed(range(len(digits))):
                 if digits[i] < 9:

@@ -1,5 +1,3 @@
-from typing import Optional
-
 import pytest
 
 from helpers.ll import compare_lls
@@ -8,7 +6,7 @@ from helpers.ll import make_ll
 
 
 class Solution:
-    def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def sortList(self, head: ListNode | None) -> ListNode | None:
         if not head or not head.next:
             return head
 

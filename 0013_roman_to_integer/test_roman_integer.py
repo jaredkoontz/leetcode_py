@@ -2,7 +2,8 @@ import pytest
 
 
 class Solution:
-    def romanToInt(self, s: str) -> int:
+    @staticmethod
+    def romanToInt(s: str) -> int:
         mappings = {
             "M": 1000,
             "D": 500,

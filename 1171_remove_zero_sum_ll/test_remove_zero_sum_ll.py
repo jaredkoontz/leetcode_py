@@ -1,5 +1,3 @@
-from typing import Optional
-
 import pytest
 
 from helpers.ll import compare_lls
@@ -8,12 +6,11 @@ from helpers.ll import make_ll
 
 
 class Solution:
-    def removeZeroSumSublists(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def removeZeroSumSublists(self, head: ListNode | None) -> ListNode | None:
         return self.removeZeroSumSublists_mine(head)
 
-    def removeZeroSumSublists_mine(
-        self, head: Optional[ListNode]
-    ) -> Optional[ListNode]:
+    @staticmethod
+    def removeZeroSumSublists_mine(head: ListNode | None) -> ListNode | None:
         dummy = ListNode(0)
         dummy.next = head
 
@@ -41,9 +38,8 @@ class Solution:
 
         return dummy.next
 
-    def removeZeroSumSublists_theirs(
-        self, head: Optional[ListNode]
-    ) -> Optional[ListNode]:
+    @staticmethod
+    def removeZeroSumSublists_theirs(head: ListNode | None) -> ListNode | None:
         dummy = ListNode(0)
         dummy.next = head
         prefix_sum = 0

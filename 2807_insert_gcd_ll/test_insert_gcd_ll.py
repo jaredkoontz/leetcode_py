@@ -1,5 +1,4 @@
 import math
-from typing import Optional
 
 import pytest
 
@@ -9,14 +8,11 @@ from helpers.ll import make_ll
 
 
 class Solution:
-    def insertGreatestCommonDivisors(
-        self, head: Optional[ListNode]
-    ) -> Optional[ListNode]:
+    def insertGreatestCommonDivisors(self, head: ListNode | None) -> ListNode | None:
         return self.insertGreatestCommonDivisors_mine(head)
 
-    def insertGreatestCommonDivisors_theirs(
-        self, head: Optional[ListNode]
-    ) -> Optional[ListNode]:
+    @staticmethod
+    def insertGreatestCommonDivisors_theirs(head: ListNode | None) -> ListNode | None:
         cur = head.next
         prev = head
 
@@ -30,9 +26,8 @@ class Solution:
 
         return head
 
-    def insertGreatestCommonDivisors_mine(
-        self, head: Optional[ListNode]
-    ) -> Optional[ListNode]:
+    @staticmethod
+    def insertGreatestCommonDivisors_mine(head: ListNode | None) -> ListNode | None:
         curr = head
         while curr and curr.next:
             # find gcd

@@ -2,7 +2,8 @@ import pytest
 
 
 class Solution:
-    def countKeyChanges(self, s: str) -> int:
+    @staticmethod
+    def countKeyChanges(s: str) -> int:
         changed = 0
         if s:
             curr_key = s[0].lower()

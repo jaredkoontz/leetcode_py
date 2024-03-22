@@ -5,7 +5,8 @@ class Solution:
     def myPow(self, x: float, n: int) -> float:
         return self.myPow_divide_conquer(x, n)
 
-    def myPow_linear(self, x: float, n: int) -> float:
+    @staticmethod
+    def myPow_linear(x: float, n: int) -> float:
         negative = False
         ans = x
         if n < 0:
@@ -16,7 +17,8 @@ class Solution:
             ans = ans * x
         return 1 / ans if negative else ans
 
-    def myPow_divide_conquer(self, x: float, n: int) -> float:
+    @staticmethod
+    def myPow_divide_conquer(x: float, n: int) -> float:
         def helper(base, exponent):
             if exponent == 0:
                 return 1

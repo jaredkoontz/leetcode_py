@@ -9,7 +9,8 @@ class Solution:
     def detectCycle(self, head: ListNode) -> ListNode | None:
         return self.detectCycle_tortise_hare(head)
 
-    def detectCycle_tortise_hare(self, head: ListNode) -> ListNode | None:
+    @staticmethod
+    def detectCycle_tortise_hare(head: ListNode) -> ListNode | None:
         slow, fast = head, head
         while fast and fast.next:
             slow = slow.next

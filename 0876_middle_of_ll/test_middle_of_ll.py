@@ -1,5 +1,3 @@
-from typing import Optional
-
 import pytest
 
 from helpers.ll import compare_lls
@@ -8,7 +6,8 @@ from helpers.ll import make_ll
 
 
 class Solution:
-    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    @staticmethod
+    def middleNode(head: ListNode | None) -> ListNode | None:
         fast, slow = head, head
         while fast and fast.next:
             fast = fast.next.next

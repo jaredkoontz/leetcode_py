@@ -1,5 +1,3 @@
-from typing import Optional
-
 import pytest
 
 from helpers.bin_tree import create_tree
@@ -7,7 +5,8 @@ from helpers.bin_tree import TreeNode
 
 
 class Solution:
-    def levelOrder(self, root: Optional[TreeNode]) -> list[int] | list[list[int]]:
+    @staticmethod
+    def levelOrder(root: TreeNode | None) -> list[int] | list[list[int]]:
         if not root:
             return []
 

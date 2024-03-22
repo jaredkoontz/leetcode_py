@@ -1,7 +1,4 @@
-from typing import List
-
-
-class ListNode(object):
+class ListNode:
     # Definition for singly-linked list.
     def __init__(self, val=0, next_node=None):
         self.val = val
@@ -52,7 +49,7 @@ def create_ll_cycle(head: ListNode, pos: int) -> ListNode:
     return head
 
 
-def make_ll(arr: List[int]) -> ListNode | None:
+def make_ll(arr: list[int]) -> ListNode | None:
     """makes a linked list from an array of integers"""
     if len(arr) != 0:
         head = ListNode(arr[0])

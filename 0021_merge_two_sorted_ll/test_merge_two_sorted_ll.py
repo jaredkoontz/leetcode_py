@@ -1,5 +1,3 @@
-from typing import Optional
-
 import pytest
 
 from helpers.ll import compare_lls
@@ -9,13 +7,14 @@ from helpers.ll import make_ll
 
 class Solution:
     def mergeTwoLists(
-        self, list1: Optional[ListNode], list2: Optional[ListNode]
-    ) -> Optional[ListNode]:
+        self, list1: ListNode | None, list2: ListNode | None
+    ) -> ListNode | None:
         return self.mergeTwoLists_in_place(list1, list2)
 
+    @staticmethod
     def mergeTwoLists_in_place(
-        self, list1: Optional[ListNode], list2: Optional[ListNode]
-    ) -> Optional[ListNode]:
+        list1: ListNode | None, list2: ListNode | None
+    ) -> ListNode | None:
         if not list1 and not list2:
             return None
         if list1 is None:
@@ -42,9 +41,10 @@ class Solution:
 
         return list1
 
+    @staticmethod
     def mergeTwoLists_extra(
-        self, list1: Optional[ListNode], list2: Optional[ListNode]
-    ) -> Optional[ListNode]:
+        list1: ListNode | None, list2: ListNode | None
+    ) -> ListNode | None:
         import sys
 
         max_size = sys.maxsize

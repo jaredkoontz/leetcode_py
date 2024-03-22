@@ -1,15 +1,12 @@
 import pytest
 
 
-class Solution(object):
-    def isPalindrome(self, x):
-        """
-        :type x: int
-        :rtype: bool
-        """
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
         return self.isPalindrome_num(x)
 
-    def isPalindrome_num(self, x):
+    @staticmethod
+    def isPalindrome_num(x: int) -> bool:
         if x < 0:
             return False
 
@@ -30,7 +27,8 @@ class Solution(object):
 
         return True
 
-    def isPalindrome_str(self, x):
+    @staticmethod
+    def isPalindrome_str(x: int) -> bool:
         if x < 0:
             return False
 

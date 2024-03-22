@@ -1,13 +1,12 @@
 import pytest
 
 
-class Solution(object):
-    def two_pass_twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        return self.two_pass_twoSum(nums, target)
+
+    @staticmethod
+    def two_pass_twoSum(nums: list[int], target: int) -> list[int]:
         number_map = {}
         length = len(nums)
         for i in range(length):
@@ -20,12 +19,8 @@ class Solution(object):
                 return [i, number_map[wanted]]
         return []
 
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
+    @staticmethod
+    def twoSum_mine(nums: list[int], target: int) -> list[int]:
         number_map = {}
 
         for i in range(len(nums)):

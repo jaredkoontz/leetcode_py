@@ -5,8 +5,9 @@ from helpers.ll import ListNode
 from helpers.ll import make_ll
 
 
-class Solution(object):
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+class Solution:
+    @staticmethod
+    def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
         dummy = ListNode()
         curr = dummy
         carry = 0

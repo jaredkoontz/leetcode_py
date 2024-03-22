@@ -7,7 +7,8 @@ class Solution:
     def pivotInteger(self, n: int) -> int:
         return self.pivotInteger_theirs2(n)
 
-    def pivotInteger_theirs2(self, n: int) -> int:
+    @staticmethod
+    def pivotInteger_theirs2(n: int) -> int:
         if n < 1:
             return -1
         x = sqrt(n * (n + 1) / 2)
@@ -17,7 +18,8 @@ class Solution:
         else:
             return int(x)
 
-    def pivotInteger_theirs(self, n: int) -> int:
+    @staticmethod
+    def pivotInteger_theirs(n: int) -> int:
         for i in range(1, n + 1):
             # Calculate the sum of elements from 1 to i using arithmetic progression formula
             left_sum = i * (i + 1) // 2
@@ -34,7 +36,8 @@ class Solution:
                 return i
         return -1
 
-    def find_sums(self, i, n):
+    @staticmethod
+    def find_sums(i, n):
         left_sum = 0
         right_sum = 0
         for i in range(1, i + 1):

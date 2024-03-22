@@ -1,6 +1,3 @@
-from typing import List
-from typing import Optional
-
 import pytest
 
 from helpers.bin_tree import create_tree
@@ -8,7 +5,7 @@ from helpers.bin_tree import TreeNode
 
 
 class Solution:
-    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+    def preorderTraversal(self, root: TreeNode | None) -> list[int]:
         my_list = []
         self.preorder(root, my_list)
         return my_list

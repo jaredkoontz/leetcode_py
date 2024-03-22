@@ -1,21 +1,17 @@
 import pytest
 
 
-class Solution(object):
-    def lengthOfLastWordMine(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        return self.lengthOfLastWord_theirs(s)
 
+    @staticmethod
+    def lengthOfLastWord_mine(s: str) -> int:
         words = s.strip().split(" ")
         return len(words[-1])
 
-    def lengthOfLastWord(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+    @staticmethod
+    def lengthOfLastWord_theirs(s: str) -> int:
         str_len = len(s)
         n = 0
         for i in range(str_len, 0, -1):

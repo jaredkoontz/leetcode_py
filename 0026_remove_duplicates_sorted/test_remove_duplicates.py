@@ -2,7 +2,8 @@ import pytest
 
 
 class Solution:
-    def removeDuplicates(self, nums: list[int]) -> int:
+    @staticmethod
+    def removeDuplicates(nums: list[int]) -> int:
         if not nums:
             return 0
         distinct = 1

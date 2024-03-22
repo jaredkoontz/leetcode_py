@@ -1,13 +1,12 @@
-from typing import List
-
 import pytest
 
 
 class Solution:
-    def findDuplicate(self, nums: List[int]) -> int:
+    def findDuplicate(self, nums: list[int]) -> int:
         return self.findDuplicate_c_space(nums)
 
-    def findDuplicate_c_space(self, nums: List[int]) -> int:
+    @staticmethod
+    def findDuplicate_c_space(nums: list[int]) -> int:
         print(f"{nums=}")
         slow, fast = 0, 0
         print(f"{slow=}, {fast=}")
@@ -29,7 +28,8 @@ class Solution:
                 break
         return slow
 
-    def findDuplicate_two_pointer(self, nums: List[int]) -> int:
+    @staticmethod
+    def findDuplicate_two_pointer(nums: list[int]) -> int:
         # same as above, just a little cleaner
         # Treat each (key, value) pair of the array as the (pointer, next) node of the linked list,
         # thus the duplicated number will be the beginning of the cycle in the linked list.
@@ -48,7 +48,8 @@ class Solution:
             fast = nums[fast]
         return slow
 
-    def findDuplicate_bin_search(self, nums: List[int]) -> int:
+    @staticmethod
+    def findDuplicate_bin_search(nums: list[int]) -> int:
         # Time:  O(nlogn)
         # Space: O(1)
         left, right = 1, len(nums) - 1
@@ -66,7 +67,8 @@ class Solution:
                 left = mid + 1
         return left
 
-    def findDuplicate_marker(self, nums: List[int]) -> int:
+    @staticmethod
+    def findDuplicate_marker(nums: list[int]) -> int:
         # Time:  O(n)
         # Space: O(n)
         duplicate = 0
@@ -85,7 +87,8 @@ class Solution:
                 break
         return duplicate
 
-    def findDuplicate_ez(self, nums: List[int]) -> int:
+    @staticmethod
+    def findDuplicate_ez(nums: list[int]) -> int:
         my_map = {}
         for num in nums:
             if num in my_map:

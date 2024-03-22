@@ -1,13 +1,12 @@
-from typing import List
-
 import pytest
 
 
 class Solution:
-    def maxFrequencyElements(self, nums: List[int]) -> int:
+    def maxFrequencyElements(self, nums: list[int]) -> int:
         return self.maxFrequencyElements_mine(nums)
 
-    def maxFrequencyElements_mine(self, nums: List[int]) -> int:
+    @staticmethod
+    def maxFrequencyElements_mine(nums: list[int]) -> int:
         frequencies = {}
         total_frequency = 0
         max_frequency = -1
@@ -25,7 +24,8 @@ class Solution:
 
         return total_frequency
 
-    def maxFrequencyElements_theirs(self, nums: List[int]) -> int:
+    @staticmethod
+    def maxFrequencyElements_theirs(nums: list[int]) -> int:
         frequencies = [0] * 101
         max_frequency = 0
         for x in nums:
@@ -37,7 +37,8 @@ class Solution:
                 ans += f
         return ans
 
-    def maxFrequencyElements_theirs2(self, nums: List[int]) -> int:
+    @staticmethod
+    def maxFrequencyElements_theirs2(nums: list[int]) -> int:
         frequencies = [0] * 101
         max_frequency = 0
         f = 0

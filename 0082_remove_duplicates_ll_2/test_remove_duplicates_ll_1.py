@@ -1,5 +1,3 @@
-from typing import Optional
-
 import pytest
 
 from helpers.ll import compare_lls
@@ -8,11 +6,11 @@ from helpers.ll import make_ll
 
 
 class Solution:
-    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def deleteDuplicates(self, head: ListNode | None) -> ListNode | None:
         return self.deleteDuplicates_mine(head)
 
     @staticmethod
-    def deleteDuplicates_mine(head: Optional[ListNode]) -> Optional[ListNode]:
+    def deleteDuplicates_mine(head: ListNode | None) -> ListNode | None:
         dummy = ListNode()
 
         dummy.next = head

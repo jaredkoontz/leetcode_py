@@ -8,7 +8,14 @@ from helpers.bin_tree import TreeNode
 
 class Solution:
     def hasPathSum(self, root: TreeNode | None, targetSum: int) -> bool:
-        return self.hasPathSum_mine(root, targetSum)
+        assert (
+            self.hasPathSum_mine(root, targetSum)
+            == self.hasPathSum_recursive(root, targetSum)
+            # == self.hasPathSum_dfs(root, targetSum)
+            == self.hasPathSum_dfs_stack(root, targetSum)
+            == self.hasPathSum_bfs_queue(root, targetSum)
+        )
+        return self.hasPathSum_dfs(root, targetSum)
 
     @staticmethod
     def hasPathSum_mine(root: TreeNode | None, targetSum: int) -> bool:
@@ -35,9 +42,9 @@ class Solution:
             return True
 
         targetSum -= root.val
-        return self.hasPathSum(root.left, targetSum) or self.hasPathSum(
-            root.right, targetSum
-        )
+        return self.hasPathSum_recursive(
+            root.left, targetSum
+        ) or self.hasPathSum_recursive(root.right, targetSum)
 
     @staticmethod
     def hasPathSum_dfs(root: TreeNode | None, targetSum: int) -> bool:
@@ -52,7 +59,7 @@ class Solution:
                 if node.right:
                     dfs(node.right, target - node.val, res)
 
-        dfs(root, targetSum, targetSum)
+        dfs(root, targetSum, result)
         return any(result)
 
     @staticmethod

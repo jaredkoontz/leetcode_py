@@ -64,6 +64,25 @@ class Solution:
         dfs(digits, 0, "", result)
         return result
 
+    @staticmethod
+    def letterCombinations_rec(digits: str) -> list[str]:
+        if digits == "":
+            return []
+        ret, sol = [], []
+        n = len(digits)
+
+        def backtrack(i=0):
+            if len(sol) == n:
+                ret.append("".join(sol[:]))
+                return
+            for num in PHONE_MAPPING[digits[i]]:
+                sol.append(num)
+                backtrack(i + 1)
+                sol.pop()
+
+        backtrack(0)
+        return ret
+
 
 @pytest.mark.parametrize(
     "digits, expected",

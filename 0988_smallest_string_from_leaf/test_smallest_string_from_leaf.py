@@ -3,7 +3,7 @@ from collections import deque
 
 import pytest
 
-from helpers.bin_tree import create_tree
+from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
 
 
@@ -48,4 +48,4 @@ class Solution:
     ],
 )
 def test_smallest_from_leaf(l1, expected):
-    assert Solution().smallestFromLeaf(create_tree(l1)) == expected
+    assert Solution().smallestFromLeaf(make_tree(l1)) == expected

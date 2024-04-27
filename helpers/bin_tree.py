@@ -13,7 +13,7 @@ class TreeNode:
         return f"{self.val} l={left_val} r={right_val}"
 
 
-def create_tree(tree_array: list[int]) -> TreeNode | None:
+def make_tree(tree_array: list[int]) -> TreeNode | None:
     # array = [root, root.left, root.right, root.left.left, ...]
     if not tree_array:
         return None
@@ -62,4 +62,4 @@ def create_array_from_tree(root):
 )
 def test_bin_tree_maker(l1):
     # todo fails because of none
-    assert create_array_from_tree(create_tree(l1)) == l1
+    assert create_array_from_tree(make_tree(l1)) == l1

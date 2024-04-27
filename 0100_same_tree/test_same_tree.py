@@ -1,6 +1,6 @@
 import pytest
 
-from helpers.bin_tree import create_tree
+from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
 
 
@@ -74,4 +74,4 @@ class Solution:
     ],
 )
 def test_isSameTree(l1, l2, expected):
-    assert Solution().isSameTree(create_tree(l1), create_tree(l2)) == expected
+    assert Solution().isSameTree(make_tree(l1), make_tree(l2)) == expected

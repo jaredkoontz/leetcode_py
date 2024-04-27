@@ -2,7 +2,7 @@ from collections import deque
 
 import pytest
 
-from helpers.bin_tree import create_tree
+from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
 
 
@@ -122,4 +122,4 @@ class Solution:
     ],
 )
 def test_sumNumbers(l1, expected):
-    assert Solution().sumNumbers(create_tree(l1)) == expected
+    assert Solution().sumNumbers(make_tree(l1)) == expected

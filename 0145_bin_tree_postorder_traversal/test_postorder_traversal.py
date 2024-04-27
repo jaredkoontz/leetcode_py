@@ -1,6 +1,6 @@
 import pytest
 
-from helpers.bin_tree import create_tree
+from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
 
 
@@ -28,4 +28,4 @@ class Solution:
     ],
 )
 def test_postorderTraversal(l1, expected):
-    assert Solution().postorderTraversal(create_tree(l1)) == expected
+    assert Solution().postorderTraversal(make_tree(l1)) == expected

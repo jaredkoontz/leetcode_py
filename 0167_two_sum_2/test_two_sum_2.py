@@ -2,6 +2,7 @@ import pytest
 
 # https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
+
 class Solution:
     def twoSum(self, numbers: list[int], target: int) -> list[int]:
         return self.twoSum_mine(numbers, target)
@@ -9,14 +10,15 @@ class Solution:
     @staticmethod
     def twoSum_mine(numbers: list[int], target: int) -> list[int]:
         n = len(numbers)
-        l, r = 0, n - 1
-        while l < r:
-            if numbers[l] + numbers[r] == target:
-                return [l + 1, r + 1]
-            elif numbers[l] + numbers[r] < target:
-                l += 1
+        left, right = 0, n - 1
+        while left < right:
+            if numbers[left] + numbers[right] == target:
+                # +1 because for some reason leetcode wants 1 index 🤷
+                return [left + 1, right + 1]
+            elif numbers[left] + numbers[right] < target:
+                left += 1
             else:
-                r -= 1
+                right -= 1
         return []
 
     @staticmethod
@@ -30,16 +32,16 @@ class Solution:
     @staticmethod
     def twoSum_bin_search(numbers: list[int], target: int) -> list[int]:
         for i in range(len(numbers)):
-            l, r = i + 1, len(numbers) - 1
+            left, right = i + 1, len(numbers) - 1
             tmp = target - numbers[i]
-            while l <= r:
-                mid = l + (r - l) // 2
+            while left <= right:
+                mid = left + (right - left) // 2
                 if numbers[mid] == tmp:
                     return [i + 1, mid + 1]
                 elif numbers[mid] < tmp:
-                    l = mid + 1
+                    left = mid + 1
                 else:
-                    r = mid - 1
+                    right = mid - 1
 
 
 @pytest.mark.parametrize(

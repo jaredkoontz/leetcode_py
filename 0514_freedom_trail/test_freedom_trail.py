@@ -4,6 +4,7 @@ import pytest
 
 # https://leetcode.com/problems/freedom-trail/
 
+
 def steps(i, k, M):
     x = abs(i - k)
     # minimum x steps to rotate the ring from i..k
@@ -11,7 +12,6 @@ def steps(i, k, M):
 
 
 class Solution:
-
     def findRotateSteps(self, ring: str, key: str) -> int:
         return self.findRotateSteps_bottom_up_dp(ring, key)
 

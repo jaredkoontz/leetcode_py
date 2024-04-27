@@ -2,6 +2,7 @@ import pytest
 
 # https://leetcode.com/problems/fibonacci-number/
 
+
 class Solution:
     def fib(self, n: int) -> int:
         return self.fib_bottom_up_optimal(n)

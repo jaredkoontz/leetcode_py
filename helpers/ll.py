@@ -24,14 +24,13 @@ class ListNode:
 
 
 def compare_lls(l1: ListNode, l2: ListNode) -> bool:
-    if (not l1 and l2) or (not l2 and l1):
-        return False
-
     while l1 and l2:
         if l1 != l2:
             return False
         l1 = l1.next
         l2 = l2.next
+    if l1 or l2:
+        return False
     return True
 
 

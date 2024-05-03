@@ -2,6 +2,7 @@ from functools import cache
 
 import pytest
 
+
 # https://leetcode.com/problems/freedom-trail/
 
 

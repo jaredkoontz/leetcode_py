@@ -2,6 +2,7 @@ from collections import deque
 
 import pytest
 
+
 # todo more at https://leetcode.com/problems/rotting-oranges/solutions/388104/python-10-lines-bfs-beat-97/
 
 

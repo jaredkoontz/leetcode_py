@@ -1,3 +1,5 @@
+from itertools import zip_longest
+
 import pytest
 
 
@@ -50,8 +52,27 @@ class Version:
 
 
 class Solution:
+    def compareVersion(self, version1: str, version2: str) -> int:
+        return self.compareVersion_mine(version1, version2)
+
     @staticmethod
-    def compareVersion(version1: str, version2: str) -> int:
+    def compareVersion_theirs(version1: str, version2: str) -> int:
+        def preprocess(version: str):
+            return map(int, version.split("."))
+
+        v1 = preprocess(version1)
+        v2 = preprocess(version2)
+
+        for x1, x2 in zip_longest(v1, v2, fillvalue=0):
+            if x1 > x2:
+                return 1
+            if x1 < x2:
+                return -1
+
+        return 0
+
+    @staticmethod
+    def compareVersion_mine(version1: str, version2: str) -> int:
         my_version1 = create_version(version1)
         my_version2 = create_version(version2)
         if my_version1 == my_version2:

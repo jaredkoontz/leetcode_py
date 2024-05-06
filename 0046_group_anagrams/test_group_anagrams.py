@@ -1,6 +1,6 @@
 import pytest
 
-from helpers.test_helpers import unorder
+from helpers.test_helpers import compare_lists
 
 
 class Solution:
@@ -33,6 +33,4 @@ class Solution:
     ],
 )
 def test_group_anagrams(strs: list[str], expected: list[list[str]]):
-    a, b = Solution().groupAnagrams(strs), expected
-
-    assert unorder(a) == unorder(b)
+    assert compare_lists(Solution().groupAnagrams(strs), expected)

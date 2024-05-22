@@ -11,7 +11,7 @@ class Solution:
         #     == self.subsets_dfs(nums)
         #     == self.subsets_backtrack(nums)
         # )
-        return self.subsets_iterative(nums)
+        return self.subsets_backtrack(nums)
 
     @staticmethod
     def subsets_iterative(nums: list[int]) -> list[list[int]]:

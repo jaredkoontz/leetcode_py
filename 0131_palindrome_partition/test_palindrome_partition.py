@@ -2,7 +2,7 @@ from functools import cache
 
 import pytest
 
-from helpers.test_helpers import compare_lists
+from helpers.test_helpers import compare_nested_lists
 
 
 def is_palindrome(s: str) -> bool:
@@ -59,4 +59,4 @@ class Solution:
     ],
 )
 def test_palindrome_partition(s, expected):
-    assert compare_lists(Solution().partition(s), expected)
+    assert compare_nested_lists(Solution().partition(s), expected)

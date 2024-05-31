@@ -1,6 +1,6 @@
 import pytest
 
-from helpers.test_helpers import compare_lists
+from helpers.test_helpers import compare_nested_lists
 
 
 class Solution:
@@ -33,4 +33,4 @@ class Solution:
     ],
 )
 def test_group_anagrams(strs: list[str], expected: list[list[str]]):
-    assert compare_lists(Solution().groupAnagrams(strs), expected)
+    assert compare_nested_lists(Solution().groupAnagrams(strs), expected)

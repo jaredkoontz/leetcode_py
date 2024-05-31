@@ -1,6 +1,6 @@
 import pytest
 
-from helpers.test_helpers import compare_lists
+from helpers.test_helpers import compare_nested_lists
 
 
 class Solution:
@@ -73,4 +73,4 @@ class Solution:
     ],
 )
 def test_subsets(l1, expected):
-    assert compare_lists(Solution().subsets(l1), expected)
+    assert compare_nested_lists(Solution().subsets(l1), expected)

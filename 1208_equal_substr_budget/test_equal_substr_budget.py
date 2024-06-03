@@ -3,7 +3,6 @@ import pytest
 
 class Solution:
     def equalSubstring(self, s: str, t: str, maxCost: int) -> int:
-
         my_list = []
         cost, left, max_len = 0, 0, 0
         for s_ch, t_ch in zip(s, t):
@@ -30,4 +29,4 @@ class Solution:
     ],
 )
 def test_equalSubstring(s, t, max_cost, expected):
-    assert Solution().equalSubstring_learning(s, t, max_cost) == expected
+    assert Solution().equalSubstring(s, t, max_cost) == expected

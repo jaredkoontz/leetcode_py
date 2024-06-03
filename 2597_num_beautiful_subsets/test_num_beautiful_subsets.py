@@ -12,9 +12,7 @@ class Solution:
             result = f(i + 1)
 
             # check if we can take nums[i]
-            if (
-                nums[i] - k not in freq and nums[i] + k not in freq
-            ):
+            if nums[i] - k not in freq and nums[i] + k not in freq:
                 freq[nums[i]] = freq.get(nums[i], 0) + 1
                 # nums[i] taken
                 result += f(i + 1)

@@ -2,7 +2,7 @@ import pytest
 
 from helpers.test_helpers import compare_flat_lists
 
-# could also sort
+
 class Solution:
     def singleNumber(self, nums: list[int]) -> list[int]:
         return self.singleNumber_learning(nums)
@@ -44,6 +44,20 @@ class Solution:
             else:
                 ret[1] ^= num
         return ret
+
+    @staticmethod
+    def singleNumber_sorting(nums: list[int]) -> list[int]:
+        nums.sort()
+        index = 0
+        appears_once = []
+        while index < len(nums):
+            if index < len(nums) - 1 and nums[index] == nums[index + 1]:
+                index += 2
+            else:
+                appears_once.append(nums[index])
+                index += 1
+
+        return appears_once
 
     @staticmethod
     def singleNumber_extra_space(nums: list[int]) -> list[int]:

@@ -3,6 +3,9 @@ import pytest
 from helpers.test_helpers import compare_nested_lists
 
 
+# https://leetcode.com/problems/group-anagrams/
+
+
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         str_map = {}
@@ -15,10 +18,7 @@ class Solution:
                 str_map[hashable].append(string)
             else:
                 str_map[hashable] = [string]
-        ret = []
-        for hashable in str_map:
-            ret.append(str_map[hashable])
-        return ret
+        return [x for x in str_map.values()]
 
 
 @pytest.mark.parametrize(
@@ -30,6 +30,7 @@ class Solution:
         ),
         ([""], [[""]]),
         (["a"], [["a"]]),
+        (["ddddddddddg", "dgggggggggg"], [["ddddddddddg"], ["dgggggggggg"]]),
     ],
 )
 def test_group_anagrams(strs: list[str], expected: list[list[str]]):

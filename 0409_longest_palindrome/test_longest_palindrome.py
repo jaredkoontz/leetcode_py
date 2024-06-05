@@ -11,7 +11,7 @@ class Solution:
             if count & 1 == 0:
                 longest_palindrome += count
             else:
-                longest_palindrome += count-1 if longest_palindrome & 1 else count
+                longest_palindrome += count - 1 if longest_palindrome & 1 else count
         return longest_palindrome
 
 

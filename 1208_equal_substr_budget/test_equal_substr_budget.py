@@ -9,6 +9,7 @@ class Solution:
             s_cost = ord("a") - ord(s_ch)
             t_cost = ord("a") - ord(t_ch)
             my_list.append(abs(s_cost - t_cost))
+
         # sliding window
         for right in range(len(my_list)):
             cost += my_list[right]

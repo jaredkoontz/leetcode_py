@@ -36,7 +36,7 @@ class Solution:
             curr_bit = (bit1 + bit2 + carry) % 2
             carry = (bit1 + bit2 + carry) // 2
             ret.append(str(curr_bit))
-        if carry:  # if carry remain
+        if carry:
             ret.append(str(carry))
         return "".join(reversed(ret))
 

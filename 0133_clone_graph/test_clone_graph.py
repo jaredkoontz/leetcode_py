@@ -14,10 +14,10 @@ class Solution:
 
     @staticmethod
     def cloneGraph_recursive(node: Node | None) -> Node | None:
-        clones = {}
-
         if not node:
             return None
+
+        clones = {}
 
         def clone(n: Node):
             if n not in clones:

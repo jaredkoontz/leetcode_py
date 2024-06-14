@@ -14,7 +14,7 @@ class Solution:
 
     def guessNumber(self, n: int) -> int:
         low = 1
-        high = n + 1
+        high = n
         while True:
             pick = (high + low) // 2
             guess_result = self.guess(pick)
@@ -22,21 +22,25 @@ class Solution:
                 return pick
             elif guess_result == -1:
                 # less than my guess
-                high = pick
+                high = pick + 1
             else:
                 # greater than my pick
-                low = pick
+                low = pick - 1
 
 
 @pytest.mark.parametrize(
-    "n,pick,expected",
+    "n,pick",
     [
-        (10, 6, 6),
-        (1, 1, 1),
-        (2, 1, 1),
+        (10, 6),
+        (
+            1,
+            1,
+        ),
+        (2, 1),
+        (100000, 69),
     ],
 )
-def test_guessNumber(n, pick, expected):
+def test_guessNumber(n, pick):
     s = Solution()
     s.MY_PICK = pick
-    assert s.guessNumber(n) == expected
+    assert s.guessNumber(n) == pick

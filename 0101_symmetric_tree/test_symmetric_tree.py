@@ -19,7 +19,10 @@ class Solution:
 
 @pytest.mark.parametrize(
     "root1, expected",
-    [([1, 2, 2, 3, 4, 4, 3], True), ([1, 2, 2, None, 3, None, 3], False)],
+    [
+        ([1, 2, 2, 3, 4, 4, 3], True),
+        ([1, 2, 2, None, 3, None, 3], False),
+    ],
 )
 def test_isSymmetric(root1, expected):
     assert Solution().isSymmetric(make_tree(root1)) == expected

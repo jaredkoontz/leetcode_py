@@ -33,7 +33,7 @@ def make_tree(tree_array: list[int]) -> TreeNode | None:
     return root
 
 
-def create_array_from_tree(root):
+def create_array_from_tree(root: TreeNode | None) -> list[int]:
     if not root:
         return []
 
@@ -48,6 +48,18 @@ def create_array_from_tree(root):
             q.insert(0, right)
         node = None if not q else q.pop()
     return my_list
+
+
+def compare_trees(root1: TreeNode | None, root2: TreeNode | None) -> bool:
+    stack = [(root1, root2)]
+    while stack:
+        n1, n2 = stack.pop()
+        if n1 and n2 and n1.val == n2.val:
+            stack.append((n1.right, n2.right))
+            stack.append((n1.left, n2.left))
+        elif n1 != n2:
+            return False
+    return True
 
 
 @pytest.mark.parametrize(

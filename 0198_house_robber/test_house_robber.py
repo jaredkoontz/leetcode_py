@@ -19,20 +19,20 @@ class Solution:
 
     @staticmethod
     def rob_memo(nums: list[int]) -> int:
-        def rob_helper(my_nums, index,my_memo):
+        def rob_helper(my_nums, index, my_memo):
             if index < 0:
                 return 0
             if my_memo[index] > 0:
                 return my_memo[index]
             result = max(
-                rob_helper(my_nums, index - 2,my_memo) + my_nums[index],
-                rob_helper(my_nums, index - 1,my_memo),
+                rob_helper(my_nums, index - 2, my_memo) + my_nums[index],
+                rob_helper(my_nums, index - 1, my_memo),
             )
             memo[index] = result
             return result
 
         memo = [0] * len(nums)
-        return rob_helper(nums, len(nums) - 1,memo)
+        return rob_helper(nums, len(nums) - 1, memo)
 
     @staticmethod
     def rob_bottom_up(nums: list[int]) -> int:
@@ -43,7 +43,7 @@ class Solution:
         memo[1] = nums[0]
         for i in range(1, len(nums)):
             value = nums[i]
-            memo[i+1] = max(memo[i], memo[i-1]+value)
+            memo[i + 1] = max(memo[i], memo[i - 1] + value)
         return memo[-1]
 
     @staticmethod
@@ -57,6 +57,8 @@ class Solution:
             last = max(now + num, last)
             now = tmp
         return last
+
+
 @pytest.mark.parametrize(
     "nums,expected",
     [

@@ -14,7 +14,7 @@ class Solution:
 
     @staticmethod
     def findKthLargest_heap(nums: list[int], k: int) -> int:
-        min_heap=nums[:k]
+        min_heap = nums[:k]
         heapq.heapify(min_heap)
 
         for num in nums[k:]:

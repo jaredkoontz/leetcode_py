@@ -1,5 +1,6 @@
 import pytest
 
+from helpers.bin_tree import compare_trees
 from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
 
@@ -16,15 +17,7 @@ class Solution:
 
     @staticmethod
     def isSameTree_dfs(p: TreeNode | None, q: TreeNode | None) -> bool:
-        stack = [(p, q)]
-        while stack:
-            n1, n2 = stack.pop()
-            if n1 and n2 and n1.val == n2.val:
-                stack.append((n1.right, n2.right))
-                stack.append((n1.left, n2.left))
-            elif n1 != n2:
-                return False
-        return True
+        return compare_trees(p, q)
 
     @staticmethod
     def isSameTree_bfs(p: TreeNode | None, q: TreeNode | None) -> bool:

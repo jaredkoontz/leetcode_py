@@ -7,7 +7,8 @@ class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: list[list[int]]) -> int:
         return self.uniquePathsWithObstacles_bottom_up(obstacleGrid)
 
-    def uniquePathsWithObstacles_top_down(self, obstacleGrid: list[list[int]]) -> int:
+    @staticmethod
+    def uniquePathsWithObstacles_top_down(obstacleGrid: list[list[int]]) -> int:
         rows, cols = len(obstacleGrid), len(obstacleGrid[0])
 
         @lru_cache(maxsize=None)
@@ -25,7 +26,8 @@ class Solution:
 
         return dfs(0, 0)
 
-    def uniquePathsWithObstacles_bottom_up(self, obstacleGrid: list[list[int]]) -> int:
+    @staticmethod
+    def uniquePathsWithObstacles_bottom_up(obstacleGrid: list[list[int]]) -> int:
         if not obstacleGrid or not obstacleGrid[0] or obstacleGrid[0][0] == 1:
             return 0
 

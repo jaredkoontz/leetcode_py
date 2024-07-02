@@ -5,10 +5,12 @@ class Solution:
     def findCenter(self, edges: list[list[int]]) -> int:
         return self.findCenter_oneline(edges)
 
-    def findCenter_oneline(self, edges: list[list[int]]) -> int:
+    @staticmethod
+    def findCenter_oneline(edges: list[list[int]]) -> int:
         return (set(edges[0]) & set(edges[1])).pop()
 
-    def findCenter_readable(self, edges: list[list[int]]) -> int:
+    @staticmethod
+    def findCenter_readable(edges: list[list[int]]) -> int:
         if edges[0][0] == edges[1][0] or edges[0][0] == edges[1][1]:
             return edges[0][0]
         else:

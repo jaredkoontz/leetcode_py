@@ -6,7 +6,8 @@ class Solution:
         return self.threeSum_two_pointer(nums)
 
     # todo does not pass lc
-    def threeSum_map(self, nums: list[int]) -> list[list[int]]:
+    @staticmethod
+    def threeSum_map(nums: list[int]) -> list[list[int]]:
         nums.sort()  # Sort the array
         if len(nums) < 3:
             return []  # If fewer than three elements, return empty list
@@ -35,7 +36,8 @@ class Solution:
 
         return result
 
-    def threeSum_two_pointer(self, nums: list[int]) -> list[list[int]]:
+    @staticmethod
+    def threeSum_two_pointer(nums: list[int]) -> list[list[int]]:
         nums.sort()  # Sort the array
         if len(nums) < 3:
             return []  # If fewer than three elements, return empty list

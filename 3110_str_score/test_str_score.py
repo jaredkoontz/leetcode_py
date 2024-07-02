@@ -5,7 +5,8 @@ class Solution:
     def scoreOfString(self, s: str) -> int:
         return self.scoreOfString_for(s)
 
-    def scoreOfString_for(self, s: str) -> int:
+    @staticmethod
+    def scoreOfString_for(s: str) -> int:
         score = 0
         prev = ord(s[0])
         for i in range(1, len(s)):
@@ -13,7 +14,8 @@ class Solution:
             prev = ord(s[i])
         return score
 
-    def scoreOfString_while(self, s: str) -> int:
+    @staticmethod
+    def scoreOfString_while(s: str) -> int:
         index = 0
         total = 0
         while index < len(s) - 1:

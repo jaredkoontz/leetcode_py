@@ -47,7 +47,15 @@ class Solution:
 
 
 @pytest.mark.parametrize(
-    "n,expected", [(1, 1), (2, 2), (3, 3), (5, 8), (7, 21), (44, 1134903170)]
+    "n,expected",
+    [
+        (1, 1),
+        (2, 2),
+        (3, 3),
+        (5, 8),
+        (7, 21),
+        (44, 1134903170),
+    ],
 )
 def test_climbStairs(n, expected):
     assert Solution().climbStairs(n) == expected

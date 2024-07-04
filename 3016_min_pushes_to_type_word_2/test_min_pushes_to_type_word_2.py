@@ -5,6 +5,10 @@ import pytest
 
 class Solution:
     def minimumPushes(self, word: str) -> int:
+        return self.minimumPushes_mine(word)
+
+    @staticmethod
+    def minimumPushes_mine(word: str) -> int:
         keys_availble = 8
         counter = Counter(word)
         keys_used = 0

@@ -15,5 +15,5 @@ class MaxHeap:
         else:
             heapq.heappushpop(self.h, element)
 
-    def getTop(self) -> list[CT]:
+    def get_top(self) -> list[CT]:
         return heapq.nlargest(self.length, self.h)

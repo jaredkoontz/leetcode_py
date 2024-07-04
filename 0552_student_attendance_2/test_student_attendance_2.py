@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def checkRecord(self, n: int) -> int:
+        return self.checkRecord_mine(n)
+
+    @staticmethod
+    def checkRecord_mine(n: int) -> int:
         """
         Suppose dp[i] is the number of all the rewarded sequences without 'A'
         having their length equals to i, then we have:

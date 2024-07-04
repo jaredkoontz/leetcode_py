@@ -5,6 +5,10 @@ import pytest
 
 class Solution:
     def maxProduct(self, nums: list[int]) -> int:
+        return self.maxProduct_mine(nums)
+
+    @staticmethod
+    def maxProduct_mine(nums: list[int]) -> int:
         my_heap = []
         for i in range(len(nums)):
             if len(my_heap) > 1:

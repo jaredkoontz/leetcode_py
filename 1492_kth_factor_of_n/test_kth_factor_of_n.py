@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def kthFactor(self, n: int, k: int) -> int:
+        return self.kthFactor_mine(n, k)
+
+    @staticmethod
+    def kthFactor_mine(n: int, k: int) -> int:
         counter = 1
         for i in range(1, (n // 2) + 1):
             if n % i == 0:

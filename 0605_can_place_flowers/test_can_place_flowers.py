@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def canPlaceFlowers(self, flowerbed: list[int], n: int) -> bool:
+        return self.canPlaceFlowers_mine(flowerbed, n)
+
+    @staticmethod
+    def canPlaceFlowers_mine(flowerbed: list[int], n: int) -> bool:
         if n == 0:
             return True
 

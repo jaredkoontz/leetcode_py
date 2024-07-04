@@ -23,7 +23,8 @@ class Solution:
             i += 1
             j -= 1
 
-    def reverseString_python(self, s: list[str]) -> None:
+    @staticmethod
+    def reverseString_python(s: list[str]) -> None:
         s = s[::-1]
 
     def reverseString_recursive(self, s: list[str]) -> list[str]:

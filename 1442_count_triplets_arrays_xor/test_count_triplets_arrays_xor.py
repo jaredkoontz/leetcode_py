@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def countTriplets(self, arr: list[int]) -> int:
+        return self.countTriplets_mine(arr)
+
+    @staticmethod
+    def countTriplets_mine(arr: list[int]) -> int:
         res = cur = 0
         count = {0: [1, 0]}
         for i, a in enumerate(arr):

@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def canJump(self, nums: list[int]) -> bool:
+        return self.canJump_mine(nums)
+
+    @staticmethod
+    def canJump_mine(nums: list[int]) -> bool:
         n = len(nums)
         goal = n - 1
 

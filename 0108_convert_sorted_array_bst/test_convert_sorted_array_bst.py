@@ -6,6 +6,10 @@ from helpers.bin_tree import TreeNode
 
 class Solution:
     def sortedArrayToBST(self, nums: list[int]) -> TreeNode | None:
+        return self.sortedArrayToBST_mine(nums)
+
+    @staticmethod
+    def sortedArrayToBST_mine(nums: list[int]) -> TreeNode | None:
         def bst_helper(left, right):
             if left > right:
                 return None

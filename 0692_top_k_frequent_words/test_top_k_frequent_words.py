@@ -5,6 +5,10 @@ import pytest
 
 class Solution:
     def topKFrequent(self, words: list[str], k: int) -> list[str]:
+        return self.topKFrequent_mine(words, k)
+
+    @staticmethod
+    def topKFrequent_mine(words: list[str], k: int) -> list[str]:
         word_map = {}
         my_heap = []
         for w in words:

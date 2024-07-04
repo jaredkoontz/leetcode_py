@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def singleNumber(self, nums: list[int]) -> int:
+        return self.singleNumber_mine(nums)
+
+    @staticmethod
+    def singleNumber_mine(nums: list[int]) -> int:
         result = 0
         for num in nums:
             result ^= num

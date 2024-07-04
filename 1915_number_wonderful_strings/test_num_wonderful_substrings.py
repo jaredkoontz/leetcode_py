@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def wonderfulSubstrings(self, word: str) -> int:
+        return self.wonderfulSubstrings_mine(word)
+
+    @staticmethod
+    def wonderfulSubstrings_mine(word: str) -> int:
         # bitmask is 10 bits, each bit 2 values, 2^10 = 1024
         count = [0] * 1024
         # 0 means empty string, which has all its bits 0

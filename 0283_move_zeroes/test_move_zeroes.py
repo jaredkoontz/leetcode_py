@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def moveZeroes(self, nums: list[int]) -> None:
+        return self.moveZeroes_mine(nums)
+
+    @staticmethod
+    def moveZeroes_mine(nums: list[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """

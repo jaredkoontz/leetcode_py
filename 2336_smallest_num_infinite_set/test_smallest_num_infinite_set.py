@@ -66,6 +66,7 @@ class SmallestInfiniteSet:
 def test_smallest_num_infinite_set(operations, vals, expected):
     s = SmallestInfiniteSet()
     for operation, val, expected in zip(operations, vals, expected):
+        # noinspection PyNoneFunctionAssignment
         if operation == "addBack":
             ret = s.addBack(val[0])
         elif operation == "popSmallest":

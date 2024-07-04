@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def searchInsert(self, nums: list[int], target: int) -> int:
+        return self.searchInsert_mine(nums, target)
+
+    @staticmethod
+    def searchInsert_mine(nums: list[int], target: int) -> int:
         if not nums:
             return 0
         left, right = 0, len(nums) - 1

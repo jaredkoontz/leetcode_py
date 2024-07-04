@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def specialArray(self, nums: list[int]) -> int:
+        return self.specialArray_mine(nums)
+
+    @staticmethod
+    def specialArray_mine(nums: list[int]) -> int:
         max_val = max(nums)
 
         for i in range(0, max_val + 1):

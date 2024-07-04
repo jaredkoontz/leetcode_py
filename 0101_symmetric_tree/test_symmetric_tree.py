@@ -6,6 +6,10 @@ from helpers.bin_tree import TreeNode
 
 class Solution:
     def isSymmetric(self, root: TreeNode | None) -> bool:
+        return self.isSymmetric_mine(root)
+
+    @staticmethod
+    def isSymmetric_mine(root: TreeNode | None) -> bool:
         def recurse(left, right):
             if not left and not right:
                 return True

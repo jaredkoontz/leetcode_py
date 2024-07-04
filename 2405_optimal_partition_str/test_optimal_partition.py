@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def partitionString(self, s: str) -> int:
+        return self.partitionString_mine(s)
+
+    @staticmethod
+    def partitionString_mine(s: str) -> int:
         if not s:
             return 0
         num_ways = 0

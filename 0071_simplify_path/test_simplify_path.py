@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def simplifyPath(self, path: str) -> str:
+        return self.simplifyPath_mine(path)
+
+    @staticmethod
+    def simplifyPath_mine(path: str) -> str:
         stack = []
         all_paths = path.split("/")
         for path in all_paths:

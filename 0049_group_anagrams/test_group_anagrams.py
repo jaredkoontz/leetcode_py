@@ -8,6 +8,10 @@ from helpers.test_helpers import compare_nested_lists
 
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        return self.groupAnagrams_mine(strs)
+
+    @staticmethod
+    def groupAnagrams_mine(strs: list[str]) -> list[list[str]]:
         str_map = {}
         for string in strs:
             ch_list = [0] * 26

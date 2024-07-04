@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def maxProfit(self, prices: list[int]) -> int:
+        return self.maxProfit_mine(prices)
+
+    @staticmethod
+    def maxProfit_mine(prices: list[int]) -> int:
         left, right = 0, 1
         max_profit = 0
 

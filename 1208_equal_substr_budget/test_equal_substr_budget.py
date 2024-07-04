@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def equalSubstring(self, s: str, t: str, maxCost: int) -> int:
+        return self.equalSubstring_mine(s, t, maxCost)
+
+    @staticmethod
+    def equalSubstring_mine(s: str, t: str, maxCost: int) -> int:
         my_list = []
         cost, left, max_len = 0, 0, 0
         for s_ch, t_ch in zip(s, t):

@@ -5,13 +5,17 @@ from helpers.heap import MaxHeap
 
 class Solution:
     def maximumHappinessSum(self, happiness: list[int], k: int) -> int:
+        return self.maximumHappinessSum_mine(happiness, k)
+
+    @staticmethod
+    def maximumHappinessSum_mine(happiness: list[int], k: int) -> int:
         my_heap = MaxHeap(k)
         counter = 0
         turns = 0
         for h in happiness:
             my_heap.add(h)
 
-        for happiest in my_heap.getTop():
+        for happiest in my_heap.get_top():
             counter += max(happiest - turns, 0)
             turns += 1
 

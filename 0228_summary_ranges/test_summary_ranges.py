@@ -5,6 +5,10 @@ import pytest
 
 class Solution:
     def summaryRanges(self, nums: list[int]) -> list[str]:
+        return self.summaryRanges_mine(nums)
+
+    @staticmethod
+    def summaryRanges_mine(nums: list[int]) -> list[str]:
         if not nums:
             return []
         lower, upper = nums[0], nums[0]

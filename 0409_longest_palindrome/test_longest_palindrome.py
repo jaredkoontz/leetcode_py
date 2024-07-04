@@ -5,6 +5,10 @@ import pytest
 
 class Solution:
     def longestPalindrome(self, s: str) -> int:
+        return self.longestPalindrome_mine(s)
+
+    @staticmethod
+    def longestPalindrome_mine(s: str) -> int:
         counter = Counter(s)
         longest_palindrome = 0
         for count in counter.values():

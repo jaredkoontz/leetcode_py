@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def findMaxK(self, nums: list[int]) -> int:
+        return self.findMaxK_mine(nums)
+
+    @staticmethod
+    def findMaxK_mine(nums: list[int]) -> int:
         curr_max = -1
         nums_set = set()
         for k in nums:

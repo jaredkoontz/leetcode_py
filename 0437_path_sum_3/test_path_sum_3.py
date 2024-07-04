@@ -10,7 +10,8 @@ class Solution:
     def pathSum(self, root: TreeNode | None, targetSum: int) -> int:
         return self.pathSum_recursive(root, targetSum)
 
-    def pathSum_queue(self, root: TreeNode | None, targetSum: int) -> int:
+    @staticmethod
+    def pathSum_queue(root: TreeNode | None, targetSum: int) -> int:
         if root is None:
             return 0
         queue = [(root, [])]

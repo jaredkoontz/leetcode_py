@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def beautifulSubsets(self, nums: list[int], k: int) -> int:
+        return self.beautifulSubsets_mine(nums, k)
+
+    @staticmethod
+    def beautifulSubsets_mine(nums: list[int], k: int) -> int:
         freq = {}
 
         def f(i: int) -> int:

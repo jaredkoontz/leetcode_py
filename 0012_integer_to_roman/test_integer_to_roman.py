@@ -20,6 +20,10 @@ MAPPINGS = {
 
 class Solution:
     def intToRoman(self, num: int) -> str:
+        return self.intToRoman_mine(num)
+
+    @staticmethod
+    def intToRoman_mine(num: int) -> str:
         ret_str = ""
         while num > 0:
             for key in MAPPINGS:

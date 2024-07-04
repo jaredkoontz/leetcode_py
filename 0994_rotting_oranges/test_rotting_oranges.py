@@ -8,6 +8,10 @@ import pytest
 
 class Solution:
     def orangesRotting(self, grid: list[list[int]]) -> int:
+        return self.orangesRotting_mine(grid)
+
+    @staticmethod
+    def orangesRotting_mine(grid: list[list[int]]) -> int:
         # number of rows
         rows = len(grid)
         if rows == 0:  # check if grid is empty

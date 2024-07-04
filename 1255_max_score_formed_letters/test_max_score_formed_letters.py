@@ -7,6 +7,12 @@ class Solution:
     def maxScoreWords(
         self, words: list[str], letters: list[str], score: list[int]
     ) -> int:
+        return self.maxScoreWords_mine(words, letters, score)
+
+    @staticmethod
+    def maxScoreWords_mine(
+        words: list[str], letters: list[str], score: list[int]
+    ) -> int:
         def backtrack(my_words, my_count, my_score, index):
             max_score = 0
             for i in range(index, len(my_words)):

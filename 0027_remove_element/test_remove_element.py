@@ -2,8 +2,11 @@ import pytest
 
 
 class Solution:
+    def removeElement(self, nums: list[int], val: int) -> int:
+        return self.removeElement_mine(nums, val)
+
     @staticmethod
-    def removeElement(nums: list[int], val: int) -> int:
+    def removeElement_mine(nums: list[int], val: int) -> int:
         index = 0
         while index < len(nums):
             if nums[index] == val:

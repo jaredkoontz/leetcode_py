@@ -3,6 +3,10 @@ import pytest
 
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
+        return self.isIsomorphic_mine(s, t)
+
+    @staticmethod
+    def isIsomorphic_mine(s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
         s_map, t_map = {}, {}

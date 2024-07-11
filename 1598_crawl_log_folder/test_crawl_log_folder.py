@@ -3,6 +3,9 @@ import pytest
 
 class Solution:
     def minOperations(self, logs: list[str]) -> int:
+        return self.minOperations_mine(logs)
+
+    def minOperations_mine(self, logs: list[str]) -> int:
         stack = []
         for log in logs:
             if log == "./":

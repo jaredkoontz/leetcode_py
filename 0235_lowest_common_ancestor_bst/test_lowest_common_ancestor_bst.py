@@ -8,7 +8,20 @@ class Solution:
     def lowestCommonAncestor(
         self, root: TreeNode, p: TreeNode, q: TreeNode
     ) -> TreeNode:
-        return self.lowestCommonAncestor_stack(root, p, q)
+        return self.lowestCommonAncestor_simple(root, p, q)
+
+    @staticmethod
+    def lowestCommonAncestor_simple(
+        root: TreeNode, p: TreeNode, q: TreeNode
+    ) -> TreeNode:
+        curr = root
+        while curr:
+            if p.val < curr.val and q.val < curr.val:
+                curr = curr.left
+            elif p.val > curr.val and q.val > curr.val:
+                curr = curr.right
+            else:
+                return curr
 
     @staticmethod
     def lowestCommonAncestor_stack(

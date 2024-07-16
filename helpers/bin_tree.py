@@ -12,6 +12,13 @@ class TreeNode:
         right_val = self.right.val if self.right is not None else "None"
         return f"{self.val} l={left_val} r={right_val}"
 
+    # does not check for children, as no question has asked for it yet
+    def __eq__(self, other):
+        if isinstance(other, TreeNode):
+            return self.val == other.val
+        elif isinstance(other, int):
+            return self.val == other
+
 
 def make_tree(tree_array: list[int]) -> TreeNode | None:
     # array = [root, root.left, root.right, root.left.left, ...]

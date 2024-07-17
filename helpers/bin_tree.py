@@ -19,6 +19,9 @@ class TreeNode:
         elif isinstance(other, int):
             return self.val == other
 
+    def __hash__(self):
+        return hash((self.val, self.left, self.right))
+
 
 def make_tree(tree_array: list[int]) -> TreeNode | None:
     # array = [root, root.left, root.right, root.left.left, ...]

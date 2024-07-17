@@ -2,6 +2,8 @@ import pytest
 
 
 class Solution:
+    __slots__ = ()
+
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         return self.two_pass_twoSum(nums, target)
 

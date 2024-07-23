@@ -5,7 +5,8 @@ class Solution:
     def longestConsecutive(self, nums: list[int]) -> int:
         return self.longestConsecutive_mine(nums)
 
-    def longestConsecutive_mine(self, nums: list[int]) -> int:
+    @staticmethod
+    def longestConsecutive_mine(nums: list[int]) -> int:
         nums = set(nums)
         longest = 0
         for num in nums:

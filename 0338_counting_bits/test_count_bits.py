@@ -3,7 +3,7 @@ import pytest
 
 class Solution:
     def countBits(self, n: int) -> list[int]:
-        return self.countBits_mine(n)
+        return self.countBits_offset(n)
 
     @staticmethod
     def countBits_mine(n: int) -> list[int]:
@@ -16,6 +16,16 @@ class Solution:
     @staticmethod
     def countBits_bin_count(n: int) -> list[int]:
         return [bin(i).count("1") for i in range(n + 1)]
+
+    @staticmethod
+    def countBits_offset(n: int) -> list[int]:
+        ans = [0] * (n + 1)
+        offset = 1
+        for i in range(1, n + 1):
+            if offset << 1 == i:
+                offset <<= 1
+            ans[i] = ans[i - offset] + 1
+        return ans
 
     @staticmethod
     def countBits_tracker(n: int) -> list[int]:

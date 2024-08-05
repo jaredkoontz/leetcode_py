@@ -180,9 +180,8 @@ class Solution:
 
         # Bellman-Ford algorithm to find shortest paths from a source city
 
-    def findTheCity_spfa(
-        self, n: int, edges: list[list[int]], distanceThreshold: int
-    ) -> int:
+    @staticmethod
+    def findTheCity_spfa(n: int, edges: list[list[int]], distanceThreshold: int) -> int:
         def spfa(
             self,
             n: int,
@@ -263,8 +262,9 @@ class Solution:
 
         # SPFA algorithm to find shortest paths from a source city
 
+    @staticmethod
     def findTheCity_floyd_warshall(
-        self, n: int, edges: list[list[int]], distanceThreshold: int
+        n: int, edges: list[list[int]], distanceThreshold: int
     ) -> int:
         # Floyd-Warshall algorithm to compute shortest paths between all pairs of cities
         def floyd(n: int, distance_matrix: list[list[int]]):

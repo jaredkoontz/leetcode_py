@@ -1,20 +1,19 @@
-"""
-Problem Statement
-Given an array of integers ( A ), and two integers ( S ) (start value) and ( D ) (destination value), you are allowed to
-perform any of the following operations on a value ( x ):
-
-Add an element from ( A ) to ( x ): ( x + A[i] )
-Subtract an element from ( A ) from ( x ): ( x - A[i] )
-Perform a bitwise XOR of an element from ( A ) with ( x ): ( x XOR A[i] )
-Each operation counts as one move. Determine the minimum number of moves required to transform the integer ( S ) into
-the integer ( D ) using the operations above. If it's not possible to achieve this transformation,
-return (-1).
-"""
-
 import pytest
 
 
 def min_moves_to_transform(arr: list[int], start: int, destination: int) -> int:
+    """
+    Problem Statement
+    Given an array of integers ( A ), and two integers ( S ) (start value) and ( D ) (destination value), you are allowed to
+    perform any of the following operations on a value ( x ):
+
+    Add an element from ( A ) to ( x ): ( x + A[i] )
+    Subtract an element from ( A ) from ( x ): ( x - A[i] )
+    Perform a bitwise XOR of an element from ( A ) with ( x ): ( x XOR A[i] )
+    Each operation counts as one move. Determine the minimum number of moves required to transform the integer ( S ) into
+    the integer ( D ) using the operations above. If it's not possible to achieve this transformation,
+    return (-1).
+    """
     if start == destination:
         return 0
 

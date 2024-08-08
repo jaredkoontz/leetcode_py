@@ -7,7 +7,8 @@ class Solution:
     def minimumOperations(self, nums: list[int], start: int, goal: int) -> int:
         return self.minimumOperations_bfs(nums, start, goal)
 
-    def minimumOperations_bfs(self, nums: list[int], start: int, goal: int) -> int:
+    @staticmethod
+    def minimumOperations_bfs(nums: list[int], start: int, goal: int) -> int:
         queue = deque([(start, 0)])
         visited = set()
         while queue:

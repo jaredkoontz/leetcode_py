@@ -1,3 +1,5 @@
+import functools
+
 import pytest
 
 
@@ -21,29 +23,47 @@ class Solution:
         if n == 0 or n == 1:
             return 1
 
-        dp = [0] * (n + 1)
-        dp[1] = dp[0] = 1
+        memo = [0] * (n + 1)
+        memo[1] = 1
+        memo[2] = 2
+        for i in range(2, n):
+            memo[i + 1] = memo[i] + memo[i - 1]
 
-        for i in range(2, n + 1):
-            dp[i] = dp[i - 1] + dp[i - 2]
-
-        return dp[n]
+        return memo[n]
 
     @staticmethod
     def climbStairs_bottom_optimal(n: int) -> int:
-        one, two = 1, 1
-        for i in range(n - 1):
-            temp = one
-            one = one + two
-            two = temp
+        if n <= 2:
+            return n
 
-        return one
+        first = 1
+        second = 2
 
-    def climbStairs_naive(self, n: int) -> int:
-        if n == 0 or n == 1:
-            return 1
+        for i in range(2, n):
+            temp = second
+            second = first + second
+            first = temp
+        return second
 
-        return self.climbStairs_naive(n - 1) + self.climbStairs_naive(n - 2)
+    @staticmethod
+    def climbStairs_cache(n: int) -> int:
+        @functools.cache
+        def helper(curr_step):
+            if curr_step <= 2:
+                return curr_step
+            return helper(curr_step - 1) + helper(curr_step - 2)
+
+        return helper(n)
+
+    @staticmethod
+    def climbStairs_naive(n: int) -> int:
+        def helper(curr_step):
+            if curr_step <= 2:
+                return curr_step
+
+            return helper(curr_step - 1) + helper(curr_step - 2)
+
+        return helper(n)
 
 
 @pytest.mark.parametrize(
@@ -52,8 +72,11 @@ class Solution:
         (1, 1),
         (2, 2),
         (3, 3),
+        (4, 5),
         (5, 8),
+        (6, 13),
         (7, 21),
+        (8, 34),
         (44, 1134903170),
     ],
 )

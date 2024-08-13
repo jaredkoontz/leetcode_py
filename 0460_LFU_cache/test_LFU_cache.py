@@ -208,7 +208,7 @@ LFUCache = LFUCacheOrderedDict
         ),
     ],
 )
-def test_lru_cache(operations, init, expected):
+def test_lfu_cache(operations, init, expected):
     cache = None
     for op, components, curr_val in zip(operations, init, expected):
         if op == "LFUCache":

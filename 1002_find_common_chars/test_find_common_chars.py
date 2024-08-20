@@ -3,7 +3,7 @@ from functools import reduce
 
 import pytest
 
-from helpers.test_helpers import compare_flat_lists
+from helpers.testing_helpers import compare_flat_lists
 
 
 class Solution:

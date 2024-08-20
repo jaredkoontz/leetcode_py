@@ -2,7 +2,6 @@ import functools
 
 import pytest
 
-
 "you can either take 1, 2, or 3 steps to reach the top of the stairs, how many ways can we do it."
 
 

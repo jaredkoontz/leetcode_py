@@ -1,6 +1,6 @@
 import pytest
 
-from helpers.test_helpers import compare_nested_lists
+from helpers.testing_helpers import compare_nested_lists
 
 
 class Solution:

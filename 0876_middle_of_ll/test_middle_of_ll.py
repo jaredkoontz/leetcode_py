@@ -24,6 +24,4 @@ class Solution:
     ],
 )
 def test_ll_middle(l1, expected):
-    linked_list1 = make_ll(l1)
-    linked_list2 = make_ll(expected)
-    assert compare_lls(Solution().middleNode(linked_list1), linked_list2)
+    assert compare_lls(Solution().middleNode(make_ll(l1)), make_ll(expected))

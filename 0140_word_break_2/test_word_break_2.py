@@ -1,15 +1,10 @@
 import pytest
 
-from helpers.test_helpers import compare_flat_lists
+from helpers.testing_helpers import compare_flat_lists
 
 
 class Solution:
     def wordBreak(self, s: str, wordDict: list[str]) -> list[str]:
-        """
-        :type s: str
-        :type wordDict: Set[str]
-        :rtype: List[str]
-        """
         return self.helper(s, wordDict, {})
 
     def helper(self, s, wordDict, memo):
@@ -50,4 +45,4 @@ class Solution:
     ],
 )
 def test_wordBreak(s, words, expected):
-    compare_flat_lists(Solution().wordBreak(s, words), expected)
+    assert compare_flat_lists(Solution().wordBreak(s, words), expected)

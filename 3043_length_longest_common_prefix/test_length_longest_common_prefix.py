@@ -11,23 +11,23 @@ class Solution:
 
     @staticmethod
     def longestCommonPrefix_trie(arr1: list[int], arr2: list[int]) -> int:
-        def add_to_trie(node, my_num):
+        def add_to_trie(node: TrieNode, my_num):
             cur = node
             for ch in str(my_num):
                 idx = ord(ch) - ord("0")
-                if cur.child[idx] is None:
-                    cur.child[idx] = TrieNode()
-                cur = cur.child[idx]
+                if cur.children.get(idx) is None:
+                    cur.children[idx] = TrieNode()
+                cur = cur.children[idx]
             cur.end = True
 
-        def prefix_count(node, my_num):
+        def prefix_count(node: TrieNode, my_num):
             cur = node
             count = 0
             for ch in str(my_num):
                 idx = ord(ch) - ord("0")
-                if cur.child[idx] is None:
+                if cur.children.get(idx) is None:
                     return count
-                cur = cur.child[idx]
+                cur = cur.children[idx]
                 count += 1
             return count
 

@@ -5,7 +5,6 @@ import pytest
 from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
 
-
 """
 The problem :
 There is a binary tree (a sample tree was made with “/”, “\” ). Tree has total three kind of nodes.

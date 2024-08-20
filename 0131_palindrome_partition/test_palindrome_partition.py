@@ -2,7 +2,7 @@ from functools import cache
 
 import pytest
 
-from helpers.test_helpers import compare_nested_lists
+from helpers.testing_helpers import compare_nested_lists
 
 
 def is_palindrome(s: str) -> bool:

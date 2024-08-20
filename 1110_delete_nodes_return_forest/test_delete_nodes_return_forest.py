@@ -4,7 +4,7 @@ import pytest
 
 from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
-from helpers.test_helpers import compare_flat_lists
+from helpers.testing_helpers import compare_flat_lists
 
 
 class Solution:
@@ -103,4 +103,6 @@ class Solution:
 )
 def test_delete_nodes_return_forest(root, to_delete, expected):
     expected_forest = [make_tree(tree) for tree in expected]
-    compare_flat_lists(Solution().delNodes(make_tree(root), to_delete), expected_forest)
+    assert compare_flat_lists(
+        Solution().delNodes(make_tree(root), to_delete), expected_forest
+    )

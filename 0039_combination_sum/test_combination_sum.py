@@ -1,5 +1,7 @@
 import pytest
 
+from helpers.testing_helpers import compare_nested_lists
+
 
 class Solution:
     def combinationSum(self, candidates: list[int], target: int) -> list[list[int]]:
@@ -11,7 +13,7 @@ class Solution:
 
         def dfs(i: int, current: list[int], total: int):
             if total == target:
-                ret.append(current.copy())
+                ret.append(current[:])
                 return
             if i >= len(candidates) or total > target:
                 return
@@ -34,4 +36,4 @@ class Solution:
     ],
 )
 def test_combinationSum2(candidates, target, expected):
-    assert Solution().combinationSum(candidates, target) == expected
+    assert compare_nested_lists(Solution().combinationSum(candidates, target), expected)

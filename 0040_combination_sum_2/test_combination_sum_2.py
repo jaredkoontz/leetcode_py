@@ -12,7 +12,6 @@ class Solution:
     def combinationSum2(self, candidates: list[int], target: int) -> list[list[int]]:
         return self.combinationSum2_dp(candidates, target)
 
-    # todo failing because of wrong types
     @staticmethod
     def combinationSum2_dp(candidates: list[int], target: int) -> list[list[int]]:
         # unique_combos_with_sum[i] contains the unique combinations of candidates that sum to 'i'.

@@ -3,10 +3,10 @@ import pytest
 
 class Solution:
     def coinChange(self, coins: list[int], amount: int) -> int:
-        return self.coinChange_iterative(coins, amount)
+        return self.coinChange_dp(coins, amount)
 
     @staticmethod
-    def coinChange_iterative(coins: list[int], amount: int) -> int:
+    def coinChange_dp(coins: list[int], amount: int) -> int:
         if amount < 1:
             return 0
 

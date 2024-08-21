@@ -1,7 +1,5 @@
 import pytest
 
-# https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
-
 
 class StringArrIterator:
     def __init__(self, str_arr):

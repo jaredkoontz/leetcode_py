@@ -1,7 +1,5 @@
 import pytest
 
-# https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
-
 
 class Solution:
     def twoSum(self, numbers: list[int], target: int) -> list[int]:

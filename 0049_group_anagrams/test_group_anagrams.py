@@ -3,9 +3,6 @@ import pytest
 from helpers.testing_helpers import compare_nested_lists
 
 
-# https://leetcode.com/problems/group-anagrams/
-
-
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         return self.groupAnagrams_mine(strs)

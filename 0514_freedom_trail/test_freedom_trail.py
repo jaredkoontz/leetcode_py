@@ -3,9 +3,6 @@ from functools import cache
 import pytest
 
 
-# https://leetcode.com/problems/freedom-trail/
-
-
 def steps(i, k, M):
     x = abs(i - k)
     # minimum x steps to rotate the ring from i..k

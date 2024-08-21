@@ -1,7 +1,5 @@
 import pytest
 
-# https://leetcode.com/problems/summary-ranges/description/
-
 
 class Solution:
     def summaryRanges(self, nums: list[int]) -> list[str]:

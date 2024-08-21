@@ -1,3 +1,7 @@
+import json
+import pprint
+from pathlib import Path
+
 """
 This is used to compare your solved problems for a session in leet code, to what is currently in this directory.
 
@@ -5,10 +9,6 @@ To use:
     get json from your web browser by running `extract_problems.json` in the dev console
     run this script, it will tell you what you are missing from this local dir, and what submissions you are missing
 """
-
-import json
-import pprint
-from pathlib import Path
 
 PATH_TO_JSON = "my_leet.json"
 
@@ -48,9 +48,13 @@ def _get_local_dirs() -> dict[str, dict[str, str]]:
     source_root = Path("..")
     for directory in source_root.glob(r"[0-9]*"):
         key, name = directory.name.split("_", 1)
-        py_paths = [file for file in directory.rglob('test_*.py')]
-        py_path = '' if len(py_paths) != 1 else py_paths[0]
-        local_dirs[key] = {"title": name, "path": directory.absolute(),'py_path':py_path}
+        py_paths = [file for file in directory.rglob("test_*.py")]
+        py_path = "" if len(py_paths) != 1 else py_paths[0]
+        local_dirs[key] = {
+            "title": name,
+            "path": directory.absolute(),
+            "py_path": py_path,
+        }
     return local_dirs
 
 
@@ -84,19 +88,26 @@ def _update_url(
         if from_leet.get(x):
             url = from_leet[x]["url"]
             file_path = Path(local_path)
-            # Read the current content of the file
-            text_to_prepend = f"# {url}"
-            current_content = file_path.read_text()
+            try:
+                if file_path:
+                    # Read the current content of the file
+                    text_to_prepend = f"# {url}"
+                    current_content = file_path.read_text()
+                    # todo search for first line being the url, if not add the comment
 
-            # Combine the new text with the existing content
-            new_content = f"{text_to_prepend}\n{current_content}"
-            file_path.write_text(new_content)
+                    # Combine the new text with the existing content
+                    new_content = f"{text_to_prepend}\n{current_content}"
+                    file_path.write_text(new_content)
+            except Exception as e:
+                print(f"failed on {x=}\n{e=}\n{url=}\n{file_path=}\n")
+
 
 def main():
     from_leet = _get_leet_code()
     from_local = _get_local_dirs()
     _compare_dicts(from_leet, from_local)
-    _update_url(from_leet,from_local)
+    # do not uncomment, all files are currently commented.
+    # _update_url(from_leet, from_local)
 
 
 if __name__ == "__main__":

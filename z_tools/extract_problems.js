@@ -4,7 +4,7 @@ document.querySelectorAll('div[role="row"]').forEach(row => {
     if (linkElement) {
         const url = linkElement.getAttribute('href');
         const title = linkElement.textContent.trim();
-        results.push({ url, title });
+        results.push({url, title});
     }
 });
 console.log(results);

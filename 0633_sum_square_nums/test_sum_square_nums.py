@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/sum-of-square-numbers
 from math import sqrt
 
 import pytest

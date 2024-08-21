@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/detect-squares
 from collections import Counter
 from collections import defaultdict
 

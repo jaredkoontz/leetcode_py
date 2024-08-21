@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/hand-of-straights
 import collections
 import heapq
 

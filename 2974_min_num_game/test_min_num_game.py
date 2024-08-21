@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/minimum-number-game
 import heapq
 
 import pytest

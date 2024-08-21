@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/min-cost-climbing-stairs
 import functools
 from collections import deque
 

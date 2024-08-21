@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/three-consecutive-odds
 import pytest
 
 

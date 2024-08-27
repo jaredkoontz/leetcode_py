@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/number-of-good-pairs/
+# https://leetcode.com/problems/number-of-good-pairs
 from collections import Counter
 
 import pytest

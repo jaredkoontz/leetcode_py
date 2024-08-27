@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/n-ary-tree-postorder-traversal/
+# https://leetcode.com/problems/n-ary-tree-postorder-traversal
 import pytest
 
 from helpers.nary_tree import make_nary_tree

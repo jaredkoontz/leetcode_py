@@ -90,14 +90,17 @@ def _update_url(
             file_path = Path(local_path)
             try:
                 if file_path:
-                    # Read the current content of the file
-                    text_to_prepend = f"# {url}"
                     current_content = file_path.read_text()
-                    # todo search for first line being the url, if not add the comment
+                    text_to_prepend = f"# {url}"
 
-                    # Combine the new text with the existing content
-                    new_content = f"{text_to_prepend}\n{current_content}"
-                    file_path.write_text(new_content)
+                    newline_index = current_content.find("\n")
+                    if (
+                        newline_index == -1
+                        or current_content[:newline_index] != text_to_prepend
+                    ):
+                        # Combine the new text with the existing content
+                        new_content = f"{text_to_prepend}\n{current_content}"
+                        file_path.write_text(new_content, newline="\n")
             except Exception as e:
                 print(f"failed on {x=}\n{e=}\n{url=}\n{file_path=}\n")
 
@@ -106,8 +109,7 @@ def main():
     from_leet = _get_leet_code()
     from_local = _get_local_dirs()
     _compare_dicts(from_leet, from_local)
-    # do not uncomment, all files are currently commented.
-    # _update_url(from_leet, from_local)
+    _update_url(from_leet, from_local)
 
 
 if __name__ == "__main__":

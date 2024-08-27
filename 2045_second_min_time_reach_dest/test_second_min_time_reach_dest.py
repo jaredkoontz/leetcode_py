@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/second-minimum-time-to-reach-destination/
+# https://leetcode.com/problems/second-minimum-time-to-reach-destination
 import heapq
 import math
 from collections import defaultdict

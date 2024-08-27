@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/maximum-depth-of-n-ary-tree/
+# https://leetcode.com/problems/maximum-depth-of-n-ary-tree
 import pytest
 
 from helpers.nary_tree import make_nary_tree
@@ -12,13 +12,13 @@ class Solution:
     @staticmethod
     def maxDepth_iter(root: NAryNode) -> int:
         max_depth = 0
-        traverse_stack = [(root,1)]
+        traverse_stack = [(root, 1)]
 
         while traverse_stack:
-            node,level = traverse_stack.pop()
-            max_depth = max(level,max_depth)
+            node, level = traverse_stack.pop()
+            max_depth = max(level, max_depth)
             for n in node.children:
-                traverse_stack.append((n,level+1))
+                traverse_stack.append((n, level + 1))
 
         return max_depth
 
@@ -36,10 +36,11 @@ class Solution:
 
         return dfs(root)
 
+
 @pytest.mark.parametrize(
     "root,expected",
     [
-        ([1, None, 3, 2, 4, None, 5, 6],3),
+        ([1, None, 3, 2, 4, None, 5, 6], 3),
         (
             [
                 1,

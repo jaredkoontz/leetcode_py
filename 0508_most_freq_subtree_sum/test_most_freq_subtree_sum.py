@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/most-frequent-subtree-sum/
+# https://leetcode.com/problems/most-frequent-subtree-sum
 import collections
 
 import pytest

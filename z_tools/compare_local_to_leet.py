@@ -61,7 +61,7 @@ def _get_local_dirs() -> dict[str, dict[str, str]]:
 def _compare_dicts(
     from_leet: dict[str, dict[str, str]], from_local: dict[str, dict[str, str]]
 ):
-    # known_missing_local = {'0271', '0000'}
+    # todo known missing from leet code = {'0271', '0000'}
 
     missing_local = (set(from_leet.keys())) - set(from_local.keys())
     missing_leet = set(from_local.keys()) - set(from_leet.keys())
@@ -88,21 +88,22 @@ def _update_url(
         if from_leet.get(x):
             url = from_leet[x]["url"]
             file_path = Path(local_path)
-            try:
-                if file_path:
-                    current_content = file_path.read_text()
-                    text_to_prepend = f"# {url}"
+            if local_path:
+                try:
+                    if file_path:
+                        current_content = file_path.read_text()
+                        text_to_prepend = f"# {url}"
 
-                    newline_index = current_content.find("\n")
-                    if (
-                        newline_index == -1
-                        or current_content[:newline_index] != text_to_prepend
-                    ):
-                        # Combine the new text with the existing content
-                        new_content = f"{text_to_prepend}\n{current_content}"
-                        file_path.write_text(new_content, newline="\n")
-            except Exception as e:
-                print(f"failed on {x=}\n{e=}\n{url=}\n{file_path=}\n")
+                        newline_index = current_content.find("\n")
+                        if (
+                            newline_index == -1
+                            or current_content[:newline_index] != text_to_prepend
+                        ):
+                            # Combine the new text with the existing content
+                            new_content = f"{text_to_prepend}\n{current_content}"
+                            file_path.write_text(new_content, newline="\n")
+                except Exception as e:
+                    print(f"failed on {x=}\n{e=}\n{url=}\n{file_path=}\n")
 
 
 def main():

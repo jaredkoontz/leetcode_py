@@ -7,15 +7,38 @@ from helpers.bin_tree import TreeNode
 
 class Solution:
     def preorderTraversal(self, root: TreeNode | None) -> list[int]:
-        my_list = []
-        self.preorder(root, my_list)
-        return my_list
+        return self.preorderTraversal_iter(root)
 
-    def preorder(self, root, my_list):
-        if root:
-            my_list.append(root.val)
-            self.preorder(root.left, my_list)
-            self.preorder(root.right, my_list)
+    @staticmethod
+    def preorderTraversal_iter(root: TreeNode | None) -> list[int]:
+        result = []
+        if not root:
+            return result
+
+        stack = [root]
+
+        while stack:
+            node = stack.pop()
+            result.append(node.val)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+
+        return result
+
+    @staticmethod
+    def preorderTraversal_rec(root: TreeNode | None) -> list[int]:
+        my_list = []
+
+        def preorder(node):
+            if node:
+                my_list.append(node.val)
+                preorder(node.left)
+                preorder(node.right)
+
+        preorder(root)
+        return my_list
 
 
 @pytest.mark.parametrize(

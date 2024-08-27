@@ -7,15 +7,37 @@ from helpers.bin_tree import TreeNode
 
 class Solution:
     def inorderTraversal(self, root: TreeNode | None) -> list[int]:
-        my_list = []
-        self.inorder(root, my_list)
-        return my_list
+        return self.inorderTraversal_stack(root)
 
-    def inorder(self, root, my_list):
-        if root:
-            self.inorder(root.left, my_list)
-            my_list.append(root.val)
-            self.inorder(root.right, my_list)
+    @staticmethod
+    def inorderTraversal_stack(root: TreeNode | None) -> list[int]:
+        result = []
+        stack = []
+        current = root
+
+        while stack or current:
+            while current:
+                stack.append(current)
+                current = current.left
+
+            current = stack.pop()
+            result.append(current.val)
+            current = current.right
+
+        return result
+
+    @staticmethod
+    def inorderTraversal_rec(root: TreeNode | None) -> list[int]:
+        my_list = []
+
+        def inorder(node):
+            if node:
+                inorder(node.left)
+                my_list.append(node.val)
+                inorder(node.right)
+
+        inorder(root)
+        return my_list
 
 
 @pytest.mark.parametrize(

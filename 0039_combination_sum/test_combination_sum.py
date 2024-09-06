@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/combination-sum
 import pytest
 
-from helpers.testing_helpers import compare_nested_lists
+from helpers.testing_helpers import freeze_nested_lists
 
 
 class Solution:
@@ -37,4 +37,7 @@ class Solution:
     ],
 )
 def test_combinationSum2(candidates, target, expected):
-    assert compare_nested_lists(Solution().combinationSum(candidates, target), expected)
+    frozen1, frozen2 = freeze_nested_lists(
+        Solution().combinationSum(candidates, target), expected
+    )
+    assert frozen1 == frozen2

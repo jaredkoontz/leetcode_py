@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/subsets
 import pytest
 
-from helpers.testing_helpers import compare_nested_lists
+from helpers.testing_helpers import freeze_nested_lists
 
 
 class Solution:
@@ -74,4 +74,5 @@ class Solution:
     ],
 )
 def test_subsets(l1, expected):
-    assert compare_nested_lists(Solution().subsets(l1), expected)
+    frozen1, frozen2 = freeze_nested_lists(Solution().subsets(l1), expected)
+    assert frozen1 == frozen2

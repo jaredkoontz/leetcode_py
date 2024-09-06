@@ -6,7 +6,7 @@ from typing import Tuple
 
 import pytest
 
-from helpers.testing_helpers import compare_nested_lists
+from helpers.testing_helpers import freeze_nested_lists
 
 
 class Solution:
@@ -78,6 +78,7 @@ class Solution:
     ],
 )
 def test_combinationSum2(candidates, target, expected):
-    assert compare_nested_lists(
+    frozen1, frozen2 = freeze_nested_lists(
         Solution().combinationSum2(candidates, target), expected
     )
+    assert frozen1 == frozen2

@@ -3,7 +3,7 @@ from functools import cache
 
 import pytest
 
-from helpers.testing_helpers import compare_nested_lists
+from helpers.testing_helpers import freeze_nested_lists
 
 
 def is_palindrome(s: str) -> bool:
@@ -60,4 +60,5 @@ class Solution:
     ],
 )
 def test_palindrome_partition(s, expected):
-    assert compare_nested_lists(Solution().partition(s), expected)
+    frozen1, frozen2 = freeze_nested_lists(Solution().partition(s), expected)
+    assert frozen1 == frozen2

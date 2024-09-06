@@ -1,6 +1,6 @@
 import pytest
 
-from helpers.testing_helpers import compare_nested_lists
+from helpers.testing_helpers import freeze_nested_lists
 
 
 def groupIsomorphic(strs: list[str]) -> list[list[str]]:
@@ -65,4 +65,5 @@ def groupIsomorphic_encoding(strs: list[str]) -> list[list[str]]:
     ],
 )
 def test_groupIsomorphic(l1, expected):
-    assert compare_nested_lists(groupIsomorphic(l1), expected)
+    frozen1, frozen2 = freeze_nested_lists(groupIsomorphic(l1), expected)
+    assert frozen1 == frozen2

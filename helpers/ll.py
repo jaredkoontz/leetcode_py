@@ -50,6 +50,8 @@ def create_ll_cycle(head: ListNode, pos: int) -> ListNode:
 
 def make_ll(arr: list[int]) -> ListNode | None:
     """makes a linked list from an array of integers"""
+    if not arr:
+        return None
     if len(arr) != 0:
         head = ListNode(arr[0])
         curr = head

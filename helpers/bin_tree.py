@@ -43,7 +43,7 @@ def make_tree(tree_array: list[int]) -> TreeNode | None:
     return root
 
 
-def create_array_from_tree(root: TreeNode | None) -> list[int]:
+def make_array_from_tree(root: TreeNode | None) -> list[int]:
     if not root:
         return []
 
@@ -84,4 +84,4 @@ def compare_trees(root1: TreeNode | None, root2: TreeNode | None) -> bool:
 )
 def test_bin_tree_maker(l1):
     # todo fails because of none
-    assert create_array_from_tree(make_tree(l1)) == l1
+    assert make_array_from_tree(make_tree(l1)) == l1

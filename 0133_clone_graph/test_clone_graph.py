@@ -3,9 +3,9 @@ from collections import deque
 
 import pytest
 
-from helpers.graph import create_adj_list
-from helpers.graph import create_graph
 from helpers.graph import is_same_graph
+from helpers.graph import make_adj_list
+from helpers.graph import make_graph
 from helpers.graph import Node
 
 
@@ -85,8 +85,8 @@ class Solution:
     ],
 )
 def test_cloneGraph(adj_list, expected):
-    first_graph = create_graph(adj_list)
-    assert create_adj_list(first_graph) == expected
+    first_graph = make_graph(adj_list)
+    assert make_adj_list(first_graph) == expected
     second_graph = Solution().cloneGraph(first_graph)
-    assert create_adj_list(second_graph) == expected
+    assert make_adj_list(second_graph) == expected
     assert is_same_graph(first_graph, second_graph)

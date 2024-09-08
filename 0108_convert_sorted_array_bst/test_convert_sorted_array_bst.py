@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree
 import pytest
 
-from helpers.bin_tree import create_array_from_tree
+from helpers.bin_tree import make_array_from_tree
 from helpers.bin_tree import TreeNode
 
 
@@ -31,4 +31,4 @@ class Solution:
     ],
 )
 def test_sortedArrayToBST(l1, expected):
-    assert create_array_from_tree(Solution().sortedArrayToBST(l1)) == expected
+    assert make_array_from_tree(Solution().sortedArrayToBST(l1)) == expected

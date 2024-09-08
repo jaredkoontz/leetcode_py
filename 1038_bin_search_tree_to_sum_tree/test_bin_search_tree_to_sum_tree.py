@@ -2,7 +2,7 @@
 import pytest
 
 from helpers.bin_tree import compare_trees
-from helpers.bin_tree import create_array_from_tree
+from helpers.bin_tree import make_array_from_tree
 from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
 
@@ -94,7 +94,7 @@ class Solution:
 def test_bstToGst(l1, expected):
     tree_given = make_tree(l1)
     tree_expected = make_tree(expected)
-    assert create_array_from_tree(
+    assert make_array_from_tree(
         Solution().bstToGst(tree_given)
-    ) == create_array_from_tree(tree_expected)
+    ) == make_array_from_tree(tree_expected)
     assert compare_trees(tree_given, tree_expected)

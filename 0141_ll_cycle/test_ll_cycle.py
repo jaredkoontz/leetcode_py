@@ -1,9 +1,9 @@
 # https://leetcode.com/problems/linked-list-cycle
 import pytest
 
-from helpers.ll import create_ll_cycle
 from helpers.ll import ListNode
 from helpers.ll import make_ll
+from helpers.ll import make_ll_cycle
 
 
 class Solution:
@@ -46,6 +46,6 @@ class Solution:
 def test_ll_cycle(l1, pos, expected):
     linked_list = make_ll(l1)
     if pos >= 0:
-        create_ll_cycle(linked_list, pos)
+        make_ll_cycle(linked_list, pos)
 
     assert Solution().hasCycle(linked_list) == expected

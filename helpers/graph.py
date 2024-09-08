@@ -10,7 +10,7 @@ class Node:
         return f"{self.val=} {self.neighbors=}"
 
 
-def create_graph(adj_list: list[list[int]]) -> Node | None:
+def make_graph(adj_list: list[list[int]]) -> Node | None:
     vertex_count = len(adj_list)
     vertex_list = [Node(i) for i in range(vertex_count)]
     for i, origin in enumerate(vertex_list):
@@ -22,7 +22,7 @@ def create_graph(adj_list: list[list[int]]) -> Node | None:
     return vertex_list[0] if len(vertex_list) > 0 else None
 
 
-def create_adj_list(node: Node) -> list[list[int]]:
+def make_adj_list(node: Node) -> list[list[int]]:
     queue = [node]
     visited = set()
     all_nodes = []

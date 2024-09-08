@@ -2,7 +2,7 @@
 import pytest
 
 from helpers.bin_tree import compare_trees
-from helpers.bin_tree import create_array_from_tree
+from helpers.bin_tree import make_array_from_tree
 from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
 
@@ -87,5 +87,5 @@ def test_balance_bst(l1, expected):
     tree_given = make_tree(l1)
     tree_expected = make_tree(expected)
     balanced = Solution().balanceBST(tree_given)
-    assert create_array_from_tree(balanced) == create_array_from_tree(tree_expected)
+    assert make_array_from_tree(balanced) == make_array_from_tree(tree_expected)
     assert compare_trees(balanced, tree_expected)

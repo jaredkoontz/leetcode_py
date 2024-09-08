@@ -34,7 +34,7 @@ def compare_lls(l1: ListNode, l2: ListNode) -> bool:
     return True
 
 
-def create_ll_cycle(head: ListNode, pos: int) -> ListNode:
+def make_ll_cycle(head: ListNode, pos: int) -> ListNode:
     curr = head
 
     while curr.next:

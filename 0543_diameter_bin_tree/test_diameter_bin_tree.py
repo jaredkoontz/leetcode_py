@@ -1,6 +1,8 @@
+# https://leetcode.com/problems/diameter-of-binary-tree
 import pytest
 
-from helpers.bin_tree import make_tree, TreeNode
+from helpers.bin_tree import make_tree
+from helpers.bin_tree import TreeNode
 
 
 class Solution:
@@ -9,17 +11,20 @@ class Solution:
 
     @staticmethod
     def diameterOfBinaryTree_dfs_rec(root: TreeNode | None) -> int:
-        max_all=[0]
+        max_all = [0]
+
         def depth(node):
             if not node:
                 return 0
-            l = depth(node.left)
-            r = depth(node.right)
-            m = l+r
-            max_all[0]=max(max_all[0],m)
-            return 1 +max(l,r)
+            left = depth(node.left)
+            right = depth(node.right)
+            m = left + right
+            max_all[0] = max(max_all[0], m)
+            return 1 + max(left, right)
+
         depth(root)
         return max_all[0]
+
     @staticmethod
     def diameterOfBinaryTree_dfs_iter(root: TreeNode | None) -> int:
         if not root:

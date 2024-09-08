@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/linked-list-in-binary-tree
 import pytest
 
 from helpers.bin_tree import make_tree
@@ -69,7 +70,9 @@ class Solution:
                 return True  # If a matching path is found
 
             # Recursively check left and right subtrees
-            return _check_path(node.left, list_node) or _check_path(node.right, list_node)
+            return _check_path(node.left, list_node) or _check_path(
+                node.right, list_node
+            )
 
         if root is None:
             return False

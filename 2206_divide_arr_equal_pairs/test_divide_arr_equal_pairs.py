@@ -17,9 +17,13 @@ class Solution:
 
         return True
 
-@pytest.mark.parametrize("nums,expected",[
-    ([3,2,3,2,2,2],True),
-    ([1,2,3,4],False),
-])
-def test_divideArray(nums,expected):
+
+@pytest.mark.parametrize(
+    "nums,expected",
+    [
+        ([3, 2, 3, 2, 2, 2], True),
+        ([1, 2, 3, 4], False),
+    ],
+)
+def test_divideArray(nums, expected):
     assert Solution().divideArray(nums) == expected

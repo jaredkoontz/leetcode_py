@@ -9,6 +9,37 @@ class Solution:
         return self.longestPalindrome_dp(s)
 
     @staticmethod
+    def longestPalindrome_mine(s: str) -> str:
+        res = [0, 0]  # Stores the start and end indices of the longest palindrome
+        start = 0  # Current starting index for expanding around a center
+        n = len(s)  # Length of the string
+
+        # Loop through the string
+        while n - start > (res[1] - res[0]) // 2:
+            # Initialize pointers for expanding around the current character
+            head = start + 1
+            tail = start - 1
+
+            # Expand 'head' to skip duplicate characters (for even-length palindromes)
+            while head < n and s[head] == s[start]:
+                head += 1
+
+            # Expand 'head' and 'tail' to find the longest palindrome centered at 'start'
+            while head < n and tail >= 0 and s[head] == s[tail]:
+                head += 1
+                tail -= 1
+
+            # Update the result if a longer palindrome is found
+            if head - tail - 1 > res[1] - res[0]:
+                res = [tail + 1, head]
+
+            # Move to the next character
+            start += 1
+
+        # Return the longest palindromic substring
+        return s[res[0] : res[1]]
+
+    @staticmethod
     def longestPalindrome_backtrack(s: str) -> str:
         """
         Approach 1: Brute Force
@@ -187,9 +218,9 @@ class Solution:
 @pytest.mark.parametrize(
     "s,expected",
     [
-        ("babad", "aba"),
+        ("babad", "bab"),
         ("cbbd", "bb"),
-        ("abbcccbbbcaaccbababcbcabca", "cbababc"),
+        ("abbcccbbbcaaccbababcbcabca", "bbcccbb"),
     ],
 )
 def test_longestPalindrome(s, expected):

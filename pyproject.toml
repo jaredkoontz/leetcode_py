@@ -1,0 +1,13 @@
+[project]
+name = "leetcode_py"
+version = "0.1.0"
+description = "python implementation of leetcode.com"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.1.0",
+    "pytest>=8.3.5",
+]

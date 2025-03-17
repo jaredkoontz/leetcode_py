@@ -3,8 +3,33 @@ import pytest
 
 
 class Solution:
+    def isValid(self, s: str) -> bool:
+        return self.isValid_mine(s)
+
     @staticmethod
-    def isValid(s: str) -> bool:
+    def isValid_mine_old(s: str) -> bool:
+        open_parens = ["(", "[", "{"]
+        closed_parens = [")", "]", "}"]
+        paren_map = {x: open_parens[i] for i, x in enumerate(closed_parens)}
+        my_stack = []
+        for char in s:
+            if char in open_parens:
+                my_stack.append(char)
+            elif char in closed_parens:
+                try:
+                    last_seen = my_stack.pop()
+                except IndexError:
+                    return False
+
+                opening_paren = paren_map.get(char)
+                if not opening_paren or opening_paren != last_seen:
+                    return False
+            else:
+                return False
+        return len(my_stack) == 0
+
+    @staticmethod
+    def isValid_mine(s: str) -> bool:
         if not s:
             return False
 
@@ -28,6 +53,8 @@ class Solution:
     "s,expected",
     [
         ("()", True),
+        ("()[]{}", True),
+        ("(]", False),
         ("(){}[]", True),
         ("(]", False),
         ("(({}))", True),

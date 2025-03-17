@@ -48,6 +48,13 @@ class Solution:
         ("pwwkew", 3),
         ("abcdefghijklmnopabcdefghijklmnopabcdefghijklmnop", 16),
         ("", 0),
+        ("dvdf", 3),
+        ("aab", 2),
+        ("abcd", 4),
+        ("aa", 1),
+        ("abcabcbb", 3),
+        ("bbbbbbb", 1),
+        ("pwwkew", 3),
     ],
 )
 def test_longest_substring(s, expected):

@@ -16,17 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v3
-        with:
-          python-version: "3.11"
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pytest
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+      - name: Install the project
+        run: uv sync --all-extras --dev
       - name: runs pre-commit
-        uses: pre-commit/action@v3.0.1
+        uses: tox-dev/action-pre-commit-uv@v1
       - name: Test with pytest
         run: |
-          python -m pytest
+          uv run python -m pytest

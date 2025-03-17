@@ -11,8 +11,6 @@ class Solution:
     @staticmethod
     def longestPalindrome_backtrack(s: str) -> str:
         """
-        It takes a lot of effort to write such a long explanation, so please UpVote ⬆️ if this helps you.
-
         Approach 1: Brute Force
 
         Intuition:

@@ -1,13 +1,18 @@
+import dataclasses
 from collections import deque
+from dataclasses import field
 
 
+@dataclasses.dataclass(frozen=True)
 class Node:
-    def __init__(self, val=0, neighbors=None):
-        self.val = val
-        self.neighbors = neighbors if neighbors is not None else []
+    val: int
+    neighbors: list["Node"] = field(default_factory=list)
 
     def __str__(self):
         return f"{self.val=} {self.neighbors=}"
+
+    def __hash__(self):
+        return hash(self.val)
 
 
 def make_graph(adj_list: list[list[int]]) -> Node | None:

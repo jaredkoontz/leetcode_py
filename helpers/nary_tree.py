@@ -1,10 +1,11 @@
+import dataclasses
 from collections import deque
 
 
+@dataclasses.dataclass
 class NAryNode:
-    def __init__(self, val=None, children=None):
-        self.val = val
-        self.children = children if children is not None else []
+    val: int = 0
+    children: list["NAryNode"] = dataclasses.field(default_factory=list)
 
 
 def make_nary_tree(data: list[list[int | None]]) -> NAryNode | None:

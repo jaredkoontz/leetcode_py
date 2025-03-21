@@ -1,8 +1,10 @@
+import dataclasses
+
+
+@dataclasses.dataclass
 class ListNode:
-    # Definition for singly-linked list.
-    def __init__(self, val=0, next_node=None):
-        self.val = val
-        self.next = next_node
+    val: int = 0
+    next: "ListNode" = None
 
     def __str__(self):
         result = "["

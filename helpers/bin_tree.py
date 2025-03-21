@@ -1,11 +1,13 @@
+import dataclasses
+
 import pytest
 
 
+@dataclasses.dataclass
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+    val: int = 0
+    left: "TreeNode" = None
+    right: "TreeNode" = None
 
     def __str__(self):
         left_val = self.left.val if self.left is not None else "None"

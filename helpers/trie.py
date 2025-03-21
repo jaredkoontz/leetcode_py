@@ -1,7 +1,10 @@
+import dataclasses
+
+
+@dataclasses.dataclass
 class TrieNode:
-    def __init__(self):
-        self.children = {}
-        self.end = False
+    children: dict = dataclasses.field(default_factory=dict)
+    end: bool = False
 
 
 class Trie:

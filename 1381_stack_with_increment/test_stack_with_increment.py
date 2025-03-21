@@ -1,84 +1,114 @@
 # https://leetcode.com/problems/design-a-stack-with-increment-operation
-import bisect
-import heapq
-
 import pytest
 
 
-class MedianFinderHeap:
-    def __init__(self):
-        # smaller half: return the max; keep q1 equal to or larger than q2
-        self.q1 = []
-        # larger half: return min
-        self.q2 = []
+class CustomStackLazyIncrement:
+    def __init__(self, maxSize):
+        self.n = maxSize
+        self.stack = []
+        self.inc = []
 
-    def addNum(self, num: int) -> None:
-        if len(self.q1) == len(self.q2):
-            if len(self.q1) == 0 or num <= self.q2[0]:
-                heapq.heappush(self.q1, -num)
-            else:
-                heapq.heappush(self.q2, num)
-                min_val = heapq.heappop(self.q2)
-                heapq.heappush(self.q1, -min_val)
-        else:
-            if num > -self.q1[0]:
-                heapq.heappush(self.q2, num)
-            else:
-                heapq.heappush(self.q1, -num)
-                max_val = -heapq.heappop(self.q1)
-                heapq.heappush(self.q2, max_val)
+    def push(self, x):
+        if len(self.inc) < self.n:
+            self.stack.append(x)
+            self.inc.append(0)
 
-    def findMedian(self) -> float:
-        if len(self.q1) == len(self.q2):
-            return (-self.q1[0] + self.q2[0]) / 2.0
-        else:
-            return -self.q1[0]
+    def pop(self):
+        if not self.inc:
+            return -1
+        if len(self.inc) > 1:
+            self.inc[-2] += self.inc[-1]
+        return self.stack.pop() + self.inc.pop()
+
+    def increment(self, k, val):
+        if self.inc:
+            self.inc[min(k, len(self.inc)) - 1] += val
 
 
-class MedianFinderBisect:
-    class sortedlist(list):
-        """just a list but with an insort (insert into sorted position)"""
+class CustomStackTheirs:
+    def __init__(self, maxSize: int):
+        self.stack = [0] * maxSize
+        self.top = -1
+        self.incrementArr = [0] * maxSize
 
-        def insort(self, x):
-            bisect.insort(self, x)
+    def push(self, x: int) -> None:
+        if self.top < len(self.stack) - 1:
+            self.top += 1
+            self.stack[self.top] = x
 
-    def __init__(self):
-        self.my_data = self.sortedlist()
+    def pop(self) -> int:
+        if self.top < 0:
+            return -1
 
-    def addNum(self, num: int) -> None:
-        self.my_data.insort(num)
+        res = self.stack[self.top] + self.incrementArr[self.top]
+        if self.top > 0:
+            self.incrementArr[self.top - 1] += self.incrementArr[self.top]
+        self.incrementArr[self.top] = 0
+        self.top -= 1
+        return res
 
-    def findMedian(self) -> float:
-        length = len(self.my_data)
-        if length == 0:
-            return 0
-        halfway = length // 2
-        if length & 1 == 1:
-            # odd
-            return float(self.my_data[halfway])
-        else:
-            return (self.my_data[halfway - 1] + self.my_data[halfway]) / 2
+    def increment(self, k: int, val: int) -> None:
+        if self.top >= 0:
+            index = min(self.top, k - 1)
+            self.incrementArr[index] += val
 
 
-med_finder = MedianFinderBisect
+class CustomStackMine:
+    def __init__(self, maxSize: int):
+        self.max_size = maxSize
+        self.stack = []
+
+    def push(self, x: int) -> None:
+        if len(self.stack) == self.max_size:
+            return
+        self.stack.append(x)
+
+    def pop(self) -> int:
+        if self.stack:
+            return self.stack.pop()
+        return -1
+
+    def increment(self, k: int, val: int) -> None:
+        num_to_update = len(self.stack) if k > len(self.stack) else k
+        for i in range(num_to_update):
+            self.stack[i] += val
+
+
+CustomStack = CustomStackMine
 
 
 @pytest.mark.parametrize(
     "operations, init, expected",
     [
         (
-            ["MedianFinder", "addNum", "addNum", "findMedian", "addNum", "findMedian"],
-            [[], [1], [2], [], [3], []],
-            [None, None, None, 1.5, None, 2.0],
+            [
+                "CustomStack",
+                "push",
+                "push",
+                "pop",
+                "push",
+                "push",
+                "push",
+                "increment",
+                "increment",
+                "pop",
+                "pop",
+                "pop",
+                "pop",
+            ],
+            [[3], [1], [2], [], [2], [3], [4], [5, 100], [2, 100], [], [], [], []],
+            [None, None, None, 2, None, None, None, None, None, 103, 202, 201, -1],
         ),
     ],
 )
-def test_median_finder(operations, init, expected):
+def test_custom_stack(operations, init, expected):
     median_finder = None
     for op, components, curr_val in zip(operations, init, expected):
-        if op == "MedianFinder":
-            median_finder = med_finder()
-        elif op == "addNum":
-            median_finder.addNum(components[0])
+        if op == "CustomStack":
+            median_finder = CustomStack(components[0])
+        elif op == "push":
+            assert median_finder.push(components[0]) == curr_val
+        elif op == "pop":
+            assert median_finder.pop() == curr_val
         else:
-            assert median_finder.findMedian() == curr_val
+            assert median_finder.increment(components[0], components[1]) == curr_val

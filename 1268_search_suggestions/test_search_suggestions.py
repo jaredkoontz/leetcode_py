@@ -4,9 +4,41 @@ import heapq
 
 import pytest
 
-from helpers.trie import add_to_trie
-from helpers.trie import traverse_trie_from_term
+from helpers.trie import Trie
 from helpers.trie import TrieNode
+
+
+def _collect_from_node(node: TrieNode, prefix: str, limit=-1):
+    words = []
+    stack = [(node, prefix)]
+    while stack:
+        node: TrieNode
+        prefix: str
+
+        node, prefix = stack.pop()
+        children = node.children
+        if not children or node.is_end:
+            words.append(prefix)
+        for idx, curr in node.children.items():
+            stack.append((curr, f"{prefix}{idx}"))
+
+    if limit >= 0:
+        return sorted(words)[:limit]
+    else:
+        return words
+
+
+def traverse_trie_from_term(node: TrieNode, search_term: str):
+    cur = node
+    count = 0
+    curr_prefix = ""
+    for ch in str(search_term):
+        curr_prefix += ch
+        if cur.children.get(ch) is None:
+            return []
+        cur = cur.children[ch]
+        count += 1
+    return _collect_from_node(cur, curr_prefix, limit=3)
 
 
 class Solution:
@@ -110,14 +142,14 @@ class Solution:
     @staticmethod
     def suggestedProducts_trie(products: list[str], searchWord: str) -> list[list[str]]:
         suggested = []
-        root = TrieNode()
+        trie = Trie()
         for product in products:
-            add_to_trie(root, product)
+            trie.insert(product)
 
         search_term = ""
         for char in searchWord:
             search_term += char
-            suggested.append(traverse_trie_from_term(root, search_term))
+            suggested.append(traverse_trie_from_term(trie.root, search_term))
 
         return suggested
 

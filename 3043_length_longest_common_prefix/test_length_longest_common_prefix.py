@@ -3,9 +3,19 @@ from bisect import bisect_left
 
 import pytest
 
-from helpers.trie import add_to_trie
-from helpers.trie import prefix_count
+from helpers.trie import Trie
 from helpers.trie import TrieNode
+
+
+def prefix_count(node: TrieNode, new_word: str):
+    cur = node
+    count = 0
+    for ch in str(new_word):
+        if cur.children.get(ch) is None:
+            return count
+        cur = cur.children[ch]
+        count += 1
+    return count
 
 
 class Solution:
@@ -14,16 +24,16 @@ class Solution:
 
     @staticmethod
     def longestCommonPrefix_trie(arr1: list[int], arr2: list[int]) -> int:
-        root = TrieNode()
+        trie = Trie()
         if len(arr2) > len(arr1):
             arr1, arr2 = arr2, arr1
 
         for num in arr1:
-            add_to_trie(root, str(num))
+            trie.insert(str(num))
 
         max_length = 0
         for num in arr2:
-            max_length = max(max_length, prefix_count(root, str(num)))
+            max_length = max(max_length, prefix_count(trie.root, str(num)))
 
         return max_length
 

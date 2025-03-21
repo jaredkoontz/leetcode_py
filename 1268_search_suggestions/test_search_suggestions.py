@@ -40,7 +40,9 @@ class Solution:
         return ans
 
     @staticmethod
-    def suggestedProducts_trie_heap(products: list[str], searchWord: str) -> list[list[str]]:
+    def suggestedProducts_trie_heap(
+        products: list[str], searchWord: str
+    ) -> list[list[str]]:
         class LocalTrieNode:
             def __init__(self):
                 self.children = collections.defaultdict(LocalTrieNode)
@@ -56,11 +58,14 @@ class Solution:
                 return sorted(self.h, reverse=True)
 
         class MaxHeapStr(str):
-            def __init__(self, string): self.string = string
+            def __init__(self, string):
+                self.string = string
 
-            def __lt__(self, other): return self.string > other.string
+            def __lt__(self, other):
+                return self.string > other.string
 
-            def __eq__(self, other): return self.string == other.string
+            def __eq__(self, other):
+                return self.string == other.string
 
         root = LocalTrieNode()
         for p in products:
@@ -74,8 +79,11 @@ class Solution:
             node = node.children[char]
             result.append(node.get_suggestion())
         return result
+
     @staticmethod
-    def suggestedProducts_trie_sort(products: list[str], searchWord: str) -> list[list[str]]:
+    def suggestedProducts_trie_sort(
+        products: list[str], searchWord: str
+    ) -> list[list[str]]:
         class LocalTrieNode:
             def __init__(self):
                 self.children = collections.defaultdict(LocalTrieNode)
@@ -98,6 +106,7 @@ class Solution:
             node = node.children[char]
             result.append(node.suggestion)
         return result
+
     @staticmethod
     def suggestedProducts_trie(products: list[str], searchWord: str) -> list[list[str]]:
         suggested = []

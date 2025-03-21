@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/circular-sentence/
+# https://leetcode.com/problems/circular-sentence
 import pytest
 
 

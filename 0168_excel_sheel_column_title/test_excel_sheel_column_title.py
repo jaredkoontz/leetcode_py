@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/excel-sheet-column-title/description/
+# https://leetcode.com/problems/excel-sheet-column-title
 import pytest
 
 

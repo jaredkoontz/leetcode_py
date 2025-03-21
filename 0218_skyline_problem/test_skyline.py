@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/the-skyline-problem/
+# https://leetcode.com/problems/the-skyline-problem
 from heapq import heappop
 from heapq import heappush
 

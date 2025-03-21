@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/divide-array-into-equal-pairs/
+# https://leetcode.com/problems/divide-array-into-equal-pairs
 from collections import Counter
 
 import pytest

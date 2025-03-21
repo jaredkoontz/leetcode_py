@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/stone-game
 # https://leetcode.com/problems/stone-game/
 # fun fact, you can just have `return True` on this problem and get 100%
 from collections import deque

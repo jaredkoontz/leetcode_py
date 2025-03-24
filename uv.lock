@@ -115,27 +115,23 @@ wheels = [
 name = "leetcode-py"
 version = "0.1.0"
 source = { virtual = "." }
-dependencies = [
-    { name = "black" },
-    { name = "ruff" },
-]
 
 [package.dev-dependencies]
 dev = [
+    { name = "black" },
     { name = "pre-commit" },
     { name = "pytest" },
+    { name = "ruff" },
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "black", specifier = ">=25.1.0" },
-    { name = "ruff", specifier = ">=0.11.0" },
-]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "black", specifier = ">=25.1.0" },
     { name = "pre-commit", specifier = ">=4.1.0" },
     { name = "pytest", specifier = ">=8.3.5" },
+    { name = "ruff", specifier = ">=0.11.0" },
 ]
 
 [[package]]

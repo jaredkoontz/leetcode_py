@@ -3,7 +3,6 @@ import pytest
 
 from helpers import trie
 
-
 Trie = trie.Trie
 
 

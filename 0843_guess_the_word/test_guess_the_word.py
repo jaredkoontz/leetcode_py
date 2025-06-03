@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/guess-the-word/description
+# https://leetcode.com/problems/guess-the-word
 import pytest
 
 

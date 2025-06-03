@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/find-missing-and-repeated-values/
+# https://leetcode.com/problems/find-missing-and-repeated-values
 from collections import Counter
 
 import pytest

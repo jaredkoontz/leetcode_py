@@ -6,7 +6,15 @@ from pathlib import Path
 This is used to compare your solved problems for a session in leet code, to what is currently in this directory.
 
 To use:
-    get json from your web browser by running `extract_problems.json` in the dev console
+    get json from your web browser by running the contents of `extract_problems.json` in the dev console.
+    Make a smart list with just your solved problems, then save that as a json, that looks like this
+    [
+        {
+          "url": "/problems/two-sum",
+          "title": "1. Two Sum"
+        },
+        ...
+    ]
     run this script, it will tell you what you are missing from this local dir, and what submissions you are missing
 """
 

@@ -13,15 +13,25 @@ permissions:
 
 jobs:
   build:
+    name: python
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v6
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: "pyproject.toml"
+
       - name: Install the project
-        run: uv sync --all-extras --dev
+        run: uv sync --locked --all-extras --dev
+
       - name: runs pre-commit
         uses: tox-dev/action-pre-commit-uv@v1
+
       - name: Test with pytest
         run: |
           uv run python -m pytest

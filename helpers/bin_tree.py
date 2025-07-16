@@ -20,6 +20,7 @@ class TreeNode:
             return self.val == other.val
         elif isinstance(other, int):
             return self.val == other
+        return None
 
     def __hash__(self):
         return hash((self.val, self.left, self.right))

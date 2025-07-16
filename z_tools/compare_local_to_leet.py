@@ -37,7 +37,7 @@ def _get_leet_code():
                 key = f"{int(number):04d}"
                 processed[key] = {
                     "title": title,
-                    "url": f'https://leetcode.com{entry["url"]}',
+                    "url": f"https://leetcode.com{entry['url']}",
                 }
         return processed
 

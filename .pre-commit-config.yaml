@@ -8,8 +8,13 @@ repos:
       - id: debug-statements
       - id: mixed-line-ending
         args: [ --fix=lf ]
-  # no install
-  #      - id: requirements-txt-fixer
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.3
+    hooks:
+      - id: ruff-check
+        args: [ --fix ]
+      - id: ruff-format
 
   - repo: https://github.com/asottile/reorder_python_imports
     rev: v3.13.0
@@ -18,35 +23,6 @@ repos:
         exclude: __init__.py
 
   - repo: https://github.com/psf/black
-    rev: 24.8.0
+    rev: 25.1.0
     hooks:
-      - id: black
-
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    # Ruff version.
-    rev: v0.5.7
-    hooks:
-      # Run the linter.
-      - id: ruff
-        args: [ --fix ]
-      # Run the formatter.
-      - id: ruff-format
-
-# no install
-#  - repo: https://github.com/asottile/setup-cfg-fmt
-#    rev: v2.5.0
-#    hooks:
-#      - id: setup-cfg-fmt
-
-# this is a leetcode repo - do we really need pyright?!?!
-#  # from https://github.com/microsoft/pyright/blob/main/docs/ci-integration.md
-#  - repo: local
-#    hooks:
-#      - id: pyright
-#        name: pyright
-#        entry: pyright
-#        language: node
-#        language_version: 14.15.3
-#        pass_filenames: false
-#        types: [ python ]
-#        additional_dependencies: [ 'pyright@1.1.269' ]
+        - id: black

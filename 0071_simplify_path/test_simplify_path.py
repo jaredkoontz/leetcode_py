@@ -22,7 +22,7 @@ class Solution:
                     stack.pop()
             else:
                 stack.append(path)
-        return f'/{"/".join(stack)}'
+        return f"/{'/'.join(stack)}"
 
 
 @pytest.mark.parametrize(

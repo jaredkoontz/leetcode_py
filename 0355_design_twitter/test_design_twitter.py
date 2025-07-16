@@ -3,7 +3,6 @@ from collections import defaultdict
 
 import pytest
 
-
 """
 each user needs to be able to view a random viewers posts, which indicates fast retrival so a hash map will
 store users

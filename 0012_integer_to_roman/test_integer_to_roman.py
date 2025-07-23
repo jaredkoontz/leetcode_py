@@ -1,7 +1,6 @@
 # https://leetcode.com/problems/integer-to-roman
 import pytest
 
-
 MAPPINGS = {
     1000: "M",
     900: "CM",

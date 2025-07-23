@@ -29,8 +29,11 @@ jobs:
       - name: Install the project
         run: uv sync --locked --all-extras --dev
 
-      - name: runs pre-commit
-        uses: tox-dev/action-pre-commit-uv@v1
+      - name: install-precommit
+        run: uv tool install pre-commit
+
+      - name: run-precommit
+        run: pre-commit run --show-diff-on-failure --color=always
 
       - name: Test with pytest
         run: |

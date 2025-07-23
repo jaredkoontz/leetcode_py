@@ -8,7 +8,29 @@ from helpers.bin_tree import TreeNode
 
 class Solution:
     def isSubtree(self, root: TreeNode | None, subRoot: TreeNode | None) -> bool:
-        return self.isSameTree_queue(subRoot, root)
+        return self.isSubtree_serialize(subRoot, root)
+
+    @staticmethod
+    def isSubtree_mine(root: TreeNode | None, subRoot: TreeNode | None) -> bool:
+        def helper(my_root, my_subRoot):
+            if not my_root:
+                return False
+            if my_root.val == my_subRoot.val and isIdentical(root, my_subRoot):
+                return True
+            return helper(my_root.left, my_subRoot) or helper(my_root.right, my_subRoot)
+
+        def isIdentical(my_root, my_subRoot):
+            if not my_root and not my_subRoot:
+                return True
+            elif not my_root or not my_subRoot or root.val != my_subRoot.val:
+                return False
+            if not isIdentical(my_root.left, my_subRoot.left):
+                return False
+            if not isIdentical(my_root.right, my_subRoot.right):
+                return False
+            return True
+
+        return helper(root, subRoot)
 
     @staticmethod
     def isSubtree_serialize(root: TreeNode | None, subRoot: TreeNode | None) -> bool:
@@ -74,7 +96,6 @@ class Solution:
 @pytest.mark.parametrize(
     "root,subroot,expected",
     [
-        ([3, 4, 5, 1, 2], [4, 1, 2], False),
         ([3, 4, 5, 1, 2, None, None, None, None, 0], [4, 1, 2], False),
     ],
 )

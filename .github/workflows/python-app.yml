@@ -1,6 +1,6 @@
 # This workflow will install Python dependencies, run tests, and pre-commit with a single version of Python
 
-name: leet_code python
+name: leet_code python ci
 
 on:
   push:
@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    name: python
+    name: python test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

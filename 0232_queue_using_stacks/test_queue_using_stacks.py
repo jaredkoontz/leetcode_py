@@ -11,11 +11,11 @@ class StackQueue:
         self.in_stack.append(x)
 
     def pop(self) -> int:
-        self.peek()  # Ensure out_stack has the front
+        self.peek()
         return self.out_stack.pop()
 
     def peek(self) -> int:
-        if not self.out_stack:  # Transfer only if empty
+        if not self.out_stack:
             while self.in_stack:
                 self.out_stack.append(self.in_stack.pop())
         return self.out_stack[-1]

@@ -41,7 +41,7 @@ class Solution:
 @pytest.mark.parametrize(
     "s, expected",
     [
-        ("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT", ["AAAAACCCCC", "CCCCCAAAAA"]),
+        ("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT", ['CCCCCAAAAA', 'AAAAACCCCC']),
         ("AAAAAAAAAAAAA", ["AAAAAAAAAA"]),
     ],
 )

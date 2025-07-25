@@ -38,7 +38,7 @@ class Solution:
     def numTrees_memo(n: int) -> int:
         def helper(start, end):
             if start >= end:
-                return 1  # empty or single node tree is 1 unique BST
+                return 1
 
             distance = end - start
             if memo[distance + 1] == 0:

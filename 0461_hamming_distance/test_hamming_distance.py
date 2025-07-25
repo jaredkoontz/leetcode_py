@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/hamming-distance
 import pytest
 
 
@@ -11,7 +12,7 @@ class Solution:
         distance = 0
         while xor:
             distance += 1
-            xor = xor & (xor-1)
+            xor = xor & (xor - 1)
         return distance
 
     @staticmethod
@@ -26,11 +27,15 @@ class Solution:
             y >>= 1
         return hamming_distance
 
-@pytest.mark.parametrize("x,y,expected", [
-    (1, 1, 0),
-    (1, 4, 2),
-    (3, 1, 1),
-    (3,0,2),
-])
+
+@pytest.mark.parametrize(
+    "x,y,expected",
+    [
+        (1, 1, 0),
+        (1, 4, 2),
+        (3, 1, 1),
+        (3, 0, 2),
+    ],
+)
 def test_hamming_distance(x, y, expected):
     assert Solution().hammingDistance(x, y) == expected

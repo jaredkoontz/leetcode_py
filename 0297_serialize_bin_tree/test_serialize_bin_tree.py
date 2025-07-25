@@ -1,42 +1,11 @@
 # https://leetcode.com/problems/serialize-and-deserialize-binary-tree
-from collections import deque
-
 import pytest
 
 from helpers.bin_tree import compare_trees
 from helpers.bin_tree import make_tree
-from helpers.bin_tree import TreeNode
+from helpers.bin_tree import TreeCodec
 
-
-class Codec:
-    spliter = ","
-    NN = "X"
-
-    def serialize(self, root: TreeNode) -> str:
-        def build_string(node, string_builder):
-            if not node:
-                string_builder.append(self.NN)
-            else:
-                string_builder.append(str(node.val))
-                build_string(node.left, string_builder)
-                build_string(node.right, string_builder)
-
-        sb = []
-        build_string(root, sb)
-        return self.spliter.join(sb)
-
-    def deserialize(self, data: str) -> TreeNode:
-        def build_tree(my_nodes):
-            val = my_nodes.popleft()
-            if val == self.NN:
-                return None
-            node = TreeNode(int(val))
-            node.left = build_tree(my_nodes)
-            node.right = build_tree(my_nodes)
-            return node
-
-        nodes = deque(data.split(self.spliter))
-        return build_tree(nodes)
+Codec = TreeCodec
 
 
 @pytest.mark.parametrize(

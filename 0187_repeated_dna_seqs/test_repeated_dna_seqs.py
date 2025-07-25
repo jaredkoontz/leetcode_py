@@ -1,6 +1,8 @@
 # https://leetcode.com/problems/repeated-dna-sequences
 import pytest
 
+from helpers.testing_helpers import compare_flat_lists
+
 
 class Solution:
     def findRepeatedDnaSequences(self, s: str) -> list[str]:
@@ -46,4 +48,4 @@ class Solution:
     ],
 )
 def test_findRepeatedDnaSequences(s, expected):
-    assert Solution().findRepeatedDnaSequences(s) == expected
+    assert compare_flat_lists(Solution().findRepeatedDnaSequences(s), expected)

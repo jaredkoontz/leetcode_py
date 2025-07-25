@@ -1,7 +1,8 @@
 # https://leetcode.com/problems/unique-binary-search-trees-ii
 import pytest
 
-from helpers.bin_tree import make_array_from_tree
+from helpers.bin_tree import make_tree
+from helpers.bin_tree import TreeCodec
 from helpers.bin_tree import TreeNode
 
 
@@ -81,5 +82,6 @@ class Solution:
 )
 def test_generateTrees(n, expected):
     trees = Solution().generateTrees(n)
+    given_trees = [TreeCodec().serialize(make_tree(x)) for x in expected]
     for tree in trees:
-        assert make_array_from_tree(tree) in expected
+        assert TreeCodec().serialize(tree) in given_trees

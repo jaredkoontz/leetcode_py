@@ -1,4 +1,5 @@
 import dataclasses
+from collections import deque
 
 import pytest
 
@@ -24,6 +25,37 @@ class TreeNode:
 
     def __hash__(self):
         return hash((self.val, self.left, self.right))
+
+
+class TreeCodec:
+    spliter = ","
+    NN = "X"
+
+    def serialize(self, root: TreeNode) -> str:
+        def build_string(node, string_builder):
+            if not node:
+                string_builder.append(self.NN)
+            else:
+                string_builder.append(str(node.val))
+                build_string(node.left, string_builder)
+                build_string(node.right, string_builder)
+
+        sb = []
+        build_string(root, sb)
+        return self.spliter.join(sb)
+
+    def deserialize(self, data: str) -> TreeNode:
+        def build_tree(my_nodes):
+            val = my_nodes.popleft()
+            if val == self.NN:
+                return None
+            node = TreeNode(int(val))
+            node.left = build_tree(my_nodes)
+            node.right = build_tree(my_nodes)
+            return node
+
+        nodes = deque(data.split(self.spliter))
+        return build_tree(nodes)
 
 
 def make_tree(tree_array: list[int]) -> TreeNode | None:

@@ -69,10 +69,12 @@ def _get_local_dirs() -> dict[str, dict[str, str]]:
 def _compare_dicts(
     from_leet: dict[str, dict[str, str]], from_local: dict[str, dict[str, str]]
 ):
-    # todo known missing from leet code = {'0271', '0000'}
+    # these are list of either non-python questions (195), paid questions (271), or stuff that isn't on leetcode
+    # in the usual format (everything in 0000_no_leet)
+    known_missing_leet = {"0195", "0271", "0000"}
 
     missing_local = (set(from_leet.keys())) - set(from_local.keys())
-    missing_leet = set(from_local.keys()) - set(from_leet.keys())
+    missing_leet = set(from_local.keys()) - set(from_leet.keys()) - known_missing_leet
 
     missing_local_info = "missing_leet\n"
     missing_leet_info = "missing_leet\n"

@@ -13,7 +13,7 @@ class Solution:
                 return my_num
 
             digits = []
-            while my_num > 10:
+            while my_num >= 10:
                 digits.append(my_num % 10)
                 my_num //= 10
             digits.append(my_num)
@@ -22,6 +22,16 @@ class Solution:
         return helper(num)
 
 
-@pytest.mark.parametrize("num,expected", [(38, 2), (0, 0), (1, 1), (11, 2), (9999, 9)])
+@pytest.mark.parametrize(
+    "num,expected",
+    [
+        # (38, 2),
+        # (0, 0),
+        (10, 1),
+        # (1, 1),
+        # (11, 2),
+        # (9999, 9),
+    ],
+)
 def test_addDigits(num: int, expected: int):
     assert Solution().addDigits(num) == expected

@@ -67,6 +67,47 @@ class Solution:
 
         return dp[0][0]
 
+    @staticmethod
+    def checkValidString_greedy_stack(s: str) -> bool:
+        stack = []
+        open_spares = 0
+
+        for p in s:
+            if stack and (stack[-1] == "*" or stack[-1] == "(") and p == ")":
+                stack.pop()
+            elif stack and stack[-1] == "(" and p == "*":
+                open_spares += 2
+                stack.pop()
+            elif p == ")" and open_spares > 0:
+                open_spares -= 1
+            else:
+                stack.append(p)
+
+        while stack and stack[-1] == "*":
+            stack.pop()
+
+        return stack == []
+
+    @staticmethod
+    def checkValidString_greedy(s: str) -> bool:
+        low = 0
+        high = 0
+        for char in s:
+            if char == "(":
+                low += 1
+                high += 1
+            elif char == ")":
+                low -= 1
+                high -= 1
+            else:
+                low -= 1
+                high += 1
+            if high < 0:
+                return False
+            if low < 0:
+                low = 0
+        return low == 0
+
 
 @pytest.mark.parametrize(
     "s,expected",

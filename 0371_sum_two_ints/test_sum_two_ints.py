@@ -12,7 +12,6 @@ class Solution:
     1 + 1 = 0 (carry needed)
     AND (&) finds where both bits are 1 — the positions that need a carry.
     Left shift (<<) moves the carry to the next higher bit position
-
     """
 
     def getSum(self, a: int, b: int) -> int:

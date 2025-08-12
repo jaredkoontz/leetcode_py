@@ -34,7 +34,7 @@ class Solution:
     def reversePrefix_mine(word: str, ch: str) -> str:
         index = word.find(ch)
         if index != -1:
-            return word[: index + 1][::-1] + word[index + 1 :]
+            return word[: index + 1][::-1] + word[index + 1:]
         return word
 
 

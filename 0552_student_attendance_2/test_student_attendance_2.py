@@ -45,7 +45,7 @@ class Solution:
         if n == 1:
             return 3
 
-        mod = 10**9 + 7
+        mod = 10 ** 9 + 7
         dp = [1, 2, 4] + [0] * (n - 2)
 
         # Calculate sequences without 'A'.

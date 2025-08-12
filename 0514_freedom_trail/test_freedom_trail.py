@@ -63,7 +63,7 @@ class Solution:
         for j in range(N - 1, -1, -1):  # key j
             for i in range(M):  # cur i
                 for k in range(
-                    M
+                        M
                 ):  # pre i (optimal k-th value is found as the recursive stack unwinds)
                     if ring[k] == key[j]:
                         # min steps to reach key[j] from each ring[i] is the min steps to reach key[j + 1] from ring[k],

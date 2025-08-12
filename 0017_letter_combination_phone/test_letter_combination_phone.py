@@ -93,13 +93,13 @@ class Solution:
         ("2", ["a", "b", "c"]),
         ("58", ["jt", "ju", "jv", "kt", "ku", "kv", "lt", "lu", "lv"]),
         (
-            "92",
-            ["wa", "wb", "wc", "xa", "xb", "xc", "ya", "yb", "yc", "za", "zb", "zc"],
+                "92",
+                ["wa", "wb", "wc", "xa", "xb", "xc", "ya", "yb", "yc", "za", "zb", "zc"],
         ),
         ("65", ["mj", "mk", "ml", "nj", "nk", "nl", "oj", "ok", "ol"]),
         (
-            "78",
-            ["pt", "pu", "pv", "qt", "qu", "qv", "rt", "ru", "rv", "st", "su", "sv"],
+                "78",
+                ["pt", "pu", "pv", "qt", "qu", "qv", "rt", "ru", "rv", "st", "su", "sv"],
         ),
     ],
 )

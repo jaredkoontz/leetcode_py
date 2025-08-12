@@ -13,6 +13,6 @@ def compare_flat_lists(list1: list[Any], list2: list[Any]):
 
 
 def freeze_nested_lists(
-    list1: list[list[Any]] | dict[Any, Any], list2: list[list[Any]] | dict[Any, Any]
+        list1: list[list[Any]] | dict[Any, Any], list2: list[list[Any]] | dict[Any, Any]
 ):
     return _unorder(list1), _unorder(list2)

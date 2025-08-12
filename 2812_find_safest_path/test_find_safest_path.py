@@ -83,9 +83,9 @@ class Solution:
                     new_y = y + COL_DIR[i]
 
                     if (
-                        0 <= new_x < n
-                        and 0 <= new_y < n
-                        and score[new_x][new_y] > s + 1
+                            0 <= new_x < n
+                            and 0 <= new_y < n
+                            and score[new_x][new_y] > s + 1
                     ):
                         score[new_x][new_y] = s + 1
                         q.append((new_x, new_y))

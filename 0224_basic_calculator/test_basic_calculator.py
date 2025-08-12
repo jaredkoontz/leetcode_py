@@ -89,9 +89,9 @@ class Solution:
                     stack.pop()
                 else:
                     while (
-                        stack
-                        and stack[-1] != "("
-                        and priority[character] <= priority[stack[-1]]
+                            stack
+                            and stack[-1] != "("
+                            and priority[character] <= priority[stack[-1]]
                     ):
                         postfix += stack.pop()
                     stack.append(character)

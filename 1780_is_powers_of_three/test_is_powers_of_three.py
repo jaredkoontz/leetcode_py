@@ -18,7 +18,7 @@ class Solution:
 
         # greedy remove largest
         while i >= 0:
-            power = 3**i
+            power = 3 ** i
             if power <= n:
                 n -= power
             if power <= n:
@@ -34,13 +34,13 @@ class Solution:
 
         @cache
         def dfs(curr_power, curr_sum):
-            if 3**curr_power > n:
+            if 3 ** curr_power > n:
                 return
-            if 3**curr_power + curr_sum == n:
+            if 3 ** curr_power + curr_sum == n:
                 works[0] = True
 
             # take the current_power
-            dfs(curr_power + 1, 3**curr_power + curr_sum)
+            dfs(curr_power + 1, 3 ** curr_power + curr_sum)
             # don't take the current_power
             dfs(curr_power + 1, curr_sum)
 

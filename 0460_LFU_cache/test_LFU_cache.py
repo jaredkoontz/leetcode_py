@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/lfu-cache
-from collections import defaultdict
 from collections import OrderedDict
+from collections import defaultdict
 
 import pytest
 
@@ -191,21 +191,21 @@ LFUCache = LFUCacheOrderedDict
     "operations, init, expected",
     [
         (
-            [
-                "LFUCache",
-                "put",
-                "put",
-                "get",
-                "put",
-                "get",
-                "get",
-                "put",
-                "get",
-                "get",
-                "get",
-            ],
-            [[2], [1, 1], [2, 2], [1], [3, 3], [2], [3], [4, 4], [1], [3], [4]],
-            [None, None, None, 1, None, -1, 3, None, -1, 3, 4],
+                [
+                    "LFUCache",
+                    "put",
+                    "put",
+                    "get",
+                    "put",
+                    "get",
+                    "get",
+                    "put",
+                    "get",
+                    "get",
+                    "get",
+                ],
+                [[2], [1, 1], [2, 2], [1], [3, 3], [2], [3], [4, 4], [1], [3], [4]],
+                [None, None, None, 1, None, -1, 3, None, -1, 3, 4],
         ),
     ],
 )

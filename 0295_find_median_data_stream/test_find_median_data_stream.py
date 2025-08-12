@@ -67,9 +67,9 @@ MedianFinder = MedianFinderBisect
     "operations, init, expected",
     [
         (
-            ["MedianFinder", "addNum", "addNum", "findMedian", "addNum", "findMedian"],
-            [[], [1], [2], [], [3], []],
-            [None, None, None, 1.5, None, 2.0],
+                ["MedianFinder", "addNum", "addNum", "findMedian", "addNum", "findMedian"],
+                [[], [1], [2], [], [3], []],
+                [None, None, None, 1.5, None, 2.0],
         ),
     ],
 )

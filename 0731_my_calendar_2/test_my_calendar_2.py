@@ -31,9 +31,9 @@ MyCalendarTwo = CalendarTwo
     "operations, init, expected",
     [
         (
-            ["MyCalendarTwo", "book", "book", "book", "book", "book", "book"],
-            [[], [10, 20], [50, 60], [10, 40], [5, 15], [5, 10], [25, 55]],
-            [None, True, True, True, False, True, True],
+                ["MyCalendarTwo", "book", "book", "book", "book", "book", "book"],
+                [[], [10, 20], [50, 60], [10, 40], [5, 15], [5, 10], [25, 55]],
+                [None, True, True, True, False, True, True],
         ),
     ],
 )

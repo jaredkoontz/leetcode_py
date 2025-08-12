@@ -3,16 +3,16 @@ import collections
 
 import pytest
 
-from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
+from helpers.bin_tree import make_tree
 
 
 class Solution:
     def maxDepth(self, root: TreeNode | None) -> int:
         assert (
-            self.maxDepth_bfs(root)
-            == self.maxDepth_dfs(root)
-            == self.maxDepth_rec(root)
+                self.maxDepth_bfs(root)
+                == self.maxDepth_dfs(root)
+                == self.maxDepth_rec(root)
         )
         return self.maxDepth_bfs(root)
 

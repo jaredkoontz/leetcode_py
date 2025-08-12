@@ -40,7 +40,7 @@ class Solution:
                 )  # --- no need to copy as we are not popping/backtracking. Instead we're passing a new variable each time
 
             for i in range(len(all_nums)):
-                new_nums = all_nums[:i] + all_nums[i + 1 :]
+                new_nums = all_nums[:i] + all_nums[i + 1:]
                 # perm.append(nums[i]) # --- instead of appending to the same variable
                 new_perm = perm + [all_nums[i]]  # --- new copy of the data/variable
                 recursive(new_nums, new_perm, res)
@@ -58,7 +58,7 @@ class Solution:
             if not nums:
                 res.append(path)
             for i in range(len(nums)):  # -- NOTE [4]
-                new_nums = nums[:i] + nums[i + 1 :]
+                new_nums = nums[:i] + nums[i + 1:]
                 stack.append(
                     (new_nums, path + [nums[i]])
                 )  # --  just like we used to do (path + [node.val]) in tree traversal
@@ -74,7 +74,7 @@ class Solution:
             if not nums:
                 res.append(path)
             for i in range(len(nums)):
-                new_nums = nums[:i] + nums[i + 1 :]
+                new_nums = nums[:i] + nums[i + 1:]
                 q.append((new_nums, path + [nums[i]]))
         return res
 

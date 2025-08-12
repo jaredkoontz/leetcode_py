@@ -12,7 +12,7 @@ class Solution:
     def findRepeatedDnaSequences_two_set(s: str) -> list[str]:
         ans, seen = set(), set()
         for i in range(len(s) - 9):
-            dna = s[i : i + 10]
+            dna = s[i: i + 10]
             if dna in seen:
                 ans.add(dna)
             else:

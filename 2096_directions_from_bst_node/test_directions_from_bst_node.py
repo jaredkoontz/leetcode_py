@@ -1,19 +1,19 @@
 # https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another
 import pytest
 
-from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
+from helpers.bin_tree import make_tree
 
 
 class Solution:
     def getDirections(
-        self, root: TreeNode | None, startValue: int, destValue: int
+            self, root: TreeNode | None, startValue: int, destValue: int
     ) -> str:
         return self.getDirections_mine(root, startValue, destValue)
 
     @staticmethod
     def getDirections_mine(
-        root: TreeNode | None, startValue: int, destValue: int
+            root: TreeNode | None, startValue: int, destValue: int
     ) -> str:
         route = ""
         stack = [(root, "")]
@@ -32,9 +32,9 @@ class Solution:
 
         # remove prefix string in case we go to the same path:
         while (
-            len(root_to_start)
-            and len(root_to_dest)
-            and root_to_start[0] == root_to_dest[0]
+                len(root_to_start)
+                and len(root_to_dest)
+                and root_to_start[0] == root_to_dest[0]
         ):
             root_to_start = root_to_start[1:]
             root_to_dest = root_to_dest[1:]
@@ -45,7 +45,7 @@ class Solution:
 
     @staticmethod
     def getDirections_lca(
-        root: TreeNode | None, startValue: int, destValue: int
+            root: TreeNode | None, startValue: int, destValue: int
     ) -> str:
         def lca(node):
             if not node:

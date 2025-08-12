@@ -42,7 +42,7 @@ class Solution:
         if n <= 0:
             return False
         exp = round(math.log(n, 3))
-        return 3**exp == n
+        return 3 ** exp == n
 
     @staticmethod
     def isPowerOfThree_by_ceil_diff(n: int) -> bool:

@@ -40,9 +40,9 @@ class Solution:
     @staticmethod
     def getMaximumGold_bruh(grid: list[list[int]]) -> int:
         grid = (
-            [[0] * (len(grid[0]) + 2)]
-            + [[0] + r + [0] for r in grid]
-            + [[0] * (len(grid[0]) + 2)]
+                [[0] * (len(grid[0]) + 2)]
+                + [[0] + r + [0] for r in grid]
+                + [[0] * (len(grid[0]) + 2)]
         )
         rows, columns = len(grid), len(grid[0])
 
@@ -98,14 +98,14 @@ class Solution:
 
             best = 0
             for r, c in (
-                (r, c) for (r, c) in component if len(list(directions(r, c))) == 1
+                    (r, c) for (r, c) in component if len(list(directions(r, c))) == 1
             ):
                 best = max(best, recur(r, c, 0))
                 if best == comp_sum:
                     return best
             if best == 0:
                 for r, c in (
-                    (r, c) for (r, c) in component if len(list(directions(r, c))) == 2
+                        (r, c) for (r, c) in component if len(list(directions(r, c))) == 2
                 ):
                     best = max(best, recur(r, c, 0))
                     if best == comp_sum:

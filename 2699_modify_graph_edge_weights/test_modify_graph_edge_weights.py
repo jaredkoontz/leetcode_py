@@ -8,13 +8,13 @@ from helpers.testing_helpers import freeze_nested_lists
 
 class Solution:
     def modifiedGraphEdges(
-        self, n: int, edges: list[list[int]], source: int, destination: int, target: int
+            self, n: int, edges: list[list[int]], source: int, destination: int, target: int
     ) -> list[list[int]]:
         return self.modifiedGraphEdges_dijkstra(n, edges, source, destination, target)
 
     @staticmethod
     def modifiedGraphEdges_dijkstra(
-        n: int, edges: list[list[int]], source: int, destination: int, target: int
+            n: int, edges: list[list[int]], source: int, destination: int, target: int
     ) -> list[list[int]]:
         def fill(edges):
             for edge in edges:
@@ -76,21 +76,21 @@ class Solution:
     "n,edges,source,destination,target,expected",
     [
         (
-            5,
-            [[4, 1, -1], [2, 0, -1], [0, 3, -1], [4, 3, -1]],
-            0,
-            1,
-            5,
-            [[4, 1, 1], [2, 0, 1], [0, 3, 1], [4, 3, 3]],
+                5,
+                [[4, 1, -1], [2, 0, -1], [0, 3, -1], [4, 3, -1]],
+                0,
+                1,
+                5,
+                [[4, 1, 1], [2, 0, 1], [0, 3, 1], [4, 3, 3]],
         ),
         (3, [[0, 1, -1], [0, 2, 5]], 0, 2, 6, []),
         (
-            4,
-            [[1, 0, 4], [1, 2, 3], [2, 3, 5], [0, 3, -1]],
-            0,
-            2,
-            6,
-            [[1, 0, 4], [1, 2, 3], [2, 3, 5], [0, 3, 1]],
+                4,
+                [[1, 0, 4], [1, 2, 3], [2, 3, 5], [0, 3, -1]],
+                0,
+                2,
+                6,
+                [[1, 0, 4], [1, 2, 3], [2, 3, 5], [0, 3, 1]],
         ),
     ],
 )

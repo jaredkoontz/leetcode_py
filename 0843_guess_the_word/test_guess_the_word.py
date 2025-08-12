@@ -48,7 +48,7 @@ class Solution:
                 for i, c in enumerate(word):
                     score += counts[i][
                         ord(c) - ord("a")
-                    ]  # all words with same chars in same positions
+                        ]  # all words with same chars in same positions
                 if score > best_score:
                     best_score = score
                     best_word = word

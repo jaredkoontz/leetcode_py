@@ -1,10 +1,10 @@
 # https://leetcode.com/problems/balance-a-binary-search-tree
 import pytest
 
+from helpers.bin_tree import TreeNode
 from helpers.bin_tree import compare_trees
 from helpers.bin_tree import make_array_from_tree
 from helpers.bin_tree import make_tree
-from helpers.bin_tree import TreeNode
 
 
 class Solution:

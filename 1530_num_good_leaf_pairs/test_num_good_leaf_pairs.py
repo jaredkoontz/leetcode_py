@@ -3,8 +3,8 @@ from collections import Counter
 
 import pytest
 
-from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
+from helpers.bin_tree import make_tree
 
 
 class Solution:

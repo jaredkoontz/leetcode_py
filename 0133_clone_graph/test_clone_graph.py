@@ -3,10 +3,10 @@ from collections import deque
 
 import pytest
 
+from helpers.graph import Node
 from helpers.graph import is_same_graph
 from helpers.graph import make_adj_list
 from helpers.graph import make_graph
-from helpers.graph import Node
 
 
 class Solution:

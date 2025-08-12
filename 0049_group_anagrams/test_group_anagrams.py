@@ -27,8 +27,8 @@ class Solution:
     "strs,expected",
     [
         (
-            ["eat", "tea", "tan", "ate", "nat", "bat"],
-            [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]],
+                ["eat", "tea", "tan", "ate", "nat", "bat"],
+                [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]],
         ),
         ([""], [[""]]),
         (["a"], [["a"]]),

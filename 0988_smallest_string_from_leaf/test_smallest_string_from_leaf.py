@@ -4,8 +4,8 @@ from collections import deque
 
 import pytest
 
-from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
+from helpers.bin_tree import make_tree
 
 LETTER_MAPPING = {x: y for x, y in zip(range(0, 26), string.ascii_lowercase)}
 

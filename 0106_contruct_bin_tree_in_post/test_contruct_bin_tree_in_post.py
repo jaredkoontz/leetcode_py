@@ -1,9 +1,9 @@
 # https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal
 import pytest
 
+from helpers.bin_tree import TreeNode
 from helpers.bin_tree import compare_trees
 from helpers.bin_tree import make_tree
-from helpers.bin_tree import TreeNode
 
 
 class Solution:
@@ -40,7 +40,7 @@ class Solution:
                 root = TreeNode(my_postorder.pop())
 
                 idx = inorder.index(root.val)
-                root.right = helper(my_inorder[idx + 1 :], my_postorder)
+                root.right = helper(my_inorder[idx + 1:], my_postorder)
                 root.left = helper(my_inorder[:idx], my_postorder)
                 return root
             return None
@@ -52,14 +52,14 @@ class Solution:
     "inorder,postorder,expected",
     [
         (
-            [9, 3, 15, 20, 7],
-            [9, 15, 7, 20, 3],
-            [3, 9, 20, None, None, 15, 7],
+                [9, 3, 15, 20, 7],
+                [9, 15, 7, 20, 3],
+                [3, 9, 20, None, None, 15, 7],
         ),
         (
-            [-1],
-            [-1],
-            [-1],
+                [-1],
+                [-1],
+                [-1],
         ),
     ],
 )

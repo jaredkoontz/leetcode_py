@@ -4,7 +4,7 @@ import heapq
 
 class Solution:
     def mincostToHireWorkers(
-        self, quality: list[int], wage: list[int], k: int
+            self, quality: list[int], wage: list[int], k: int
     ) -> float:
         return self.mincostToHireWorkers_heap(quality, wage, k)
 

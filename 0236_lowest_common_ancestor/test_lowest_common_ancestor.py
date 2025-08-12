@@ -1,19 +1,19 @@
 # https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree
 import pytest
 
-from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
+from helpers.bin_tree import make_tree
 
 
 class Solution:
     def lowestCommonAncestor(
-        self, root: TreeNode | None, p: TreeNode | None, q: TreeNode | None
+            self, root: TreeNode | None, p: TreeNode | None, q: TreeNode | None
     ) -> TreeNode | None:
         return self.lowestCommonAncestor_recursive(root, p, q)
 
     @staticmethod
     def lowestCommonAncestor_recursive(
-        root: TreeNode | None, p: TreeNode | None, q: TreeNode | None
+            root: TreeNode | None, p: TreeNode | None, q: TreeNode | None
     ) -> TreeNode | None:
         def lca(node, first, second):
             if not node:
@@ -37,7 +37,7 @@ class Solution:
 
     @staticmethod
     def lowestCommonAncestor_stack(
-        root: TreeNode | None, p: TreeNode | None, q: TreeNode | None
+            root: TreeNode | None, p: TreeNode | None, q: TreeNode | None
     ) -> TreeNode | None:
         stack = [(root, "")]
         p_path = ""
@@ -75,6 +75,6 @@ class Solution:
 )
 def test_least_common_ancestor(root, p, q, expected):
     assert (
-        Solution().lowestCommonAncestor(make_tree(root), TreeNode(p), TreeNode(q))
-        == expected
+            Solution().lowestCommonAncestor(make_tree(root), TreeNode(p), TreeNode(q))
+            == expected
     )

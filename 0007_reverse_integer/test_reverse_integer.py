@@ -10,8 +10,8 @@ class Solution:
 
     @staticmethod
     def reverse_no_str(x: int) -> int:
-        max_int = 2**31 - 1
-        min_int = -(2**31)
+        max_int = 2 ** 31 - 1
+        min_int = -(2 ** 31)
         reverse = 0
 
         while x != 0:
@@ -25,8 +25,8 @@ class Solution:
 
     @staticmethod
     def reverse_mine_no_str(x: int) -> int:
-        max_int = 2**31 - 1
-        min_int = -(2**31)
+        max_int = 2 ** 31 - 1
+        min_int = -(2 ** 31)
         reverse = 0
         negative = x < 0
 
@@ -47,7 +47,7 @@ class Solution:
             return 0
         nums = []
         negative = False
-        max_int, min_int = 2**31 - 1, -(2**31)
+        max_int, min_int = 2 ** 31 - 1, -(2 ** 31)
 
         if x < 0:
             negative = True

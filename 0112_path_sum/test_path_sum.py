@@ -3,18 +3,18 @@ from collections import deque
 
 import pytest
 
-from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
+from helpers.bin_tree import make_tree
 
 
 class Solution:
     def hasPathSum(self, root: TreeNode | None, targetSum: int) -> bool:
         assert (
-            self.hasPathSum_mine(root, targetSum)
-            == self.hasPathSum_recursive(root, targetSum)
-            # == self.hasPathSum_dfs(root, targetSum)
-            == self.hasPathSum_dfs_stack(root, targetSum)
-            == self.hasPathSum_bfs_queue(root, targetSum)
+                self.hasPathSum_mine(root, targetSum)
+                == self.hasPathSum_recursive(root, targetSum)
+                # == self.hasPathSum_dfs(root, targetSum)
+                == self.hasPathSum_dfs_stack(root, targetSum)
+                == self.hasPathSum_bfs_queue(root, targetSum)
         )
         return self.hasPathSum_dfs(root, targetSum)
 

@@ -1,8 +1,8 @@
 # https://leetcode.com/problems/double-a-number-represented-as-a-linked-list
 import pytest
 
-from helpers.ll import compare_lls
 from helpers.ll import ListNode
+from helpers.ll import compare_lls
 from helpers.ll import make_ll
 
 

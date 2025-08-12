@@ -71,10 +71,10 @@ class Solution:
     @staticmethod
     def numTeams_memo(rating: list[int]) -> int:
         def _count_increasing_teams(
-            my_rating: list[int],
-            current_index: int,
-            team_size: int,
-            increasing_cache: list[list[int]],
+                my_rating: list[int],
+                current_index: int,
+                team_size: int,
+                increasing_cache: list[list[int]],
         ) -> int:
             n = len(my_rating)
 
@@ -104,10 +104,10 @@ class Solution:
             return valid_teams
 
         def _count_decreasing_teams(
-            my_rating: list[int],
-            current_index: int,
-            team_size: int,
-            decreasing_cache: list[list[int]],
+                my_rating: list[int],
+                current_index: int,
+                team_size: int,
+                decreasing_cache: list[list[int]],
         ) -> int:
             n = len(my_rating)
 
@@ -156,8 +156,8 @@ class Solution:
             for j in range(i + 1, len(rating)):
                 for k in range(j + 1, len(rating)):
                     if (
-                        rating[i] < rating[j] < rating[k]
-                        or rating[i] > rating[j] > rating[k]
+                            rating[i] < rating[j] < rating[k]
+                            or rating[i] > rating[j] > rating[k]
                     ):
                         num_teams += 1
         return num_teams

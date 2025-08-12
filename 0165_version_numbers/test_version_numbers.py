@@ -26,26 +26,26 @@ class Version:
         if self.minor > other.minor and other.major <= self.major:
             return True
         if (
-            self.patch > other.patch
-            and other.minor <= self.minor
-            and other.major <= self.major
+                self.patch > other.patch
+                and other.minor <= self.minor
+                and other.major <= self.major
         ):
             return True
         if (
-            self.bruh > other.bruh
-            and other.patch <= self.patch
-            and other.minor <= self.minor
-            and other.major <= self.major
+                self.bruh > other.bruh
+                and other.patch <= self.patch
+                and other.minor <= self.minor
+                and other.major <= self.major
         ):
             return True
         return False
 
     def __eq__(self, other):
         return (
-            self.major == other.major
-            and self.minor == other.minor
-            and self.patch == other.patch
-            and self.bruh == other.bruh
+                self.major == other.major
+                and self.minor == other.minor
+                and self.patch == other.patch
+                and self.bruh == other.bruh
         )
 
     def __str__(self):

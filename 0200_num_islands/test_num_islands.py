@@ -30,12 +30,12 @@ class Solution:
                 for dr, dc in directions:
                     r, c = curr_row + dr, curr_col + dc
                     if (
-                        # r in range(rows)
-                        # and curr_col in range(cols)
-                        0 <= r < rows
-                        and 0 <= c < cols
-                        and grid[r][c] == "1"
-                        and (r, c) not in visited
+                            # r in range(rows)
+                            # and curr_col in range(cols)
+                            0 <= r < rows
+                            and 0 <= c < cols
+                            and grid[r][c] == "1"
+                            and (r, c) not in visited
                     ):
                         queue.append((r, c))
                         visited.add((r, c))
@@ -52,11 +52,11 @@ class Solution:
     def numIslands_dfs(grid: list[list[str]]) -> int:
         def dfs(curr_grid, row, col):
             if (
-                row < 0
-                or col < 0
-                or row >= len(curr_grid)
-                or col >= len(curr_grid[0])
-                or curr_grid[row][col] != "1"
+                    row < 0
+                    or col < 0
+                    or row >= len(curr_grid)
+                    or col >= len(curr_grid[0])
+                    or curr_grid[row][col] != "1"
             ):
                 return
             curr_grid[row][col] = "#"
@@ -84,9 +84,9 @@ class Solution:
                 r = row + dr
                 c = col + dc
                 if (
-                    0 <= r < len(curr_grid)
-                    and 0 <= c < len(curr_grid[0])
-                    and curr_grid[r][c] == "1"
+                        0 <= r < len(curr_grid)
+                        and 0 <= c < len(curr_grid[0])
+                        and curr_grid[r][c] == "1"
                 ):
                     dfs(curr_grid, r, c)
 
@@ -105,15 +105,15 @@ class Solution:
             while queue:
                 row, col = queue.popleft()
                 for row, col in (
-                    [row + 1, col],
-                    [row, col + 1],
-                    [row - 1, col],
-                    [row, col - 1],
+                        [row + 1, col],
+                        [row, col + 1],
+                        [row - 1, col],
+                        [row, col - 1],
                 ):
                     if (
-                        0 <= row < len(my_grid)
-                        and 0 <= col < len(my_grid[0])
-                        and my_grid[row][col] == "1"
+                            0 <= row < len(my_grid)
+                            and 0 <= col < len(my_grid[0])
+                            and my_grid[row][col] == "1"
                     ):
                         my_grid[row][col] = "0"
                         queue.append((row, col))
@@ -132,22 +132,22 @@ class Solution:
     "grid,expected",
     [
         (
-            [
-                ["1", "1", "1", "1", "0"],
-                ["1", "1", "0", "1", "0"],
-                ["1", "1", "0", "0", "0"],
-                ["0", "0", "0", "0", "0"],
-            ],
-            1,
+                [
+                    ["1", "1", "1", "1", "0"],
+                    ["1", "1", "0", "1", "0"],
+                    ["1", "1", "0", "0", "0"],
+                    ["0", "0", "0", "0", "0"],
+                ],
+                1,
         ),
         (
-            [
-                ["1", "1", "0", "0", "0"],
-                ["1", "1", "0", "0", "0"],
-                ["0", "0", "1", "0", "0"],
-                ["0", "0", "0", "1", "1"],
-            ],
-            3,
+                [
+                    ["1", "1", "0", "0", "0"],
+                    ["1", "1", "0", "0", "0"],
+                    ["0", "0", "1", "0", "0"],
+                    ["0", "0", "0", "1", "1"],
+                ],
+                3,
         ),
     ],
 )

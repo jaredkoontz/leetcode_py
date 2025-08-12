@@ -14,8 +14,8 @@ MAPPING = {
     "0": 0,
 }
 
-MAX_INT = 2**31 - 1
-MIN_INT = -(2**31)
+MAX_INT = 2 ** 31 - 1
+MIN_INT = -(2 ** 31)
 
 
 class Solution:
@@ -35,7 +35,7 @@ class Solution:
         while i < length and s[i].isdigit():
             res, i = res + s[i], i + 1
 
-        return max(-(2**31), min(sign * int(res or 0), 2**31 - 1))
+        return max(-(2 ** 31), min(sign * int(res or 0), 2 ** 31 - 1))
 
     @staticmethod
     def myAtoi_no_int(s: str) -> int:
@@ -101,8 +101,8 @@ class Solution:
             pos += 1
 
         value = sign * value
-        value = min(value, 2**31 - 1)
-        value = max(-(2**31), value)
+        value = min(value, 2 ** 31 - 1)
+        value = max(-(2 ** 31), value)
 
         return value
 

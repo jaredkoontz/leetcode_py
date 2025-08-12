@@ -30,14 +30,14 @@ class Solution:
     "word,expected,word_list",
     [
         (
-            "aba",
-            4,
-            [
-                "a",
-                "b",
-                "a",
                 "aba",
-            ],
+                4,
+                [
+                    "a",
+                    "b",
+                    "a",
+                    "aba",
+                ],
         ),
         ("aabb", 9, ["a", "aa", "aab", "aabb", "a", "abb", "b", "bb", "b"]),
     ],

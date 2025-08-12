@@ -34,9 +34,9 @@ RecentCounter = RecentCounterMine
     "operations, init, expected",
     [
         (
-            ["RecentCounter", "ping", "ping", "ping", "ping"],
-            [[], [1], [100], [3001], [3002]],
-            [None, 1, 2, 3, 3],
+                ["RecentCounter", "ping", "ping", "ping", "ping"],
+                [[], [1], [100], [3001], [3002]],
+                [None, 1, 2, 3, 3],
         ),
     ],
 )

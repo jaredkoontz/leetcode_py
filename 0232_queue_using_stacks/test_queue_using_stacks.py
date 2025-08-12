@@ -31,9 +31,9 @@ MyQueue = StackQueue
     "operations, init, expected",
     [
         (
-            ["MyQueue", "push", "push", "peek", "pop", "empty"],
-            [[], [1], [2], [], [], []],
-            [None, None, None, 1, 1, False],
+                ["MyQueue", "push", "push", "peek", "pop", "empty"],
+                [[], [1], [2], [], [], []],
+                [None, None, None, 1, 1, False],
         ),
     ],
 )

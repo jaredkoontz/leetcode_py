@@ -20,7 +20,7 @@ class Solution:
                 j += 1
             length = int(s[index:j])
             index = j + 1
-            my_list.append(s[index : index + length])
+            my_list.append(s[index: index + length])
             index += length
         return my_list
 
@@ -30,17 +30,17 @@ class Solution:
     [
         (["neet", "code", "love", "you"], ["neet", "code", "love", "you"]),
         (
-            ["#4neet", "#4code", "#4love", "#3you"],
-            ["#4neet", "#4code", "#4love", "#3you"],
+                ["#4neet", "#4code", "#4love", "#3you"],
+                ["#4neet", "#4code", "#4love", "#3you"],
         ),
         (["we", "say", ":", "yes"], ["we", "say", ":", "yes"]),
         (
-            ["2#we", "3say", "1:", "5yes"],
-            ["2#we", "3say", "1:", "5yes"],
+                ["2#we", "3say", "1:", "5yes"],
+                ["2#we", "3say", "1:", "5yes"],
         ),
         (
-            ["we", "say", ":", "yes", "!@#$%^&*()"],
-            ["we", "say", ":", "yes", "!@#$%^&*()"],
+                ["we", "say", ":", "yes", "!@#$%^&*()"],
+                ["we", "say", ":", "yes", "!@#$%^&*()"],
         ),
     ],
 )

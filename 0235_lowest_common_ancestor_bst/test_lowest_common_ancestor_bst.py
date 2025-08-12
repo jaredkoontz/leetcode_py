@@ -1,19 +1,19 @@
 # https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree
 import pytest
 
-from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeNode
+from helpers.bin_tree import make_tree
 
 
 class Solution:
     def lowestCommonAncestor(
-        self, root: TreeNode, p: TreeNode, q: TreeNode
+            self, root: TreeNode, p: TreeNode, q: TreeNode
     ) -> TreeNode:
         return self.lowestCommonAncestor_simple(root, p, q)
 
     @staticmethod
     def lowestCommonAncestor_simple(
-        root: TreeNode, p: TreeNode, q: TreeNode
+            root: TreeNode, p: TreeNode, q: TreeNode
     ) -> TreeNode:
         curr = root
         while curr:
@@ -26,7 +26,7 @@ class Solution:
 
     @staticmethod
     def lowestCommonAncestor_stack(
-        root: TreeNode, p: TreeNode, q: TreeNode
+            root: TreeNode, p: TreeNode, q: TreeNode
     ) -> TreeNode:
         stack = [root]
         while stack:
@@ -42,14 +42,14 @@ class Solution:
 
     @staticmethod
     def lowestCommonAncestor_recursive(
-        root: TreeNode, p: TreeNode, q: TreeNode
+            root: TreeNode, p: TreeNode, q: TreeNode
     ) -> TreeNode:
         def lca(node: TreeNode, first: TreeNode, second: TreeNode) -> TreeNode:
             if node:
                 node_value = node.val
                 if (
-                    first.val >= node_value >= second.val
-                    or first.val <= node_value <= second.val
+                        first.val >= node_value >= second.val
+                        or first.val <= node_value <= second.val
                 ):
                     return node
                 elif node_value > first.val and node_value > second.val:
@@ -70,6 +70,6 @@ class Solution:
 )
 def test_lowestCommonAncestor(root, p, q, expected):
     assert (
-        Solution().lowestCommonAncestor(make_tree(root), TreeNode(p), TreeNode(q))
-        == expected
+            Solution().lowestCommonAncestor(make_tree(root), TreeNode(p), TreeNode(q))
+            == expected
     )

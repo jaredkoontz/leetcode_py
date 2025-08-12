@@ -43,7 +43,7 @@ def traverse_trie_from_term(node: TrieNode, search_term: str):
 
 class Solution:
     def suggestedProducts(
-            self, products: list[str], searchWord: str
+        self, products: list[str], searchWord: str
     ) -> list[list[str]]:
         return self.suggestedProducts_trie(products, searchWord)
 
@@ -60,7 +60,7 @@ class Solution:
             while left <= right and (len(products[left]) <= i or products[left][i] < c):
                 left += 1
             while left <= right and (
-                    len(products[right]) <= i or products[right][i] > c
+                len(products[right]) <= i or products[right][i] > c
             ):
                 right -= 1
 
@@ -73,7 +73,7 @@ class Solution:
 
     @staticmethod
     def suggestedProducts_trie_heap(
-            products: list[str], searchWord: str
+        products: list[str], searchWord: str
     ) -> list[list[str]]:
         class LocalTrieNode:
             def __init__(self):
@@ -114,7 +114,7 @@ class Solution:
 
     @staticmethod
     def suggestedProducts_trie_sort(
-            products: list[str], searchWord: str
+        products: list[str], searchWord: str
     ) -> list[list[str]]:
         class LocalTrieNode:
             def __init__(self):
@@ -158,20 +158,20 @@ class Solution:
     "products,searchWord,expected",
     [
         (
-                ["mobile", "mouse", "moneypot", "monitor", "mousepad"],
-                "mouse",
-                [
-                    ["mobile", "moneypot", "monitor"],
-                    ["mobile", "moneypot", "monitor"],
-                    ["mouse", "mousepad"],
-                    ["mouse", "mousepad"],
-                    ["mouse", "mousepad"],
-                ],
+            ["mobile", "mouse", "moneypot", "monitor", "mousepad"],
+            "mouse",
+            [
+                ["mobile", "moneypot", "monitor"],
+                ["mobile", "moneypot", "monitor"],
+                ["mouse", "mousepad"],
+                ["mouse", "mousepad"],
+                ["mouse", "mousepad"],
+            ],
         ),
         (
-                ["havana"],
-                "havana",
-                [["havana"], ["havana"], ["havana"], ["havana"], ["havana"], ["havana"]],
+            ["havana"],
+            "havana",
+            [["havana"], ["havana"], ["havana"], ["havana"], ["havana"], ["havana"]],
         ),
     ],
 )

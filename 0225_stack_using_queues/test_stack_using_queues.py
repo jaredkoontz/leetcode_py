@@ -57,9 +57,9 @@ MyStack = TwoQueueStack
     "operations, init, expected",
     [
         (
-                ["MyStack", "push", "push", "top", "pop", "empty"],
-                [[], [1], [2], [], [], []],
-                [None, None, None, 2, 2, False],
+            ["MyStack", "push", "push", "top", "pop", "empty"],
+            [[], [1], [2], [], [], []],
+            [None, None, None, 2, 2, False],
         ),
     ],
 )

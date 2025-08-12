@@ -66,18 +66,18 @@ RandomizedSet = GetRandomVal
     "operations, init, expected",
     [
         (
-                [
-                    "RandomizedSet",
-                    "insert",
-                    "remove",
-                    "insert",
-                    "getRandom",
-                    "remove",
-                    "insert",
-                    "getRandom",
-                ],
-                [[], [1], [2], [2], [], [1], [2], []],
-                [None, True, False, True, 2, True, False, 2],
+            [
+                "RandomizedSet",
+                "insert",
+                "remove",
+                "insert",
+                "getRandom",
+                "remove",
+                "insert",
+                "getRandom",
+            ],
+            [[], [1], [2], [2], [], [1], [2], []],
+            [None, True, False, True, 2, True, False, 2],
         ),
     ],
 )

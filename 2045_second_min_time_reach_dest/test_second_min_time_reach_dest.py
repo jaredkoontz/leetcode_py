@@ -9,13 +9,13 @@ import pytest
 
 class Solution:
     def secondMinimum(
-            self, n: int, edges: list[list[int]], time: int, change: int
+        self, n: int, edges: list[list[int]], time: int, change: int
     ) -> int:
         return self.secondMinimum_bfs(n, edges, time, change)
 
     @staticmethod
     def secondMinimum_dijkstra(
-            n: int, edges: list[list[int]], time: int, change: int
+        n: int, edges: list[list[int]], time: int, change: int
     ) -> int:
         # prepare the graph adjacency list
         adj = [[] for _ in range(n + 1)]
@@ -62,7 +62,7 @@ class Solution:
 
     @staticmethod
     def secondMinimum_bfs(
-            n: int, edges: list[list[int]], time: int, change: int
+        n: int, edges: list[list[int]], time: int, change: int
     ) -> int:
         adj = defaultdict(list)
         for edge in edges:
@@ -96,7 +96,7 @@ class Solution:
 
     @staticmethod
     def secondMinimum_leet(
-            n: int, edges: list[list[int]], time: int, change: int
+        n: int, edges: list[list[int]], time: int, change: int
     ) -> int:
         D = [[] for _ in range(n + 1)]
         D[1] = [0]

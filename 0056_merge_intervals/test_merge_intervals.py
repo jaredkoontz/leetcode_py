@@ -14,8 +14,8 @@ class Solution:
             end_of_interval = 1
             last_interval = merged_intervals[-1] if merged_intervals else []
             if (
-                    merged_intervals
-                    and candidate[start_of_interval] <= last_interval[end_of_interval]
+                merged_intervals
+                and candidate[start_of_interval] <= last_interval[end_of_interval]
             ):
                 last_interval[1] = max(
                     last_interval[end_of_interval], candidate[end_of_interval]

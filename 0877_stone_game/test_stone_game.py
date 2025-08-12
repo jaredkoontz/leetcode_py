@@ -48,7 +48,7 @@ class Solution:
             if len(piles) == 1:
                 score = piles.pop()
             elif (piles[0] >= max(piles[-1], piles[-2])) == (
-                    piles[-1] >= max(piles[0], piles[1])
+                piles[-1] >= max(piles[0], piles[1])
             ):
                 if piles[0] > piles[-1]:
                     score = piles.popleft()

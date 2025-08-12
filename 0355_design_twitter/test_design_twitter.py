@@ -156,8 +156,8 @@ class TheirTwitter:
 
     def unfollow(self, followerId, followeeId):
         if (
-                followerId in self.user_follows
-                and followeeId in self.user_follows[followerId]
+            followerId in self.user_follows
+            and followeeId in self.user_follows[followerId]
         ):
             self.user_follows[followerId].remove(followeeId)
 
@@ -186,18 +186,18 @@ Twitter = CppTwitter
     "operations, init, expected",
     [
         (
-                [
-                    "Twitter",
-                    "postTweet",
-                    "getNewsFeed",
-                    "follow",
-                    "postTweet",
-                    "getNewsFeed",
-                    "unfollow",
-                    "getNewsFeed",
-                ],
-                [[], [1, 5], [1], [1, 2], [2, 6], [1], [1, 2], [1]],
-                [None, None, [5], None, None, [6, 5], None, [5]],
+            [
+                "Twitter",
+                "postTweet",
+                "getNewsFeed",
+                "follow",
+                "postTweet",
+                "getNewsFeed",
+                "unfollow",
+                "getNewsFeed",
+            ],
+            [[], [1, 5], [1], [1, 2], [2, 6], [1], [1, 2], [1]],
+            [None, None, [5], None, None, [6, 5], None, [5]],
         ),
     ],
 )

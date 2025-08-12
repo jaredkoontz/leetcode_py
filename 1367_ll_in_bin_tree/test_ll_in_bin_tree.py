@@ -1,8 +1,8 @@
 # https://leetcode.com/problems/linked-list-in-binary-tree
 import pytest
 
-from helpers.bin_tree import TreeNode
 from helpers.bin_tree import make_tree
+from helpers.bin_tree import TreeNode
 from helpers.ll import ListNode
 from helpers.ll import make_ll
 
@@ -14,10 +14,10 @@ class Solution:
     @staticmethod
     def isSubPath_KMP(head: ListNode | None, root: TreeNode | None) -> bool:
         def _search_in_tree(
-                node: TreeNode | None,
-                pattern_index: int,
-                pattern: list[int],
-                prefix_table: list[int],
+            node: TreeNode | None,
+            pattern_index: int,
+            pattern: list[int],
+            prefix_table: list[int],
         ) -> bool:
             if not node:
                 return False
@@ -126,19 +126,19 @@ class Solution:
     "head,root,expected",
     [
         (
-                [4, 2, 8],
-                [1, 4, 4, None, 2, 2, None, 1, None, 6, 8, None, None, None, None, 1, 3],
-                True,
+            [4, 2, 8],
+            [1, 4, 4, None, 2, 2, None, 1, None, 6, 8, None, None, None, None, 1, 3],
+            True,
         ),
         (
-                [1, 4, 2, 6],
-                [1, 4, 4, None, 2, 2, None, 1, None, 6, 8, None, None, None, None, 1, 3],
-                True,
+            [1, 4, 2, 6],
+            [1, 4, 4, None, 2, 2, None, 1, None, 6, 8, None, None, None, None, 1, 3],
+            True,
         ),
         (
-                [1, 4, 2, 6, 8],
-                [1, 4, 4, None, 2, 2, None, 1, None, 6, 8, None, None, None, None, 1, 3],
-                False,
+            [1, 4, 2, 6, 8],
+            [1, 4, 4, None, 2, 2, None, 1, None, 6, 8, None, None, None, None, 1, 3],
+            False,
         ),
     ],
 )

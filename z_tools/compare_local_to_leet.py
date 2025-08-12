@@ -67,7 +67,7 @@ def _get_local_dirs() -> dict[str, dict[str, str]]:
 
 
 def _compare_dicts(
-        from_leet: dict[str, dict[str, str]], from_local: dict[str, dict[str, str]]
+    from_leet: dict[str, dict[str, str]], from_local: dict[str, dict[str, str]]
 ):
     # these are list of either non-python questions (195), paid questions (271), or stuff that isn't on leetcode
     # in the usual format (everything in 0000_no_leet)
@@ -91,7 +91,7 @@ def _compare_dicts(
 
 
 def _update_url(
-        from_leet: dict[str, dict[str, str]], from_local: dict[str, dict[str, str]]
+    from_leet: dict[str, dict[str, str]], from_local: dict[str, dict[str, str]]
 ):
     for x in from_local:
         local_path = from_local[x]["py_path"]
@@ -106,8 +106,8 @@ def _update_url(
 
                         newline_index = current_content.find("\n")
                         if (
-                                newline_index == -1
-                                or current_content[:newline_index] != text_to_prepend
+                            newline_index == -1
+                            or current_content[:newline_index] != text_to_prepend
                         ):
                             # Combine the new text with the existing content
                             new_content = f"{text_to_prepend}\n{current_content}"

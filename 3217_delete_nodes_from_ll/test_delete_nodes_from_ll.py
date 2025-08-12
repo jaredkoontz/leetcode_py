@@ -11,7 +11,7 @@ class Solution:
 
     @staticmethod
     def modifiedList_no_dummy(
-            nums: list[int], head: ListNode | None
+        nums: list[int], head: ListNode | None
     ) -> ListNode | None:
         nums = set(nums)
         prev = None

@@ -5,7 +5,7 @@ import pytest
 class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
         result = self.divide_long(dividend, divisor)
-        return min(max(result, -(2 ** 31)), 2 ** 31 - 1)  # Clamp to 32-bit signed int range
+        return min(max(result, -(2**31)), 2**31 - 1)  # Clamp to 32-bit signed int range
 
     def divide_long(self, dividend: int, divisor: int) -> int:
         # Handle sign
@@ -44,14 +44,14 @@ class Solution:
         Q = 0
         while n >= d:
             power = 0
-            while n >= d * (2 ** power):
+            while n >= d * (2**power):
                 power += 1
             Q += 2 ** (power - 1)
             n = n - d * (2 ** (power - 1))
-        if Q > 2 ** 31 - 1 and sign:
-            return 2 ** 31 - 1
-        if Q < -(2 ** 31) and sign:
-            return -(2 ** 31)
+        if Q > 2**31 - 1 and sign:
+            return 2**31 - 1
+        if Q < -(2**31) and sign:
+            return -(2**31)
         if not sign:
             return Q * -1
         else:

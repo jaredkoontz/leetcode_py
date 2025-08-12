@@ -29,22 +29,22 @@ def _create_graph(edges: list[list[int]], succProb: list[float]):
 
 class Solution:
     def maxProbability(
-            self,
-            n: int,
-            edges: list[list[int]],
-            succProb: list[float],
-            start_node: int,
-            end_node: int,
+        self,
+        n: int,
+        edges: list[list[int]],
+        succProb: list[float],
+        start_node: int,
+        end_node: int,
     ) -> float:
         return self.maxProbability_bfs(n, edges, succProb, start_node, end_node)
 
     @staticmethod
     def maxProbability_dijkstra(
-            n: int,
-            edges: list[list[int]],
-            succProb: list[float],
-            start_node: int,
-            end_node: int,
+        n: int,
+        edges: list[list[int]],
+        succProb: list[float],
+        start_node: int,
+        end_node: int,
     ) -> float:
         graph = _create_graph(edges, succProb)
 
@@ -71,11 +71,11 @@ class Solution:
 
     @staticmethod
     def maxProbability_bfs(
-            n: int,
-            edges: list[list[int]],
-            succProb: list[float],
-            start_node: int,
-            end_node: int,
+        n: int,
+        edges: list[list[int]],
+        succProb: list[float],
+        start_node: int,
+        end_node: int,
     ) -> float:
         graph = _create_graph(edges, succProb)
         probs = [0.0] * n

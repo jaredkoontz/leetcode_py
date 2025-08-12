@@ -7,13 +7,13 @@ import pytest
 
 class Solution:
     def floodFill(
-            self, image: list[list[int]], sr: int, sc: int, color: int
+        self, image: list[list[int]], sr: int, sc: int, color: int
     ) -> list[list[int]]:
         return self.floodFill_mine(image, sr, sc, color)
 
     @staticmethod
     def floodFill_mine(
-            image: list[list[int]], sr: int, sc: int, color: int
+        image: list[list[int]], sr: int, sc: int, color: int
     ) -> list[list[int]]:
         m, n = len(image), len(image[0])
         start_color = image[sr][sc]

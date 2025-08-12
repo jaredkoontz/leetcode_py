@@ -5,12 +5,12 @@ import pytest
 class Solution:
     def productExceptSelf(self, nums: list[int]) -> list[int]:
         assert (
-                self.productExceptSelf_pre_suf_mine(nums)
-                == self.productExceptSelf_pre_suf_optimal(nums)
-                == self.productExceptSelf_pre_suf(nums)
-                == self.productExceptSelf_brute_force(nums)
-                == self.productExceptSelf_neet(nums)
-                == self.productExceptSelf_final(nums)
+            self.productExceptSelf_pre_suf_mine(nums)
+            == self.productExceptSelf_pre_suf_optimal(nums)
+            == self.productExceptSelf_pre_suf(nums)
+            == self.productExceptSelf_brute_force(nums)
+            == self.productExceptSelf_neet(nums)
+            == self.productExceptSelf_final(nums)
         )
         return self.productExceptSelf_final(nums)
 

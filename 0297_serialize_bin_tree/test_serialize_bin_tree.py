@@ -1,9 +1,9 @@
 # https://leetcode.com/problems/serialize-and-deserialize-binary-tree
 import pytest
 
-from helpers.bin_tree import TreeCodec
 from helpers.bin_tree import compare_trees
 from helpers.bin_tree import make_tree
+from helpers.bin_tree import TreeCodec
 
 Codec = TreeCodec
 

@@ -26,9 +26,9 @@ class KthLargest:
     "operations, init, expected",
     [
         (
-                ["KthLargest", "add", "add", "add", "add", "add"],
-                [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]],
-                [0, 4, 5, 5, 8, 8],
+            ["KthLargest", "add", "add", "add", "add", "add"],
+            [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]],
+            [0, 4, 5, 5, 8, 8],
         ),
     ],
 )

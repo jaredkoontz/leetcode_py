@@ -35,15 +35,15 @@ class DetectSquares:
                 d = x2 - x1
                 # Check for the top right and bottom right points of the square.
                 total_squares += (
-                        self.coord_count[x2][y1]
-                        * self.coord_count[x1][y1 + d]
-                        * self.coord_count[x2][y1 + d]
+                    self.coord_count[x2][y1]
+                    * self.coord_count[x1][y1 + d]
+                    * self.coord_count[x2][y1 + d]
                 )
                 # Check for the top left and bottom left points of the square if the y-axis distance is within bounds.
                 total_squares += (
-                        self.coord_count[x2][y1]
-                        * self.coord_count[x1][y1 - d]
-                        * self.coord_count[x2][y1 - d]
+                    self.coord_count[x2][y1]
+                    * self.coord_count[x1][y1 - d]
+                    * self.coord_count[x2][y1 - d]
                 )
 
         # Return the total number of squares found.
@@ -54,18 +54,18 @@ class DetectSquares:
     "operations, init, expected",
     [
         (
-                ["DetectSquares", "add", "add", "add", "count", "count", "add", "count"],
-                [
-                    [],
-                    [[3, 10]],
-                    [[11, 2]],
-                    [[3, 2]],
-                    [[11, 10]],
-                    [[14, 8]],
-                    [[11, 2]],
-                    [[11, 10]],
-                ],
-                [None, None, None, None, 1, 0, None, 2],
+            ["DetectSquares", "add", "add", "add", "count", "count", "add", "count"],
+            [
+                [],
+                [[3, 10]],
+                [[11, 2]],
+                [[3, 2]],
+                [[11, 10]],
+                [[14, 8]],
+                [[11, 2]],
+                [[11, 10]],
+            ],
+            [None, None, None, None, 1, 0, None, 2],
         ),
     ],
 )

@@ -1,18 +1,18 @@
 # https://leetcode.com/problems/same-tree
 import pytest
 
-from helpers.bin_tree import TreeNode
 from helpers.bin_tree import compare_trees
 from helpers.bin_tree import make_tree
+from helpers.bin_tree import TreeNode
 
 
 class Solution:
     def isSameTree(self, p: TreeNode | None, q: TreeNode | None) -> bool:
         assert (
-                self.isSameTree_dfs(p, q)
-                == self.isSameTree_bfs(p, q)
-                == self.isSameTree_clean(p, q)
-                == self.isSameTree_mine(p, q)
+            self.isSameTree_dfs(p, q)
+            == self.isSameTree_bfs(p, q)
+            == self.isSameTree_clean(p, q)
+            == self.isSameTree_mine(p, q)
         )
         return self.isSameTree_clean(p, q)
 
@@ -39,9 +39,9 @@ class Solution:
     def isSameTree_clean(self, p: TreeNode | None, q: TreeNode | None) -> bool:
         if p and q:
             return (
-                    p.val == q.val
-                    and self.isSameTree_clean(p.left, q.left)
-                    and self.isSameTree_clean(p.right, q.right)
+                p.val == q.val
+                and self.isSameTree_clean(p.left, q.left)
+                and self.isSameTree_clean(p.right, q.right)
             )
         return p is q
 

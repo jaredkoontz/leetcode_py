@@ -50,7 +50,7 @@ class Solution:
 
     @staticmethod
     def splitListToParts_split_copy(
-            head: ListNode | None, k: int
+        head: ListNode | None, k: int
     ) -> List[ListNode | None]:
         size = 0
         nodes = [None] * k
@@ -82,7 +82,7 @@ class Solution:
 
     @staticmethod
     def splitListToParts_wrong_directions(
-            head: ListNode | None, k: int
+        head: ListNode | None, k: int
     ) -> List[ListNode | None]:
         """
         read the instructions wrong 😭
@@ -109,9 +109,9 @@ class Solution:
     [
         ([1, 2, 3], 5, [[1], [2], [3], [], []]),
         (
-                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                3,
-                [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11]],
+            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+            3,
+            [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11]],
         ),
         ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3, [[1, 2, 3, 4], [5, 6, 7], [8, 9, 10]]),
     ],

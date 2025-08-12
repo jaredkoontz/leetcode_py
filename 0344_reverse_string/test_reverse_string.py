@@ -32,7 +32,7 @@ class Solution:
         n = len(s)
         if n < 2:
             return s
-        return self.reverseString_recursive(s[n / 2:]) + self.reverseString_recursive(
+        return self.reverseString_recursive(s[n / 2 :]) + self.reverseString_recursive(
             s[: n / 2]
         )
 

@@ -1,8 +1,8 @@
 # https://leetcode.com/problems/binary-tree-preorder-traversal
 import pytest
 
-from helpers.bin_tree import TreeNode
 from helpers.bin_tree import make_tree
+from helpers.bin_tree import TreeNode
 
 
 class Solution:

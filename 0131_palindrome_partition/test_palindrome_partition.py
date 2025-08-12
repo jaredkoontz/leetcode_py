@@ -45,8 +45,8 @@ class Solution:
                 result.append(path)
                 return
             for i in range(j, len(my_str)):
-                if is_palindrome(my_str[j: i + 1]):
-                    dfs(my_str, i + 1, path + [my_str[j: i + 1]], result)
+                if is_palindrome(my_str[j : i + 1]):
+                    dfs(my_str, i + 1, path + [my_str[j : i + 1]], result)
 
         dfs(s, 0, [], res)
         return res

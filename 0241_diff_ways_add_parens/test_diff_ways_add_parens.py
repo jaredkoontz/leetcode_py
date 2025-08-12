@@ -27,7 +27,7 @@ class Solution:
                         for n2 in nums2:
                             res.append(operations[op](n1, n2))
             if not res:
-                res.append(int(expression[left: right + 1]))
+                res.append(int(expression[left : right + 1]))
             return res
 
         return backtrack(0, len(expression) - 1)

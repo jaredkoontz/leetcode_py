@@ -38,9 +38,9 @@ class Solution:
                 return ""
 
             if (len(s1) < len(s2)) and s2.startswith(s1):
-                return helper(s2[len(s1):], s1)
+                return helper(s2[len(s1) :], s1)
             elif (len(s2) < len(s1)) and s1.startswith(s2):
-                return helper(s1[len(s2):], s2)
+                return helper(s1[len(s2) :], s2)
             else:
                 return ""
 

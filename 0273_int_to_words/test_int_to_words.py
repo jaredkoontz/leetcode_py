@@ -87,42 +87,42 @@ class Solution:
                 )
             if my_num < 1000:
                 return (
-                        _convert_to_words(my_num // 100)
-                        + " Hundred"
-                        + (
-                            " " + _convert_to_words(my_num % 100)
-                            if my_num % 100 != 0
-                            else ""
-                        )
+                    _convert_to_words(my_num // 100)
+                    + " Hundred"
+                    + (
+                        " " + _convert_to_words(my_num % 100)
+                        if my_num % 100 != 0
+                        else ""
+                    )
                 )
             if my_num < 1000000:
                 return (
-                        _convert_to_words(my_num // 1000)
-                        + " Thousand"
-                        + (
-                            " " + _convert_to_words(my_num % 1000)
-                            if my_num % 1000 != 0
-                            else ""
-                        )
+                    _convert_to_words(my_num // 1000)
+                    + " Thousand"
+                    + (
+                        " " + _convert_to_words(my_num % 1000)
+                        if my_num % 1000 != 0
+                        else ""
+                    )
                 )
             if my_num < 1000000000:
                 return (
-                        _convert_to_words(my_num // 1000000)
-                        + " Million"
-                        + (
-                            " " + _convert_to_words(my_num % 1000000)
-                            if my_num % 1000000 != 0
-                            else ""
-                        )
-                )
-            return (
-                    _convert_to_words(my_num // 1000000000)
-                    + " Billion"
+                    _convert_to_words(my_num // 1000000)
+                    + " Million"
                     + (
-                        " " + _convert_to_words(my_num % 1000000000)
-                        if my_num % 1000000000 != 0
+                        " " + _convert_to_words(my_num % 1000000)
+                        if my_num % 1000000 != 0
                         else ""
                     )
+                )
+            return (
+                _convert_to_words(my_num // 1000000000)
+                + " Billion"
+                + (
+                    " " + _convert_to_words(my_num % 1000000000)
+                    if my_num % 1000000000 != 0
+                    else ""
+                )
             )
 
         # Arrays to store words for numbers less than 10, 20, and 100
@@ -273,7 +273,7 @@ class Solution:
                         final_str = INT_NAMES[val] + " " + final_str
                     elif curr_place == 100:
                         final_str = (
-                                INT_NAMES[val] + " " + INT_NAMES[100] + " " + final_str
+                            INT_NAMES[val] + " " + INT_NAMES[100] + " " + final_str
                         )
                     else:
                         final_str = INT_NAMES[val * curr_place] + " " + final_str
@@ -335,8 +335,8 @@ class Solution:
         (119_000, "One Hundred Nineteen Thousand"),
         (123_345, "One Hundred Twenty Three Thousand Three Hundred Forty Five"),
         (
-                1_234_567,
-                "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven",
+            1_234_567,
+            "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven",
         ),
     ],
 )

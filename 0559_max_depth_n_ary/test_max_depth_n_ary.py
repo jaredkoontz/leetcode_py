@@ -1,8 +1,8 @@
 # https://leetcode.com/problems/maximum-depth-of-n-ary-tree
 import pytest
 
-from helpers.nary_tree import NAryNode
 from helpers.nary_tree import make_nary_tree
+from helpers.nary_tree import NAryNode
 
 
 class Solution:
@@ -42,34 +42,34 @@ class Solution:
     [
         ([1, None, 3, 2, 4, None, 5, 6], 3),
         (
-                [
-                    1,
-                    None,
-                    2,
-                    3,
-                    4,
-                    5,
-                    None,
-                    None,
-                    6,
-                    7,
-                    None,
-                    8,
-                    None,
-                    9,
-                    10,
-                    None,
-                    None,
-                    11,
-                    None,
-                    12,
-                    None,
-                    13,
-                    None,
-                    None,
-                    14,
-                ],
+            [
+                1,
+                None,
+                2,
+                3,
+                4,
                 5,
+                None,
+                None,
+                6,
+                7,
+                None,
+                8,
+                None,
+                9,
+                10,
+                None,
+                None,
+                11,
+                None,
+                12,
+                None,
+                13,
+                None,
+                None,
+                14,
+            ],
+            5,
         ),
     ],
 )

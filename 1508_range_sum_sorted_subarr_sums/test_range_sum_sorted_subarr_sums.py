@@ -10,7 +10,7 @@ class Solution:
 
     @staticmethod
     def rangeSum_neet(nums: list[int], n: int, left: int, right: int) -> int:
-        mod = 10 ** 9 + 7
+        mod = 10**9 + 7
         left, right = left - 1, right - 1
 
         min_heap = [(num, index) for index, num in enumerate(nums)]
@@ -28,7 +28,7 @@ class Solution:
 
     @staticmethod
     def rangeSum_sliding_bin_search(nums, n, left, right):
-        mod = 10 ** 9 + 7
+        mod = 10**9 + 7
 
         def count_and_sum(my_nums, length, target):
             count = 0
@@ -64,8 +64,8 @@ class Solution:
             return total_sum - bin_left * (count - k)
 
         result = (
-                         sum_of_first_k(nums, n, right) - sum_of_first_k(nums, n, left - 1)
-                 ) % mod
+            sum_of_first_k(nums, n, right) - sum_of_first_k(nums, n, left - 1)
+        ) % mod
         # Ensure non-negative result
         return (result + mod) % mod
 
@@ -87,7 +87,7 @@ class Solution:
 
         # Find the sum of all values between left and right.
         range_sum = 0
-        mod = 10 ** 9 + 7
+        mod = 10**9 + 7
         for i in range(left - 1, right):
             range_sum = (range_sum + store_subarray[i]) % mod
         return range_sum

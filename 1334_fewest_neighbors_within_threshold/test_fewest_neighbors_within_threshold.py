@@ -7,19 +7,19 @@ import pytest
 
 class Solution:
     def findTheCity(
-            self, n: int, edges: list[list[int]], distanceThreshold: int
+        self, n: int, edges: list[list[int]], distanceThreshold: int
     ) -> int:
         return self.findTheCity_floyd_warshall(n, edges, distanceThreshold)
 
     @staticmethod
     def findTheCity_dijkstra(
-            n: int, edges: list[list[int]], distanceThreshold: int
+        n: int, edges: list[list[int]], distanceThreshold: int
     ) -> int:
         def dijkstra(
-                n: int,
-                adjacency_list: list[list[tuple]],
-                shortest_path_distances: list[int],
-                source: int,
+            n: int,
+            adjacency_list: list[list[tuple]],
+            shortest_path_distances: list[int],
+            source: int,
         ):
             # Priority queue to process nodes with the smallest distance first
             priority_queue = [(0, source)]
@@ -35,11 +35,11 @@ class Solution:
                 # Update distances to neighboring cities
                 for neighbor_city, edge_weight in adjacency_list[current_city]:
                     if (
-                            shortest_path_distances[neighbor_city]
-                            > current_distance + edge_weight
+                        shortest_path_distances[neighbor_city]
+                        > current_distance + edge_weight
                     ):
                         shortest_path_distances[neighbor_city] = (
-                                current_distance + edge_weight
+                            current_distance + edge_weight
                         )
                         heapq.heappush(
                             priority_queue,
@@ -49,9 +49,9 @@ class Solution:
             # Determine the city with the fewest number of reachable cities within the distance threshold
 
         def get_city_with_fewest_reachable(
-                n: int,
-                shortest_path_matrix: list[list[int]],
-                distance_threshold: int,
+            n: int,
+            shortest_path_matrix: list[list[int]],
+            distance_threshold: int,
         ) -> int:
             city_with_fewest_reachable = -1
             fewest_reachable_count = n
@@ -96,13 +96,13 @@ class Solution:
 
     @staticmethod
     def findTheCity_bellman_ford(
-            n: int, edges: list[list[int]], distanceThreshold: int
+        n: int, edges: list[list[int]], distanceThreshold: int
     ) -> int:
         def bellmanFord(
-                n: int,
-                edges: list[list[int]],
-                shortestPathDistances: list[int],
-                source: int,
+            n: int,
+            edges: list[list[int]],
+            shortestPathDistances: list[int],
+            source: int,
         ) -> None:
             # Initialize distances from the source
             shortestPathDistances[:] = [float("inf")] * n
@@ -113,21 +113,21 @@ class Solution:
                 updated = False
                 for start, end, weight in edges:
                     if (
-                            shortestPathDistances[start] != float("inf")
-                            and shortestPathDistances[start] + weight
-                            < shortestPathDistances[end]
+                        shortestPathDistances[start] != float("inf")
+                        and shortestPathDistances[start] + weight
+                        < shortestPathDistances[end]
                     ):
                         shortestPathDistances[end] = (
-                                shortestPathDistances[start] + weight
+                            shortestPathDistances[start] + weight
                         )
                         updated = True
                     if (
-                            shortestPathDistances[end] != float("inf")
-                            and shortestPathDistances[end] + weight
-                            < shortestPathDistances[start]
+                        shortestPathDistances[end] != float("inf")
+                        and shortestPathDistances[end] + weight
+                        < shortestPathDistances[start]
                     ):
                         shortestPathDistances[start] = (
-                                shortestPathDistances[end] + weight
+                            shortestPathDistances[end] + weight
                         )
                         updated = True
                 if not updated:
@@ -136,9 +136,9 @@ class Solution:
             # Determine the city with the fewest number of reachable cities within the distance threshold
 
         def getCityWithFewestReachable(
-                n: int,
-                shortestPathMatrix: list[list[int]],
-                distanceThreshold: int,
+            n: int,
+            shortestPathMatrix: list[list[int]],
+            distanceThreshold: int,
         ) -> int:
             cityWithFewestReachable = -1
             fewestReachableCount = n
@@ -184,11 +184,11 @@ class Solution:
     @staticmethod
     def findTheCity_spfa(n: int, edges: list[list[int]], distanceThreshold: int) -> int:
         def spfa(
-                self,
-                n: int,
-                adjacency_list: list[list[tuple]],
-                shortest_path_distances: list[int],
-                source: int,
+            self,
+            n: int,
+            adjacency_list: list[list[tuple]],
+            shortest_path_distances: list[int],
+            source: int,
         ):
             # Queue to process nodes with updated shortest path distances
             queue = deque([source])
@@ -201,11 +201,11 @@ class Solution:
                 current_city = queue.popleft()
                 for neighbor_city, edge_weight in adjacency_list[current_city]:
                     if (
-                            shortest_path_distances[neighbor_city]
-                            > shortest_path_distances[current_city] + edge_weight
+                        shortest_path_distances[neighbor_city]
+                        > shortest_path_distances[current_city] + edge_weight
                     ):
                         shortest_path_distances[neighbor_city] = (
-                                shortest_path_distances[current_city] + edge_weight
+                            shortest_path_distances[current_city] + edge_weight
                         )
                         update_count[neighbor_city] += 1
                         queue.append(neighbor_city)
@@ -218,9 +218,9 @@ class Solution:
             # Determine the city with the fewest number of reachable cities within the distance threshold
 
         def get_city_with_fewest_reachable(
-                n: int,
-                shortest_path_matrix: list[list[int]],
-                distance_threshold: int,
+            n: int,
+            shortest_path_matrix: list[list[int]],
+            distance_threshold: int,
         ) -> int:
             city_with_fewest_reachable = -1
             fewest_reachable_count = n
@@ -265,7 +265,7 @@ class Solution:
 
     @staticmethod
     def findTheCity_floyd_warshall(
-            n: int, edges: list[list[int]], distanceThreshold: int
+        n: int, edges: list[list[int]], distanceThreshold: int
     ) -> int:
         # Floyd-Warshall algorithm to compute shortest paths between all pairs of cities
         def floyd(n: int, distance_matrix: list[list[int]]):
@@ -282,7 +282,7 @@ class Solution:
 
         # Determine the city with the fewest number of reachable cities within the distance threshold
         def get_city_with_fewest_reachable(
-                n: int, distance_matrix: list[list[int]], distance_threshold: int
+            n: int, distance_matrix: list[list[int]], distance_threshold: int
         ) -> int:
             city_with_fewest_reachable = -1
             fewest_reachable_count = n

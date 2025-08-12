@@ -1,20 +1,20 @@
 # https://leetcode.com/problems/merge-two-sorted-lists
 import pytest
 
-from helpers.ll import ListNode
 from helpers.ll import compare_lls
+from helpers.ll import ListNode
 from helpers.ll import make_ll
 
 
 class Solution:
     def mergeTwoLists(
-            self, list1: ListNode | None, list2: ListNode | None
+        self, list1: ListNode | None, list2: ListNode | None
     ) -> ListNode | None:
         return self.mergeTwoLists_in_place(list1, list2)
 
     @staticmethod
     def mergeTwoLists_in_place(
-            list1: ListNode | None, list2: ListNode | None
+        list1: ListNode | None, list2: ListNode | None
     ) -> ListNode | None:
         if not list1 and not list2:
             return None
@@ -44,7 +44,7 @@ class Solution:
 
     @staticmethod
     def mergeTwoLists_extra(
-            list1: ListNode | None, list2: ListNode | None
+        list1: ListNode | None, list2: ListNode | None
     ) -> ListNode | None:
         import sys
 

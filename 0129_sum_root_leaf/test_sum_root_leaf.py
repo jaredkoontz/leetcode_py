@@ -3,8 +3,8 @@ from collections import deque
 
 import pytest
 
-from helpers.bin_tree import TreeNode
 from helpers.bin_tree import make_tree
+from helpers.bin_tree import TreeNode
 
 
 class Solution:
@@ -80,7 +80,7 @@ class Solution:
                     pre.right = None
                     if not pre.left:
                         tot_sum += cur
-                    cur //= 10 ** depth
+                    cur //= 10**depth
                     root = root.right
             else:
                 cur = cur * 10 + root.val
@@ -93,8 +93,8 @@ class Solution:
     def sumNumbers_one_line(root: TreeNode | None) -> int:
         return (
             f := lambda n, q: n
-                              and (f(n.left, q := 10 * q + n.val) + f(n.right, q) or q)
-                              or 0
+            and (f(n.left, q := 10 * q + n.val) + f(n.right, q) or q)
+            or 0
         )(root, 0)
 
     @staticmethod

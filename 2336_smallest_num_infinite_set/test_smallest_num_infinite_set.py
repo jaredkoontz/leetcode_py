@@ -48,19 +48,19 @@ class SmallestInfiniteSet:
     "operations,vals,expected",
     [
         (
-                [
-                    "SmallestInfiniteSet",
-                    "addBack",
-                    "popSmallest",
-                    "popSmallest",
-                    "popSmallest",
-                    "addBack",
-                    "popSmallest",
-                    "popSmallest",
-                    "popSmallest",
-                ],
-                [[], [2], [], [], [], [1], [], [], []],
-                [None, None, 1, 2, 3, None, 1, 4, 5],
+            [
+                "SmallestInfiniteSet",
+                "addBack",
+                "popSmallest",
+                "popSmallest",
+                "popSmallest",
+                "addBack",
+                "popSmallest",
+                "popSmallest",
+                "popSmallest",
+            ],
+            [[], [2], [], [], [], [1], [], [], []],
+            [None, None, 1, 2, 3, None, 1, 4, 5],
         )
     ],
 )

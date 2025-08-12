@@ -37,7 +37,7 @@ class Solution:
             start += 1
 
         # Return the longest palindromic substring
-        return s[res[0]: res[1]]
+        return s[res[0] : res[1]]
 
     @staticmethod
     def longestPalindrome_backtrack(s: str) -> str:
@@ -112,7 +112,7 @@ class Solution:
             while left >= 0 and right < len(s) and s[left] == s[right]:
                 left -= 1
                 right += 1
-            return s[left + 1: right]
+            return s[left + 1 : right]
 
         max_str = s[0]
 
@@ -162,7 +162,7 @@ class Solution:
                     dp[j][i] = True
                     if i - j + 1 > max_len:
                         max_len = i - j + 1
-                        max_str = s[j: i + 1]
+                        max_str = s[j : i + 1]
         return max_str
 
     @staticmethod
@@ -201,9 +201,9 @@ class Solution:
             if i < right:
                 dp[i] = min(right - i, dp[2 * center - i])
             while (
-                    i - dp[i] - 1 >= 0
-                    and i + dp[i] + 1 < len(s)
-                    and s[i - dp[i] - 1] == s[i + dp[i] + 1]
+                i - dp[i] - 1 >= 0
+                and i + dp[i] + 1 < len(s)
+                and s[i - dp[i] - 1] == s[i + dp[i] + 1]
             ):
                 dp[i] += 1
             if i + dp[i] > right:
@@ -211,7 +211,7 @@ class Solution:
                 right = i + dp[i]
             if dp[i] > max_len:
                 max_len = dp[i]
-                max_str = s[i - dp[i]: i + dp[i] + 1].replace("#", "")
+                max_str = s[i - dp[i] : i + dp[i] + 1].replace("#", "")
         return max_str
 
 

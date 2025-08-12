@@ -1,9 +1,9 @@
 # https://leetcode.com/problems/unique-binary-search-trees-ii
 import pytest
 
+from helpers.bin_tree import make_tree
 from helpers.bin_tree import TreeCodec
 from helpers.bin_tree import TreeNode
-from helpers.bin_tree import make_tree
 
 
 class Solution:
@@ -68,14 +68,14 @@ class Solution:
     "n, expected",
     [
         (
-                3,
-                [
-                    [1, None, 2, None, 3],
-                    [1, None, 3, 2],
-                    [2, 1, 3],
-                    [3, 1, None, None, 2],
-                    [3, 2, None, 1],
-                ],
+            3,
+            [
+                [1, None, 2, None, 3],
+                [1, None, 3, 2],
+                [2, 1, 3],
+                [3, 1, None, None, 2],
+                [3, 2, None, 1],
+            ],
         ),
         (1, [[1]]),
     ],

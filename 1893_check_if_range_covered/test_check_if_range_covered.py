@@ -8,7 +8,7 @@ class Solution:
 
     @staticmethod
     def isCovered_line_sweep_no_prefix(
-            ranges: list[list[int]], left: int, right: int
+        ranges: list[list[int]], left: int, right: int
     ) -> bool:
         diff = [0] * 52
 
@@ -42,7 +42,7 @@ class Solution:
 
     @staticmethod
     def isCovered_greedy_sorting(
-            ranges: list[list[int]], left: int, right: int
+        ranges: list[list[int]], left: int, right: int
     ) -> bool:
         ranges.sort()
         for start, end in ranges:

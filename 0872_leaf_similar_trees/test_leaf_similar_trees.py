@@ -3,8 +3,8 @@ from collections import deque
 
 import pytest
 
-from helpers.bin_tree import TreeNode
 from helpers.bin_tree import make_tree
+from helpers.bin_tree import TreeNode
 
 
 class Solution:
@@ -72,9 +72,9 @@ class Solution:
     "l1,l2,expected",
     [
         (
-                [3, 5, 1, 6, 2, 9, 8, None, None, 7, 4],
-                [3, 5, 1, 6, 7, 4, 2, None, None, None, None, None, None, 9, 8],
-                True,
+            [3, 5, 1, 6, 2, 9, 8, None, None, 7, 4],
+            [3, 5, 1, 6, 7, 4, 2, None, None, None, None, None, None, 9, 8],
+            True,
         ),
         ([1, 2, 3], [1, 3, 2], False),
     ],

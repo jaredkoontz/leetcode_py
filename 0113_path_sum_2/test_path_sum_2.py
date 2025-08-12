@@ -3,19 +3,19 @@ from collections import deque
 
 import pytest
 
-from helpers.bin_tree import TreeNode
 from helpers.bin_tree import make_tree
+from helpers.bin_tree import TreeNode
 
 
 class Solution:
     def pathSum(self, root: TreeNode | None, targetSum: int) -> list[list[int]]:
         assert (
-                self.pathSum_mine(root, targetSum)
-                == self.pathSum_recursive(root, targetSum)
-                == self.pathSum_dfs(root, targetSum)
-                == self.pathSum_dfs_stack(root, targetSum)
-                == self.pathSum_dfs_stack_ii(root, targetSum)
-                == self.pathSum_bfs_queue(root, targetSum)
+            self.pathSum_mine(root, targetSum)
+            == self.pathSum_recursive(root, targetSum)
+            == self.pathSum_dfs(root, targetSum)
+            == self.pathSum_dfs_stack(root, targetSum)
+            == self.pathSum_dfs_stack_ii(root, targetSum)
+            == self.pathSum_bfs_queue(root, targetSum)
         )
         return self.pathSum_mine(root, targetSum)
 
@@ -39,7 +39,7 @@ class Solution:
         return all_paths
 
     def pathSum_recursive(
-            self, root: TreeNode | None, targetSum: int
+        self, root: TreeNode | None, targetSum: int
     ) -> list[list[int]]:
         if not root:
             return []
@@ -125,9 +125,9 @@ class Solution:
     "l1,leaf_sum,expected",
     [
         (
-                [5, 4, 8, 11, None, 13, 4, 7, 2, None, None, None, 5, 1],
-                22,
-                [[5, 4, 11, 2], [5, 8, 4, 5]],
+            [5, 4, 8, 11, None, 13, 4, 7, 2, None, None, None, 5, 1],
+            22,
+            [[5, 4, 11, 2], [5, 8, 4, 5]],
         ),
         ([1, 2, 3], 5, []),
         ([4, 9, 0, 5, 1], 14, [[4, 9, 1]]),

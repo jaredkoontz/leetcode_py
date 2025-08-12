@@ -36,11 +36,11 @@ class Solution:
         def _is_valid_cell(expanded_grid, row, col):
             n = len(expanded_grid)
             return (
-                    row >= 0
-                    and col >= 0
-                    and row < n
-                    and col < n
-                    and expanded_grid[row][col] == 0
+                row >= 0
+                and col >= 0
+                and row < n
+                and col < n
+                and expanded_grid[row][col] == 0
             )
 
         grid_size = len(grid)
@@ -92,11 +92,11 @@ class Solution:
                 if grid[i][j] == "/":
                     g[i * 3][j * 3 + 2] = g[i * 3 + 1][j * 3 + 1] = g[i * 3 + 2][
                         j * 3
-                        ] = 1
+                    ] = 1
                 elif grid[i][j] == "\\":
                     g[i * 3][j * 3] = g[i * 3 + 1][j * 3 + 1] = g[i * 3 + 2][
                         j * 3 + 2
-                        ] = 1
+                    ] = 1
         for i in range(n * 3):
             for j in range(n * 3):
                 regions += 1 if dfs(i, j) > 0 else 0

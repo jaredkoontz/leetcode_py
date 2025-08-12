@@ -7,7 +7,7 @@ from helpers.ll import make_ll
 
 class Solution:
     def getIntersectionNode(
-            self, head_a: ListNode, head_b: ListNode
+        self, head_a: ListNode, head_b: ListNode
     ) -> ListNode | None:
         return self.getIntersectionNode_mine(head_a, head_b)
 

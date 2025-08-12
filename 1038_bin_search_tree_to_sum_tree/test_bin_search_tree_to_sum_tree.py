@@ -1,10 +1,10 @@
 # https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree
 import pytest
 
-from helpers.bin_tree import TreeNode
 from helpers.bin_tree import compare_trees
 from helpers.bin_tree import make_array_from_tree
 from helpers.bin_tree import make_tree
+from helpers.bin_tree import TreeNode
 
 
 class Solution:
@@ -85,8 +85,8 @@ class Solution:
     "l1,expected",
     [
         (
-                [4, 1, 6, 0, 2, 5, 7, None, None, None, 3, None, None, None, 8],
-                [30, 36, 21, 36, 35, 26, 15, None, None, None, 33, None, None, None, 8],
+            [4, 1, 6, 0, 2, 5, 7, None, None, None, 3, None, None, None, 8],
+            [30, 36, 21, 36, 35, 26, 15, None, None, None, 33, None, None, None, 8],
         ),
         ([0, None, 1], [1, None, 1]),
     ],

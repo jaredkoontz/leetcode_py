@@ -77,7 +77,7 @@ class Solution:
         def justify_curr_line(current_line: list[str]) -> str:
             final_line = ""
             for num_spaces, word in zip(
-                    get_spaces_between_words(current_line), current_line[:-1]
+                get_spaces_between_words(current_line), current_line[:-1]
             ):
                 final_line += word + (" " * num_spaces)
             return final_line + current_line[-1]
@@ -114,45 +114,45 @@ class Solution:
     "words, maxWidth, expected",
     [
         (
-                ["This", "is", "an", "example", "of", "text", "justification."],
-                16,
-                ["This    is    an", "example  of text", "justification.  "],
+            ["This", "is", "an", "example", "of", "text", "justification."],
+            16,
+            ["This    is    an", "example  of text", "justification.  "],
         ),
         (
-                ["What", "must", "be", "acknowledgment", "shall", "be"],
-                16,
-                ["What   must   be", "acknowledgment  ", "shall be        "],
+            ["What", "must", "be", "acknowledgment", "shall", "be"],
+            16,
+            ["What   must   be", "acknowledgment  ", "shall be        "],
         ),
         (
-                [
-                    "Science",
-                    "is",
-                    "what",
-                    "we",
-                    "understand",
-                    "well",
-                    "enough",
-                    "to",
-                    "explain",
-                    "to",
-                    "a",
-                    "computer.",
-                    "Art",
-                    "is",
-                    "everything",
-                    "else",
-                    "we",
-                    "do",
-                ],
-                20,
-                [
-                    "Science  is  what we",
-                    "understand      well",
-                    "enough to explain to",
-                    "a  computer.  Art is",
-                    "everything  else  we",
-                    "do                  ",
-                ],
+            [
+                "Science",
+                "is",
+                "what",
+                "we",
+                "understand",
+                "well",
+                "enough",
+                "to",
+                "explain",
+                "to",
+                "a",
+                "computer.",
+                "Art",
+                "is",
+                "everything",
+                "else",
+                "we",
+                "do",
+            ],
+            20,
+            [
+                "Science  is  what we",
+                "understand      well",
+                "enough to explain to",
+                "a  computer.  Art is",
+                "everything  else  we",
+                "do                  ",
+            ],
         ),
     ],
 )

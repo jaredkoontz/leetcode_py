@@ -14,7 +14,7 @@ def groupIsomorphic_naive(strs: list[str]) -> list[list[str]]:
         s_map, t_map = {}, {}
         for s_char, t_char in zip(s, t):
             if (s_char in s_map and s_map[s_char] != t_char) or (
-                    t_char in t_map and t_map[t_char] != s_char
+                t_char in t_map and t_map[t_char] != s_char
             ):
                 return False
             s_map[s_char], t_map[t_char] = t_char, s_char
@@ -59,8 +59,8 @@ def groupIsomorphic_encoding(strs: list[str]) -> list[list[str]]:
     "l1,expected",
     [
         (
-                ["aab", "xxy", "xyz", "abc", "def", "xyx"],
-                [["xyx"], ["xyz", "abc", "def"], ["aab", "xxy"]],
+            ["aab", "xxy", "xyz", "abc", "def", "xyx"],
+            [["xyx"], ["xyz", "abc", "def"], ["aab", "xxy"]],
         )
     ],
 )

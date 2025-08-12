@@ -26,12 +26,12 @@ class Solution:
 
             # Make sure the sequence starts at one of the corners
             return (
-                    grid[row][col] % 2 == 0
-                    and (
-                            sequence.find(border_converted) != -1
-                            or sequence_reversed.find(border_converted) != -1
-                    )
-                    and grid[row + 1][col + 1] == 5
+                grid[row][col] % 2 == 0
+                and (
+                    sequence.find(border_converted) != -1
+                    or sequence_reversed.find(border_converted) != -1
+                )
+                and grid[row + 1][col + 1] == 5
             )
 
         ans = 0
@@ -100,36 +100,36 @@ class Solution:
             for i in range(row, row + 3):
                 for j in range(col, col + 3):
                     if (
-                            my_grid[i][j] < 1
-                            or my_grid[i][j] > 9
-                            or record[my_grid[i][j]] > 0
+                        my_grid[i][j] < 1
+                        or my_grid[i][j] > 9
+                        or record[my_grid[i][j]] > 0
                     ):
                         return False
                     record[my_grid[i][j]] = 1
 
             sum1 = (
-                    my_grid[row][col]
-                    + my_grid[row + 1][col + 1]
-                    + my_grid[row + 2][col + 2]
+                my_grid[row][col]
+                + my_grid[row + 1][col + 1]
+                + my_grid[row + 2][col + 2]
             )
             sum2 = (
-                    my_grid[row][col + 2]
-                    + my_grid[row + 1][col + 1]
-                    + my_grid[row + 2][col]
+                my_grid[row][col + 2]
+                + my_grid[row + 1][col + 1]
+                + my_grid[row + 2][col]
             )
             if sum1 != sum2:
                 return False
 
             for i in range(3):
                 if (
-                        my_grid[row + i][col]
-                        + my_grid[row + i][col + 1]
-                        + my_grid[row + i][col + 2]
-                        != sum1
-                        or my_grid[row][col + i]
-                        + my_grid[row + 1][col + i]
-                        + my_grid[row + 2][col + i]
-                        != sum1
+                    my_grid[row + i][col]
+                    + my_grid[row + i][col + 1]
+                    + my_grid[row + i][col + 2]
+                    != sum1
+                    or my_grid[row][col + i]
+                    + my_grid[row + 1][col + i]
+                    + my_grid[row + 2][col + i]
+                    != sum1
                 ):
                     return False
 

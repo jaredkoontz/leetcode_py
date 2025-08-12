@@ -27,10 +27,10 @@ class Solution:
 
             for index in find(curr_str, x_str):
                 # take the x string away
-                dfs(curr_str[:index] + curr_str[index + 2:], curr_score + x)
+                dfs(curr_str[:index] + curr_str[index + 2 :], curr_score + x)
             for index in find(curr_str, y_str):
                 # take the y string away
-                dfs(curr_str[:index] + curr_str[index + 2:], curr_score + y)
+                dfs(curr_str[:index] + curr_str[index + 2 :], curr_score + y)
 
         dfs(s, 0)
 

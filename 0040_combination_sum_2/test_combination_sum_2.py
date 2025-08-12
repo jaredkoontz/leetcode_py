@@ -23,7 +23,7 @@ class Solution:
             # We don't want to modify unique_combos_with_sum while we're iterating over it,
             # so create a deep copy first.
             for existingComboSum, existing_combos in deepcopy(
-                    unique_combos_with_sum
+                unique_combos_with_sum
             ).items():
                 # Create new combos by adding 'candidate' to each existing combo.
                 new_combo_sum: int = existingComboSum + candidate
@@ -45,7 +45,7 @@ class Solution:
 
     @staticmethod
     def combinationSum2_backtrack(
-            candidates: list[int], target: int
+        candidates: list[int], target: int
     ) -> list[list[int]]:
         candidates.sort()
         ret = []

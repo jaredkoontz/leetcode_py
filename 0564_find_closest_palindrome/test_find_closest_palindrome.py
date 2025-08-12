@@ -43,7 +43,7 @@ class Solution:
         candidates.add(get_palindrome(left_half + 1, even))
         candidates.add(get_palindrome(left_half - 1, even))
         candidates.add(10 ** (length - 1) - 1)  # 999...9
-        candidates.add(10 ** length + 1)  # 1000...001
+        candidates.add(10**length + 1)  # 1000...001
 
         # Find the closest palindrome
         original_number = int(n)

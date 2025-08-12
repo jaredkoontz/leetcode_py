@@ -1,8 +1,8 @@
 # https://leetcode.com/problems/rotate-list
 import pytest
 
-from helpers.ll import ListNode
 from helpers.ll import compare_lls
+from helpers.ll import ListNode
 from helpers.ll import make_ll
 
 
@@ -12,7 +12,7 @@ class Solution:
 
     @staticmethod
     def rotateRight_one_rotation_explanation(
-            head: ListNode | None, k: int
+        head: ListNode | None, k: int
     ) -> ListNode | None:
         if not head:
             return None

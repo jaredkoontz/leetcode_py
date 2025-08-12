@@ -1,8 +1,8 @@
 # https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree
 import pytest
 
-from helpers.bin_tree import TreeNode
 from helpers.bin_tree import make_array_from_tree
+from helpers.bin_tree import TreeNode
 
 
 class Solution:

@@ -10,9 +10,9 @@ Trie = trie.Trie
     "operations, init, expected",
     [
         (
-                ["Trie", "insert", "search", "search", "startsWith", "insert", "search"],
-                [[], ["apple"], ["apple"], ["app"], ["app"], ["app"], ["app"]],
-                [None, None, True, False, True, None, True],
+            ["Trie", "insert", "search", "search", "startsWith", "insert", "search"],
+            [[], ["apple"], ["apple"], ["app"], ["app"], ["app"], ["app"]],
+            [None, None, True, False, True, None, True],
         ),
     ],
 )

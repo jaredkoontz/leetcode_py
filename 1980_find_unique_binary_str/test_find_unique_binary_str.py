@@ -51,7 +51,7 @@ class Solution:
         integers = {int(num, 2) for num in nums}
         num_bits = len(nums)
 
-        for i in range(2 ** num_bits):
+        for i in range(2**num_bits):
             if i not in integers:
                 return bin(i)[2:].zfill(num_bits)
 

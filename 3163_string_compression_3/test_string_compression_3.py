@@ -35,8 +35,8 @@ class Solution:
         ("abcde", "1a1b1c1d1e"),
         ("aaaaaaaaaaaaaabb", "9a5a2b"),
         (
-                "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabb",
-                "9a9a9a9a9a9a2a2b",
+            "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabb",
+            "9a9a9a9a9a9a2a2b",
         ),
     ],
 )

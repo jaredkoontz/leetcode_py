@@ -23,11 +23,11 @@ class Solution:
             return True
 
         if (
-                row < 0
-                or row == self.ROWS
-                or col < 0
-                or col == self.COLS
-                or self.board[row][col] != suffix[0]
+            row < 0
+            or row == self.ROWS
+            or col < 0
+            or col == self.COLS
+            or self.board[row][col] != suffix[0]
         ):
             return False
         ret = False
@@ -44,19 +44,19 @@ class Solution:
     "board, word, expected",
     [
         (
-                [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]],
-                "ABCCED",
-                True,
+            [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]],
+            "ABCCED",
+            True,
         ),
         (
-                [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]],
-                "SEE",
-                True,
+            [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]],
+            "SEE",
+            True,
         ),
         (
-                [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]],
-                "ABCB",
-                False,
+            [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]],
+            "ABCB",
+            False,
         ),
     ],
 )

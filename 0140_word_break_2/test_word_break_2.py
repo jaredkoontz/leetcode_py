@@ -21,7 +21,7 @@ class Solution:
             if len(word) == len(s):
                 res.append(word)
             else:
-                result_of_the_rest = self.helper(s[len(word):], wordDict, memo)
+                result_of_the_rest = self.helper(s[len(word) :], wordDict, memo)
                 for item in result_of_the_rest:
                     item = word + " " + item
                     res.append(item)
@@ -33,14 +33,14 @@ class Solution:
     "s,words,expected",
     [
         (
-                "catsanddog",
-                ["cat", "cats", "and", "sand", "dog"],
-                ["cats and dog", "cat sand dog"],
+            "catsanddog",
+            ["cat", "cats", "and", "sand", "dog"],
+            ["cats and dog", "cat sand dog"],
         ),
         (
-                "pineapplepenapple",
-                ["apple", "pen", "applepen", "pine", "pineapple"],
-                ["pine apple pen apple", "pineapple pen apple", "pine applepen apple"],
+            "pineapplepenapple",
+            ["apple", "pen", "applepen", "pine", "pineapple"],
+            ["pine apple pen apple", "pineapple pen apple", "pine applepen apple"],
         ),
         ("catsandog", ["cats", "dog", "sand", "and", "cat"], []),
     ],

@@ -12,7 +12,7 @@ class Solution:
     def judgeSquareSum_sqrt(c: int) -> bool:
         # Since a^2 + b^2 = c => a = sqrt(c - b^2) => a <= sqrt(c).
         for a in range(int(sqrt(c)) + 1):
-            b = sqrt(c - a ** 2)
+            b = sqrt(c - a**2)
             if b == int(b):
                 return True
         return False
@@ -26,7 +26,7 @@ class Solution:
         """
         my_set = set()
         for a in range(c):
-            my_set.add(a ** 2)
+            my_set.add(a**2)
         for val in my_set:
             b_square = c - val
             if b_square in my_set:
@@ -47,7 +47,7 @@ class Solution:
         left = 0
         right = int(sqrt(c))
         while left <= right:
-            cur = left ** 2 + right ** 2
+            cur = left**2 + right**2
             if cur == c:
                 return True
             elif cur < c:
@@ -62,7 +62,7 @@ class Solution:
             return True
         for i in range(0, (c // 2) + 1):
             for j in range(0, (c // 2) + 1):
-                if i ** 2 + j ** 2 == c:
+                if i**2 + j**2 == c:
                     return True
         return False
 

@@ -1,8 +1,8 @@
 # https://leetcode.com/problems/middle-of-the-linked-list
 import pytest
 
-from helpers.ll import ListNode
 from helpers.ll import compare_lls
+from helpers.ll import ListNode
 from helpers.ll import make_ll
 
 

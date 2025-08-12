@@ -1,8 +1,8 @@
 # https://leetcode.com/problems/remove-nodes-from-linked-list
 import pytest
 
-from helpers.ll import ListNode
 from helpers.ll import compare_lls
+from helpers.ll import ListNode
 from helpers.ll import make_ll
 
 
@@ -18,7 +18,7 @@ class Solution:
 
     @staticmethod
     def removeNodes_reverse_and_filter_optimal(
-            head: ListNode | None,
+        head: ListNode | None,
     ) -> ListNode | None:
         if not head or not head.next:
             return head

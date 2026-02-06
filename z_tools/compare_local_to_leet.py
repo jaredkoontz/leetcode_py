@@ -3,7 +3,9 @@ import pprint
 from pathlib import Path
 
 """
-This is used to compare your solved problems for a session in leet code, to what is currently in this directory.
+This is used to compare your solved problems for a session in leet code, to what is currently in the project.
+To get your solved leetcode problems, login and go to https://leetcode.com/problemset/ and set the filter to solved.
+I find it easiest to create a saved list and work from that page. 
 
 To use:
     get json from your web browser by running the contents of `extract_problems.json` in the dev console.

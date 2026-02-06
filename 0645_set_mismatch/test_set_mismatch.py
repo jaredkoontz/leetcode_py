@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/set-mismatch/
+# https://leetcode.com/problems/set-mismatch
 import pytest
 
 

@@ -32,6 +32,7 @@ class Solution:
                 return [number_map[candidate], i]
             else:
                 number_map[nums[i]] = i
+        return []
 
 
 @pytest.mark.parametrize(

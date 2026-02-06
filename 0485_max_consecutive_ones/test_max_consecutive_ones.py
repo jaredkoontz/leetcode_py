@@ -5,6 +5,7 @@ import pytest
 class Solution:
     def findMaxConsecutiveOnes(self, nums: list[int]) -> int:
         return self.findMaxConsecutiveOnes_mine(nums)
+
     @staticmethod
     def findMaxConsecutiveOnes_mine(nums: list[int]) -> int:
         max_count = 0
@@ -19,11 +20,12 @@ class Solution:
 
         return max_count
 
+
 @pytest.mark.parametrize(
     "nums,expected",
     [
-        ([1,1,0,1,1,1],3),
-        ([1,0,1,1,0,1], 2),
+        ([1, 1, 0, 1, 1, 1], 3),
+        ([1, 0, 1, 1, 0, 1], 2),
     ],
 )
 def test_max_product_two_elements(nums, expected):
